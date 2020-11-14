@@ -1,0 +1,112 @@
+
+Log Entry : 21:58:10 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: username processing
+-------------------------------------------------------
+
+Log Entry : 21:58:15 16 октября 2020 г.
+event: ExceptionThrown
+     : <SetUp>b__51_2(): OpenQA.Selenium.Support.Events.WebDriverExceptionEventArgs - no such element: Unable to locate element: {"method":"css selector","selector":"*[name="username"]"}
+  (Session info: chrome=86.0.4240.75)
+-------------------------------------------------------
+
+Log Entry : 21:58:15 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password processing
+-------------------------------------------------------
+
+Log Entry : 21:58:20 16 октября 2020 г.
+event: ExceptionThrown
+     : <SetUp>b__51_2(): OpenQA.Selenium.Support.Events.WebDriverExceptionEventArgs - no such element: Unable to locate element: {"method":"css selector","selector":"*[name="password"]"}
+  (Session info: chrome=86.0.4240.75)
+-------------------------------------------------------
+
+Log Entry : 21:58:20 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: login processing
+-------------------------------------------------------
+
+Log Entry : 21:58:25 16 октября 2020 г.
+event: ExceptionThrown
+     : <SetUp>b__51_2(): OpenQA.Selenium.Support.Events.WebDriverExceptionEventArgs - no such element: Unable to locate element: {"method":"css selector","selector":"*[name="login"]"}
+  (Session info: chrome=86.0.4240.75)
+-------------------------------------------------------
+
+Log Entry : 21:58:26 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [name=countries_form] .row processing
+-------------------------------------------------------
+
+Log Entry : 21:58:26 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [name=countries_form] .row is found
+-------------------------------------------------------
+
+Log Entry : 21:58:26 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: a processing
+-------------------------------------------------------
+
+Log Entry : 21:58:26 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: a is found
+-------------------------------------------------------
+
+Log Entry : 21:58:28 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: form .fa-external-link processing
+-------------------------------------------------------
+
+Log Entry : 21:58:28 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: form .fa-external-link is found
+-------------------------------------------------------
+
+Log Entry : 21:58:51 16 октября 2020 г.
+event: currentTestName
+     : myCheckNewTabs
+-------------------------------------------------------
+
+Log Entry : 21:58:51 16 октября 2020 г.
+event: Capabilities
+     : {
+  "acceptInsecureCerts": false,
+  "browserName": "chrome",
+  "browserVersion": "86.0.4240.75",
+  "chrome": {
+    "chromedriverVersion": "85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689})",
+    "userDataDir": "c:\\Users\\AdminVadim\\AppData\\Local\\Google\\Chrome\\User Data"
+  },
+  "goog:chromeOptions": {
+    "debuggerAddress": "localhost:2797"
+  },
+  "networkConnectionEnabled": false,
+  "pageLoadStrategy": "normal",
+  "platformName": "windows",
+  "proxy": {},
+  "setWindowRect": true,
+  "strictFileInteractability": false,
+  "timeouts": {
+    "implicit": 0,
+    "pageLoad": 300000,
+    "script": 30000
+  },
+  "unhandledPromptBehavior": "dismiss and notify",
+  "webauthn:virtualAuthenticators": true
+}
+-------------------------------------------------------
+
+Log Entry : 21:58:51 16 октября 2020 г.
+event: testRunType
+     : Local
+-------------------------------------------------------
+
+Log Entry : 21:58:51 16 октября 2020 г.
+event: driverType
+     : Chrome
+-------------------------------------------------------
+
+Log Entry : 21:58:51 16 октября 2020 г.
+event: ================================================
+     : ================================================
+-------------------------------------------------------

@@ -1,0 +1,1922 @@
+
+Log Entry : 21:59:32 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: username processing
+-------------------------------------------------------
+
+Log Entry : 21:59:37 16 октября 2020 г.
+event: ExceptionThrown
+     : <SetUp>b__51_2(): OpenQA.Selenium.Support.Events.WebDriverExceptionEventArgs - no such element: Unable to locate element: {"method":"css selector","selector":"*[name="username"]"}
+  (Session info: chrome=86.0.4240.75)
+-------------------------------------------------------
+
+Log Entry : 21:59:37 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password processing
+-------------------------------------------------------
+
+Log Entry : 21:59:42 16 октября 2020 г.
+event: ExceptionThrown
+     : <SetUp>b__51_2(): OpenQA.Selenium.Support.Events.WebDriverExceptionEventArgs - no such element: Unable to locate element: {"method":"css selector","selector":"*[name="password"]"}
+  (Session info: chrome=86.0.4240.75)
+-------------------------------------------------------
+
+Log Entry : 21:59:42 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: login processing
+-------------------------------------------------------
+
+Log Entry : 21:59:47 16 октября 2020 г.
+event: ExceptionThrown
+     : <SetUp>b__51_2(): OpenQA.Selenium.Support.Events.WebDriverExceptionEventArgs - no such element: Unable to locate element: {"method":"css selector","selector":"*[name="login"]"}
+  (Session info: chrome=86.0.4240.75)
+-------------------------------------------------------
+
+Log Entry : 21:59:47 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:47 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:47 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:47 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:48 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:48 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:48 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 21:59:48 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 21:59:48 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:48 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:48 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 21:59:48 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 21:59:48 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 21:59:48 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 21:59:48 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:48 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:48 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 21:59:48 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 21:59:49 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 21:59:49 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 21:59:49 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:49 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:49 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:49 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:49 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 21:59:49 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 21:59:50 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:50 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:50 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 21:59:50 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 21:59:50 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 21:59:50 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 21:59:50 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:50 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:50 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 21:59:50 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 21:59:50 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 21:59:50 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 21:59:51 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:51 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:51 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 21:59:51 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 21:59:51 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 21:59:51 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 21:59:51 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:51 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:51 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 21:59:51 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 21:59:52 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 21:59:52 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 21:59:52 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:52 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:52 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 21:59:52 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 21:59:52 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 21:59:52 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 21:59:52 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:52 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:52 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 21:59:52 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 21:59:53 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 21:59:53 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 21:59:53 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:53 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:53 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 21:59:53 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 21:59:53 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 21:59:53 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 21:59:53 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:53 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:53 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 21:59:53 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 21:59:54 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 21:59:54 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 21:59:54 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:54 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:54 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 21:59:54 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 21:59:54 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 21:59:54 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 21:59:54 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:54 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:55 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 21:59:55 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 21:59:55 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:00 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:00 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:00 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:00 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:00 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:01 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:01 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:01 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:06 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:06 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:06 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:06 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:06 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:06 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:06 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:06 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:06 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:07 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:07 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:07 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:07 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:07 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:07 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:07 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:07 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:07 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:07 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:08 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:08 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:08 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:08 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:08 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:08 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:08 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:08 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:08 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:08 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:09 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:09 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:09 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:14 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:14 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:14 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:14 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:14 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:14 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:14 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:14 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:14 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:15 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:15 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:15 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:15 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:15 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:15 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:15 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:15 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:15 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:15 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:16 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:16 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:16 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:16 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:16 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:16 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:16 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:16 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:16 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:16 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:16 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:16 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:17 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:17 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:17 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:17 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:17 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:17 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:17 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:17 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:17 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:17 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:17 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:17 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:18 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:18 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:18 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:18 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:18 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:18 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:18 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:18 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:19 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:19 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:19 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:19 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:19 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:19 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:19 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:19 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:19 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:19 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:19 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:19 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:20 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:20 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:20 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:20 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:20 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:20 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:20 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:20 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:21 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:21 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:21 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:21 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:21 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:21 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:21 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:21 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:21 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:21 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:21 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:21 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:21 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:21 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:22 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:22 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:22 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:22 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:22 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:22 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:22 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:27 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:28 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:28 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:28 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:28 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:28 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:28 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:28 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:28 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:28 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:28 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:28 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:28 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:29 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:29 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:29 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:29 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:29 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:29 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:29 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:29 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:29 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:29 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:29 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:29 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:30 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:30 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:30 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:30 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:30 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:30 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:30 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:30 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:30 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:30 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:30 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:31 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:31 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:31 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:31 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:31 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:31 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:31 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:31 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:31 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:32 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:32 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:32 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:32 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:32 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:32 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:32 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:32 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:32 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:32 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:32 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:32 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:33 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:33 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:33 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:33 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:33 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:33 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:33 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:33 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:33 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:33 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:34 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:34 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:34 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:34 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:34 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:34 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:34 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:34 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:34 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:34 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:34 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:34 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:35 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:35 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:35 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:35 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:35 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:35 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:35 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:40 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:41 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:41 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:41 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:41 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:41 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:41 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:41 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:41 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:41 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:41 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:41 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:41 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:42 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:42 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:42 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:42 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:42 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:42 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:42 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:42 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:42 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:42 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:43 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:43 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:43 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:43 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:43 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:43 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:43 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:43 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:44 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:44 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:44 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:44 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:44 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:44 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:44 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:44 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:44 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:44 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:44 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:44 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:45 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:45 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:45 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:45 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:45 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:45 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:45 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:50 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:51 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:51 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:51 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:51 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:51 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:51 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:51 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:51 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:51 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- processing
+-------------------------------------------------------
+
+Log Entry : 22:00:51 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: app- is found
+-------------------------------------------------------
+
+Log Entry : 22:00:51 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] processing
+-------------------------------------------------------
+
+Log Entry : 22:00:51 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id^=doc-] is found
+-------------------------------------------------------
+
+Log Entry : 22:00:52 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 processing
+-------------------------------------------------------
+
+Log Entry : 22:00:52 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: h1 is found
+-------------------------------------------------------
+
+Log Entry : 22:00:52 16 октября 2020 г.
+event: currentTestName
+     : MyLeftMenuClick
+-------------------------------------------------------
+
+Log Entry : 22:00:52 16 октября 2020 г.
+event: Capabilities
+     : {
+  "acceptInsecureCerts": false,
+  "browserName": "chrome",
+  "browserVersion": "86.0.4240.75",
+  "chrome": {
+    "chromedriverVersion": "85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689})",
+    "userDataDir": "c:\\Users\\AdminVadim\\AppData\\Local\\Google\\Chrome\\User Data"
+  },
+  "goog:chromeOptions": {
+    "debuggerAddress": "localhost:2997"
+  },
+  "networkConnectionEnabled": false,
+  "pageLoadStrategy": "normal",
+  "platformName": "windows",
+  "proxy": {},
+  "setWindowRect": true,
+  "strictFileInteractability": false,
+  "timeouts": {
+    "implicit": 0,
+    "pageLoad": 300000,
+    "script": 30000
+  },
+  "unhandledPromptBehavior": "dismiss and notify",
+  "webauthn:virtualAuthenticators": true
+}
+-------------------------------------------------------
+
+Log Entry : 22:00:52 16 октября 2020 г.
+event: testRunType
+     : Local
+-------------------------------------------------------
+
+Log Entry : 22:00:52 16 октября 2020 г.
+event: driverType
+     : Chrome
+-------------------------------------------------------
+
+Log Entry : 22:00:52 16 октября 2020 г.
+event: ================================================
+     : ================================================
+-------------------------------------------------------

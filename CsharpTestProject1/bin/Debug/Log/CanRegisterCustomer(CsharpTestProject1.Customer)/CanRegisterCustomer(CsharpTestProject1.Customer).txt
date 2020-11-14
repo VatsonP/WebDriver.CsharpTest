@@ -1,0 +1,1036 @@
+
+Log Entry : 20:20:48 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: box-login processing
+-------------------------------------------------------
+
+Log Entry : 20:20:48 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: box-login is found
+-------------------------------------------------------
+
+Log Entry : 20:20:48 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: username processing
+-------------------------------------------------------
+
+Log Entry : 20:20:48 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: username is found
+-------------------------------------------------------
+
+Log Entry : 20:20:48 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password processing
+-------------------------------------------------------
+
+Log Entry : 20:20:48 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password is found
+-------------------------------------------------------
+
+Log Entry : 20:20:48 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: login processing
+-------------------------------------------------------
+
+Log Entry : 20:20:48 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: login is found
+-------------------------------------------------------
+
+Log Entry : 20:20:49 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: table.dataTable tr.row processing
+-------------------------------------------------------
+
+Log Entry : 20:20:49 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: table.dataTable tr.row is found
+-------------------------------------------------------
+
+Log Entry : 20:20:50 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: tax_id processing
+-------------------------------------------------------
+
+Log Entry : 20:20:50 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: tax_id is found
+-------------------------------------------------------
+
+Log Entry : 20:20:50 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: company processing
+-------------------------------------------------------
+
+Log Entry : 20:20:50 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: company is found
+-------------------------------------------------------
+
+Log Entry : 20:20:50 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: firstname processing
+-------------------------------------------------------
+
+Log Entry : 20:20:50 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: firstname is found
+-------------------------------------------------------
+
+Log Entry : 20:20:50 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: lastname processing
+-------------------------------------------------------
+
+Log Entry : 20:20:50 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: lastname is found
+-------------------------------------------------------
+
+Log Entry : 20:20:50 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: address1 processing
+-------------------------------------------------------
+
+Log Entry : 20:20:50 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: address1 is found
+-------------------------------------------------------
+
+Log Entry : 20:20:50 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: postcode processing
+-------------------------------------------------------
+
+Log Entry : 20:20:50 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: postcode is found
+-------------------------------------------------------
+
+Log Entry : 20:20:51 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: city processing
+-------------------------------------------------------
+
+Log Entry : 20:20:51 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: city is found
+-------------------------------------------------------
+
+Log Entry : 20:20:51 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id ^= select2-country_code] processing
+-------------------------------------------------------
+
+Log Entry : 20:20:51 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id ^= select2-country_code] is found
+-------------------------------------------------------
+
+Log Entry : 20:20:51 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .select2-results__option[id $= UA] processing
+-------------------------------------------------------
+
+Log Entry : 20:20:51 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .select2-results__option[id $= UA] is found
+-------------------------------------------------------
+
+Log Entry : 20:20:51 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: email processing
+-------------------------------------------------------
+
+Log Entry : 20:20:51 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: email is found
+-------------------------------------------------------
+
+Log Entry : 20:20:51 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: phone processing
+-------------------------------------------------------
+
+Log Entry : 20:20:51 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: phone is found
+-------------------------------------------------------
+
+Log Entry : 20:20:51 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password processing
+-------------------------------------------------------
+
+Log Entry : 20:20:51 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password is found
+-------------------------------------------------------
+
+Log Entry : 20:20:51 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: confirmed_password processing
+-------------------------------------------------------
+
+Log Entry : 20:20:51 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: confirmed_password is found
+-------------------------------------------------------
+
+Log Entry : 20:20:59 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: create_account processing
+-------------------------------------------------------
+
+Log Entry : 20:20:59 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: create_account is found
+-------------------------------------------------------
+
+Log Entry : 20:21:02 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: box-login processing
+-------------------------------------------------------
+
+Log Entry : 20:21:07 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: box-login is found
+-------------------------------------------------------
+
+Log Entry : 20:21:08 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: table.dataTable tr.row processing
+-------------------------------------------------------
+
+Log Entry : 20:21:08 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: table.dataTable tr.row is found
+-------------------------------------------------------
+
+Log Entry : 20:21:08 28 октября 2020 г.
+event: currentTestName
+     : CanRegisterCustomer(CsharpTestProject1.Customer)
+-------------------------------------------------------
+
+Log Entry : 20:21:08 28 октября 2020 г.
+event: Capabilities
+     : {
+  "acceptInsecureCerts": false,
+  "browserName": "chrome",
+  "browserVersion": "86.0.4240.111",
+  "chrome": {
+    "chromedriverVersion": "85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689})",
+    "userDataDir": "c:\\Users\\AdminVadim\\AppData\\Local\\Google\\Chrome\\User Data"
+  },
+  "goog:chromeOptions": {
+    "debuggerAddress": "localhost:3709"
+  },
+  "networkConnectionEnabled": false,
+  "pageLoadStrategy": "normal",
+  "platformName": "windows",
+  "proxy": {},
+  "setWindowRect": true,
+  "strictFileInteractability": false,
+  "timeouts": {
+    "implicit": 0,
+    "pageLoad": 300000,
+    "script": 30000
+  },
+  "unhandledPromptBehavior": "dismiss and notify",
+  "webauthn:virtualAuthenticators": true
+}
+-------------------------------------------------------
+
+Log Entry : 20:21:08 28 октября 2020 г.
+event: testRunType
+     : Local
+-------------------------------------------------------
+
+Log Entry : 20:21:08 28 октября 2020 г.
+event: driverType
+     : Chrome
+-------------------------------------------------------
+
+Log Entry : 20:21:08 28 октября 2020 г.
+event: ================================================
+     : ================================================
+-------------------------------------------------------
+
+Log Entry : 15:27:04 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: box-login processing
+-------------------------------------------------------
+
+Log Entry : 15:27:04 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: box-login is found
+-------------------------------------------------------
+
+Log Entry : 15:27:04 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: username processing
+-------------------------------------------------------
+
+Log Entry : 15:27:04 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: username is found
+-------------------------------------------------------
+
+Log Entry : 15:27:04 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password processing
+-------------------------------------------------------
+
+Log Entry : 15:27:04 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password is found
+-------------------------------------------------------
+
+Log Entry : 15:27:05 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: login processing
+-------------------------------------------------------
+
+Log Entry : 15:27:05 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: login is found
+-------------------------------------------------------
+
+Log Entry : 15:27:05 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: table.dataTable tr.row processing
+-------------------------------------------------------
+
+Log Entry : 15:27:05 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: table.dataTable tr.row is found
+-------------------------------------------------------
+
+Log Entry : 15:27:06 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: tax_id processing
+-------------------------------------------------------
+
+Log Entry : 15:27:06 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: tax_id is found
+-------------------------------------------------------
+
+Log Entry : 15:27:06 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: company processing
+-------------------------------------------------------
+
+Log Entry : 15:27:06 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: company is found
+-------------------------------------------------------
+
+Log Entry : 15:27:06 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: firstname processing
+-------------------------------------------------------
+
+Log Entry : 15:27:06 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: firstname is found
+-------------------------------------------------------
+
+Log Entry : 15:27:06 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: lastname processing
+-------------------------------------------------------
+
+Log Entry : 15:27:06 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: lastname is found
+-------------------------------------------------------
+
+Log Entry : 15:27:06 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: address1 processing
+-------------------------------------------------------
+
+Log Entry : 15:27:06 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: address1 is found
+-------------------------------------------------------
+
+Log Entry : 15:27:07 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: postcode processing
+-------------------------------------------------------
+
+Log Entry : 15:27:07 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: postcode is found
+-------------------------------------------------------
+
+Log Entry : 15:27:07 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: city processing
+-------------------------------------------------------
+
+Log Entry : 15:27:07 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: city is found
+-------------------------------------------------------
+
+Log Entry : 15:27:07 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id ^= select2-country_code] processing
+-------------------------------------------------------
+
+Log Entry : 15:27:07 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id ^= select2-country_code] is found
+-------------------------------------------------------
+
+Log Entry : 15:27:07 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .select2-results__option[id $= UA] processing
+-------------------------------------------------------
+
+Log Entry : 15:27:07 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .select2-results__option[id $= UA] is found
+-------------------------------------------------------
+
+Log Entry : 15:27:07 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: email processing
+-------------------------------------------------------
+
+Log Entry : 15:27:07 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: email is found
+-------------------------------------------------------
+
+Log Entry : 15:27:07 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: phone processing
+-------------------------------------------------------
+
+Log Entry : 15:27:07 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: phone is found
+-------------------------------------------------------
+
+Log Entry : 15:27:07 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password processing
+-------------------------------------------------------
+
+Log Entry : 15:27:07 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password is found
+-------------------------------------------------------
+
+Log Entry : 15:27:07 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: confirmed_password processing
+-------------------------------------------------------
+
+Log Entry : 15:27:07 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: confirmed_password is found
+-------------------------------------------------------
+
+Log Entry : 15:27:16 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: create_account processing
+-------------------------------------------------------
+
+Log Entry : 15:27:16 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: create_account is found
+-------------------------------------------------------
+
+Log Entry : 15:27:18 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: box-login processing
+-------------------------------------------------------
+
+Log Entry : 15:27:23 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: box-login is found
+-------------------------------------------------------
+
+Log Entry : 15:27:24 29 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: table.dataTable tr.row processing
+-------------------------------------------------------
+
+Log Entry : 15:27:24 29 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: table.dataTable tr.row is found
+-------------------------------------------------------
+
+Log Entry : 15:27:24 29 октября 2020 г.
+event: currentTestName
+     : CanRegisterCustomer(CsharpTestProject1.Customer)
+-------------------------------------------------------
+
+Log Entry : 15:27:24 29 октября 2020 г.
+event: Capabilities
+     : {
+  "acceptInsecureCerts": false,
+  "browserName": "chrome",
+  "browserVersion": "86.0.4240.111",
+  "chrome": {
+    "chromedriverVersion": "85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689})",
+    "userDataDir": "c:\\Users\\AdminVadim\\AppData\\Local\\Google\\Chrome\\User Data"
+  },
+  "goog:chromeOptions": {
+    "debuggerAddress": "localhost:2627"
+  },
+  "networkConnectionEnabled": false,
+  "pageLoadStrategy": "normal",
+  "platformName": "windows",
+  "proxy": {},
+  "setWindowRect": true,
+  "strictFileInteractability": false,
+  "timeouts": {
+    "implicit": 0,
+    "pageLoad": 300000,
+    "script": 30000
+  },
+  "unhandledPromptBehavior": "dismiss and notify",
+  "webauthn:virtualAuthenticators": true
+}
+-------------------------------------------------------
+
+Log Entry : 15:27:24 29 октября 2020 г.
+event: testRunType
+     : Local
+-------------------------------------------------------
+
+Log Entry : 15:27:24 29 октября 2020 г.
+event: driverType
+     : Chrome
+-------------------------------------------------------
+
+Log Entry : 15:27:24 29 октября 2020 г.
+event: ================================================
+     : ================================================
+-------------------------------------------------------
+
+Log Entry : 22:39:40 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: box-login processing
+-------------------------------------------------------
+
+Log Entry : 22:39:40 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: box-login is found
+-------------------------------------------------------
+
+Log Entry : 22:39:40 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: username processing
+-------------------------------------------------------
+
+Log Entry : 22:39:40 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: username is found
+-------------------------------------------------------
+
+Log Entry : 22:39:40 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password processing
+-------------------------------------------------------
+
+Log Entry : 22:39:40 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password is found
+-------------------------------------------------------
+
+Log Entry : 22:39:40 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: login processing
+-------------------------------------------------------
+
+Log Entry : 22:39:40 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: login is found
+-------------------------------------------------------
+
+Log Entry : 22:39:46 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: table.dataTable tr.row processing
+-------------------------------------------------------
+
+Log Entry : 22:39:46 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: table.dataTable tr.row is found
+-------------------------------------------------------
+
+Log Entry : 22:39:47 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: tax_id processing
+-------------------------------------------------------
+
+Log Entry : 22:39:47 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: tax_id is found
+-------------------------------------------------------
+
+Log Entry : 22:39:47 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: company processing
+-------------------------------------------------------
+
+Log Entry : 22:39:47 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: company is found
+-------------------------------------------------------
+
+Log Entry : 22:39:47 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: firstname processing
+-------------------------------------------------------
+
+Log Entry : 22:39:47 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: firstname is found
+-------------------------------------------------------
+
+Log Entry : 22:39:47 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: lastname processing
+-------------------------------------------------------
+
+Log Entry : 22:39:47 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: lastname is found
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: address1 processing
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: address1 is found
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: postcode processing
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: postcode is found
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: city processing
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: city is found
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id ^= select2-country_code] processing
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id ^= select2-country_code] is found
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .select2-results__option[id $= UA] processing
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .select2-results__option[id $= UA] is found
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: email processing
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: email is found
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: phone processing
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: phone is found
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password processing
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password is found
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: confirmed_password processing
+-------------------------------------------------------
+
+Log Entry : 22:39:48 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: confirmed_password is found
+-------------------------------------------------------
+
+Log Entry : 22:39:57 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: create_account processing
+-------------------------------------------------------
+
+Log Entry : 22:39:57 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: create_account is found
+-------------------------------------------------------
+
+Log Entry : 22:40:00 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: box-login processing
+-------------------------------------------------------
+
+Log Entry : 22:40:05 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: box-login is found
+-------------------------------------------------------
+
+Log Entry : 22:40:05 31 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__61_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: table.dataTable tr.row processing
+-------------------------------------------------------
+
+Log Entry : 22:40:05 31 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__61_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: table.dataTable tr.row is found
+-------------------------------------------------------
+
+Log Entry : 22:40:05 31 октября 2020 г.
+event: currentTestName
+     : CanRegisterCustomer(CsharpTestProject1.Customer)
+-------------------------------------------------------
+
+Log Entry : 22:40:05 31 октября 2020 г.
+event: Capabilities
+     : {
+  "acceptInsecureCerts": false,
+  "browserName": "chrome",
+  "browserVersion": "86.0.4240.111",
+  "chrome": {
+    "chromedriverVersion": "85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689})",
+    "userDataDir": "c:\\Users\\AdminVadim\\AppData\\Local\\Google\\Chrome\\User Data"
+  },
+  "goog:chromeOptions": {
+    "debuggerAddress": "localhost:1459"
+  },
+  "networkConnectionEnabled": false,
+  "pageLoadStrategy": "normal",
+  "platformName": "windows",
+  "proxy": {},
+  "setWindowRect": true,
+  "strictFileInteractability": false,
+  "timeouts": {
+    "implicit": 0,
+    "pageLoad": 300000,
+    "script": 30000
+  },
+  "unhandledPromptBehavior": "dismiss and notify",
+  "webauthn:virtualAuthenticators": true
+}
+-------------------------------------------------------
+
+Log Entry : 22:40:05 31 октября 2020 г.
+event: testRunType
+     : Local
+-------------------------------------------------------
+
+Log Entry : 22:40:05 31 октября 2020 г.
+event: driverType
+     : Chrome
+-------------------------------------------------------
+
+Log Entry : 22:40:05 31 октября 2020 г.
+event: ================================================
+     : ================================================
+-------------------------------------------------------
+
+Log Entry : 16:06:40 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: box-login processing
+-------------------------------------------------------
+
+Log Entry : 16:06:40 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: box-login is found
+-------------------------------------------------------
+
+Log Entry : 16:06:40 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: username processing
+-------------------------------------------------------
+
+Log Entry : 16:06:40 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: username is found
+-------------------------------------------------------
+
+Log Entry : 16:06:40 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password processing
+-------------------------------------------------------
+
+Log Entry : 16:06:40 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password is found
+-------------------------------------------------------
+
+Log Entry : 16:06:40 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: login processing
+-------------------------------------------------------
+
+Log Entry : 16:06:40 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: login is found
+-------------------------------------------------------
+
+Log Entry : 16:06:41 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: table.dataTable tr.row processing
+-------------------------------------------------------
+
+Log Entry : 16:06:41 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: table.dataTable tr.row is found
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: tax_id processing
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: tax_id is found
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: company processing
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: company is found
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: firstname processing
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: firstname is found
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: lastname processing
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: lastname is found
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: address1 processing
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: address1 is found
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: postcode processing
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: postcode is found
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: city processing
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: city is found
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id ^= select2-country_code] processing
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id ^= select2-country_code] is found
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .select2-results__option[id $= UA] processing
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .select2-results__option[id $= UA] is found
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: email processing
+-------------------------------------------------------
+
+Log Entry : 16:06:42 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: email is found
+-------------------------------------------------------
+
+Log Entry : 16:06:43 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: phone processing
+-------------------------------------------------------
+
+Log Entry : 16:06:43 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: phone is found
+-------------------------------------------------------
+
+Log Entry : 16:06:43 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password processing
+-------------------------------------------------------
+
+Log Entry : 16:06:43 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: password is found
+-------------------------------------------------------
+
+Log Entry : 16:06:43 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: confirmed_password processing
+-------------------------------------------------------
+
+Log Entry : 16:06:43 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: confirmed_password is found
+-------------------------------------------------------
+
+Log Entry : 16:06:51 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: create_account processing
+-------------------------------------------------------
+
+Log Entry : 16:06:51 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Name: create_account is found
+-------------------------------------------------------
+
+Log Entry : 16:06:54 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: box-login processing
+-------------------------------------------------------
+
+Log Entry : 16:06:59 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.Id: box-login is found
+-------------------------------------------------------
+
+Log Entry : 16:06:59 5 ноября 2020 г.
+event: FindingElement
+     : <SetUp>b__64_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: table.dataTable tr.row processing
+-------------------------------------------------------
+
+Log Entry : 16:06:59 5 ноября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__64_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: table.dataTable tr.row is found
+-------------------------------------------------------
+
+Log Entry : 16:06:59 5 ноября 2020 г.
+event: currentTestName
+     : CanRegisterCustomer(CsharpTestProject1.Customer)
+-------------------------------------------------------
+
+Log Entry : 16:06:59 5 ноября 2020 г.
+event: Capabilities
+     : {
+  "acceptInsecureCerts": false,
+  "browserName": "chrome",
+  "browserVersion": "86.0.4240.183",
+  "chrome": {
+    "chromedriverVersion": "85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689})",
+    "userDataDir": "c:\\Users\\AdminVadim\\AppData\\Local\\Google\\Chrome\\User Data"
+  },
+  "goog:chromeOptions": {
+    "debuggerAddress": "localhost:2490"
+  },
+  "networkConnectionEnabled": false,
+  "pageLoadStrategy": "normal",
+  "platformName": "windows",
+  "proxy": {},
+  "setWindowRect": true,
+  "strictFileInteractability": false,
+  "timeouts": {
+    "implicit": 0,
+    "pageLoad": 300000,
+    "script": 30000
+  },
+  "unhandledPromptBehavior": "dismiss and notify",
+  "webauthn:virtualAuthenticators": true
+}
+-------------------------------------------------------
+
+Log Entry : 16:06:59 5 ноября 2020 г.
+event: testRunType
+     : Local
+-------------------------------------------------------
+
+Log Entry : 16:06:59 5 ноября 2020 г.
+event: driverType
+     : Chrome
+-------------------------------------------------------
+
+Log Entry : 16:06:59 5 ноября 2020 г.
+event: ================================================
+     : ================================================
+-------------------------------------------------------

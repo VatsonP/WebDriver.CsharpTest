@@ -1,0 +1,59 @@
+
+Log Entry : 20:26:31 28 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__49_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: div[class='input-wrapper'] [type='search'] processing
+-------------------------------------------------------
+
+Log Entry : 20:26:31 28 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__49_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: div[class='input-wrapper'] [type='search'] is found
+-------------------------------------------------------
+
+Log Entry : 20:26:33 28 октября 2020 г.
+event: currentTestName
+     : SecondTest
+-------------------------------------------------------
+
+Log Entry : 20:26:33 28 октября 2020 г.
+event: Capabilities
+     : {
+  "acceptInsecureCerts": false,
+  "browserName": "chrome",
+  "browserVersion": "86.0.4240.111",
+  "chrome": {
+    "chromedriverVersion": "85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689})",
+    "userDataDir": "c:\\Users\\AdminVadim\\AppData\\Local\\Google\\Chrome\\User Data"
+  },
+  "goog:chromeOptions": {
+    "debuggerAddress": "localhost:3805"
+  },
+  "networkConnectionEnabled": false,
+  "pageLoadStrategy": "normal",
+  "platformName": "windows",
+  "proxy": {},
+  "setWindowRect": true,
+  "strictFileInteractability": false,
+  "timeouts": {
+    "implicit": 0,
+    "pageLoad": 300000,
+    "script": 30000
+  },
+  "unhandledPromptBehavior": "dismiss and notify",
+  "webauthn:virtualAuthenticators": true
+}
+-------------------------------------------------------
+
+Log Entry : 20:26:33 28 октября 2020 г.
+event: testRunType
+     : Local
+-------------------------------------------------------
+
+Log Entry : 20:26:33 28 октября 2020 г.
+event: driverType
+     : Chrome
+-------------------------------------------------------
+
+Log Entry : 20:26:33 28 октября 2020 г.
+event: ================================================
+     : ================================================
+-------------------------------------------------------

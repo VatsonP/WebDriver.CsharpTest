@@ -1,0 +1,249 @@
+
+Log Entry : 21:58:58 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id=box-campaigns] li.product processing
+-------------------------------------------------------
+
+Log Entry : 21:58:58 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id=box-campaigns] li.product is found
+-------------------------------------------------------
+
+Log Entry : 21:58:58 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .name processing
+-------------------------------------------------------
+
+Log Entry : 21:58:58 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .name is found
+-------------------------------------------------------
+
+Log Entry : 21:58:58 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .regular-price processing
+-------------------------------------------------------
+
+Log Entry : 21:58:59 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .regular-price is found
+-------------------------------------------------------
+
+Log Entry : 21:58:59 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .regular-price processing
+-------------------------------------------------------
+
+Log Entry : 21:58:59 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .regular-price is found
+-------------------------------------------------------
+
+Log Entry : 21:58:59 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .regular-price processing
+-------------------------------------------------------
+
+Log Entry : 21:58:59 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .regular-price is found
+-------------------------------------------------------
+
+Log Entry : 21:58:59 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .regular-price processing
+-------------------------------------------------------
+
+Log Entry : 21:58:59 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .regular-price is found
+-------------------------------------------------------
+
+Log Entry : 21:58:59 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .campaign-price processing
+-------------------------------------------------------
+
+Log Entry : 21:58:59 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .campaign-price is found
+-------------------------------------------------------
+
+Log Entry : 21:58:59 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .campaign-price processing
+-------------------------------------------------------
+
+Log Entry : 21:58:59 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .campaign-price is found
+-------------------------------------------------------
+
+Log Entry : 21:58:59 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .campaign-price processing
+-------------------------------------------------------
+
+Log Entry : 21:58:59 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .campaign-price is found
+-------------------------------------------------------
+
+Log Entry : 21:58:59 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .campaign-price processing
+-------------------------------------------------------
+
+Log Entry : 21:58:59 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .campaign-price is found
+-------------------------------------------------------
+
+Log Entry : 21:59:01 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id=box-product] processing
+-------------------------------------------------------
+
+Log Entry : 21:59:01 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [id=box-product] is found
+-------------------------------------------------------
+
+Log Entry : 21:59:01 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [itemprop=name] processing
+-------------------------------------------------------
+
+Log Entry : 21:59:01 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: [itemprop=name] is found
+-------------------------------------------------------
+
+Log Entry : 21:59:03 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .regular-price processing
+-------------------------------------------------------
+
+Log Entry : 21:59:03 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .regular-price is found
+-------------------------------------------------------
+
+Log Entry : 21:59:03 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .regular-price processing
+-------------------------------------------------------
+
+Log Entry : 21:59:03 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .regular-price is found
+-------------------------------------------------------
+
+Log Entry : 21:59:03 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .regular-price processing
+-------------------------------------------------------
+
+Log Entry : 21:59:03 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .regular-price is found
+-------------------------------------------------------
+
+Log Entry : 21:59:03 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .regular-price processing
+-------------------------------------------------------
+
+Log Entry : 21:59:03 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .regular-price is found
+-------------------------------------------------------
+
+Log Entry : 21:59:03 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .campaign-price processing
+-------------------------------------------------------
+
+Log Entry : 21:59:03 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .campaign-price is found
+-------------------------------------------------------
+
+Log Entry : 21:59:03 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .campaign-price processing
+-------------------------------------------------------
+
+Log Entry : 21:59:03 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .campaign-price is found
+-------------------------------------------------------
+
+Log Entry : 21:59:03 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .campaign-price processing
+-------------------------------------------------------
+
+Log Entry : 21:59:03 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .campaign-price is found
+-------------------------------------------------------
+
+Log Entry : 21:59:03 16 октября 2020 г.
+event: FindingElement
+     : <SetUp>b__51_0(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .campaign-price processing
+-------------------------------------------------------
+
+Log Entry : 21:59:03 16 октября 2020 г.
+event: FindElementCompleted
+     : <SetUp>b__51_1(): OpenQA.Selenium.Support.Events.FindElementEventArgs - By.CssSelector: .campaign-price is found
+-------------------------------------------------------
+
+Log Entry : 21:59:05 16 октября 2020 г.
+event: currentTestName
+     : myCheckProductPage
+-------------------------------------------------------
+
+Log Entry : 21:59:05 16 октября 2020 г.
+event: Capabilities
+     : {
+  "acceptInsecureCerts": false,
+  "browserName": "chrome",
+  "browserVersion": "86.0.4240.75",
+  "chrome": {
+    "chromedriverVersion": "85.0.4183.87 (cd6713ebf92fa1cacc0f1a598df280093af0c5d7-refs/branch-heads/4183@{#1689})",
+    "userDataDir": "c:\\Users\\AdminVadim\\AppData\\Local\\Google\\Chrome\\User Data"
+  },
+  "goog:chromeOptions": {
+    "debuggerAddress": "localhost:2936"
+  },
+  "networkConnectionEnabled": false,
+  "pageLoadStrategy": "normal",
+  "platformName": "windows",
+  "proxy": {},
+  "setWindowRect": true,
+  "strictFileInteractability": false,
+  "timeouts": {
+    "implicit": 0,
+    "pageLoad": 300000,
+    "script": 30000
+  },
+  "unhandledPromptBehavior": "dismiss and notify",
+  "webauthn:virtualAuthenticators": true
+}
+-------------------------------------------------------
+
+Log Entry : 21:59:05 16 октября 2020 г.
+event: testRunType
+     : Local
+-------------------------------------------------------
+
+Log Entry : 21:59:05 16 октября 2020 г.
+event: driverType
+     : Chrome
+-------------------------------------------------------
+
+Log Entry : 21:59:05 16 октября 2020 г.
+event: ================================================
+     : ================================================
+-------------------------------------------------------
