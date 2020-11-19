@@ -39,8 +39,7 @@ namespace CsharpTestProject1
             adminLeftMenuPage = new AdminLeftMenuPage(pageParams);
         }
 
-
-        public void LoginAs(string usrText, string passText)
+        private void LoginAs(string usrText, string passText)
         {
             if (adminPanelLoginPage.Open().IsOnThisPage())
             {
@@ -50,9 +49,7 @@ namespace CsharpTestProject1
 
         public void MyLeftMenuClick()
         {
-
-
-        LoginAs(usrText: "admin", passText: "admin");
+            LoginAs(usrText: "admin", passText: "admin");//открыть страницу и выполнить коннект под пользователем
 
             PageParams.DriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TitleIs("My Store"));
             //подождать пока не загрузится страница с заголовком "My Store"
