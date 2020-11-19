@@ -11,10 +11,15 @@ namespace CsharpTestProject1
         public static IWebDriver    Driver { get => DriverBase.driver; }
         public static WebDriverWait DriverWait { get => DriverBase.wait; }
         public static string        CurrentIpStr { get => DriverBase.CurrentIpStr; }
+        public static void Sleep(int sleep_Msec)
+        {
+            Driver.Sleep(sleep_Msec);
+        }
 
         public PageParams(DriverBase drvBase)
         {
             DrvBase = drvBase;
         }
+
     }
 }

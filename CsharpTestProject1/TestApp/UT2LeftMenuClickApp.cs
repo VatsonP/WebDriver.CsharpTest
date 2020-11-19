@@ -73,7 +73,7 @@ namespace CsharpTestProject1
                 submenuPoints = adminLeftMenuPage.getCss_menu_id_doc_Elements(menuPoint); //menuPoint.FindElements(By.CssSelector("[id^=doc-]"));
                 submenuQuantity = submenuPoints.Count; // сохраняем количество пунктов подменю
 
-                PageParams.Driver.Sleep(sleepTimeMenuMSec);
+                PageParams.Sleep(sleepTimeMenuMSec);
 
                 if (submenuQuantity > 0)
                 { //подменю есть
@@ -88,7 +88,7 @@ namespace CsharpTestProject1
 
                         var IsDisplayed = adminLeftMenuPage.Css_h1_Element.Displayed; // PageParams.Driver.FindElement(By.CssSelector("h1"));  //проверка наличия заголовка
 
-                        PageParams.Driver.Sleep(sleepTimeSubmenuMSec);
+                        PageParams.Sleep(sleepTimeSubmenuMSec);
                     }
                 }
                 else
@@ -98,7 +98,7 @@ namespace CsharpTestProject1
 
             }
 
-            PageParams.Driver.Sleep(sleepTimeMSec);
+            PageParams.Sleep(sleepTimeMSec);
         }
 
     }

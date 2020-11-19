@@ -1,6 +1,8 @@
 ﻿using System;
 using OpenQA.Selenium;
+using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CsharpTestProject1
 {
@@ -10,11 +12,57 @@ namespace CsharpTestProject1
 
         internal IWebElement Css_h1_Element => PageParams.Driver.FindElement(By.CssSelector("h1"));
 
-
-        public IList<IWebElement> getCss_menu_id_doc_Elements(IWebElement menuPoint)
+        internal IList<IWebElement> getCss_menu_id_doc_Elements(IWebElement menuPoint)
         {
             return menuPoint.FindElements(By.CssSelector("[id^=doc-]"));
         }
+
+        //-- for UT3CheckNewTabsApp ----------------------------------------------
+        internal IList<IWebElement> Css_countries_row_Elements => PageParams.Driver.FindElements(By.CssSelector("[name=countries_form] .row"));
+
+        internal IList<IWebElement> Css_form_fa_external_link_Elements => PageParams.Driver.FindElements(By.CssSelector("form .fa-external-link"));
+
+        internal IWebElement getCss_a_Elements(IWebElement countryRow)
+        {
+            return countryRow.FindElement(By.CssSelector("a"));
+        }
+
+        internal String getCurrentWindowHandle()
+        {
+            return PageParams.Driver.CurrentWindowHandle; 
+        }
+
+        internal ReadOnlyCollection<String> getWindowHandles()
+        {
+            return PageParams.Driver.WindowHandles;
+        }
+
+        private static Func<IWebDriver, String> AnyWindowOtherThan(ReadOnlyCollection<String> oldWindows)
+        {
+            return (driver) =>
+            {
+                ReadOnlyCollection<string> handles = driver.WindowHandles;
+                handles.Except(oldWindows);
+                return handles.Count > 0 ? handles.AsEnumerable().Last() : null;
+            };
+
+        }
+
+        internal String waitUntilEditCountry(ReadOnlyCollection<String> existingWindows)
+        {
+            return PageParams.DriverWait.Until(AnyWindowOtherThan(existingWindows)); // ждем загрузки окна
+        }
+
+        internal void SwitchToWindow(String strWindow)
+        {
+            PageParams.Driver.SwitchTo().Window(strWindow);  // переключаемся в новое окно
+        }
+
+        internal void CloseCurWindow()
+        {
+            PageParams.Driver.Close();  // закрываем окно
+        }
+        //-------------------------------------------------------------------------
 
         public AdminLeftMenuPage(PageParams _pageParams) : base(_pageParams) 
         {
@@ -22,12 +70,33 @@ namespace CsharpTestProject1
             //т.к. заменяется свойствами, возвращающими нужный IWebElement
             //PageFactory.InitElements(PageParams.Driver, this);
         }
-
-        internal AdminLeftMenuPage Open()
+              
+        internal AdminLeftMenuPage waitUntilMyStore()
         {
-            //XAMPP litecart admin page - "http://" + CurrentIpStr + ":8080/litecart/admin/?app=customers&doc=customers"
-            PageParams.Driver.Url = "http://" + PageParams.CurrentIpStr + ":8080/litecart/admin/?app=customers&doc=customers"; //открыть страницу
+            PageParams.DriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TitleIs("My Store"));
+            //подождать пока не загрузится страница с заголовком "My Store"
+            return this;
+        }
 
+        internal AdminLeftMenuPage OpenCountries()
+        {
+            //XAMPP litecart admin page - "http://" + CurrentIpStr + ":8080/litecart/admin/?app=countries&doc=countries"
+            PageParams.Driver.Url = "http://" + PageParams.CurrentIpStr + ":8080/litecart/admin/?app=countries&doc=countries";
+            //открыть страницу со списком стран
+
+            return this;
+        }
+        internal AdminLeftMenuPage waitUntilCountries()
+        {
+            PageParams.DriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TitleContains("Countries")); 
+            // ждем загрузки страницы
+            return this;
+        }
+        internal AdminLeftMenuPage waitUntilEditCountry()
+        {
+            // открываем страницу выбранной страны
+            PageParams.DriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TitleContains("Edit Country"));  
+            // ждем загрузки страницы
             return this;
         }
 
