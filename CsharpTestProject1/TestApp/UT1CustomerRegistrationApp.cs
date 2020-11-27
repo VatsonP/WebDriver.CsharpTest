@@ -46,11 +46,11 @@ namespace CsharpTestProject1
             registrationPage.DriverSleep();
 
 
-            registrationPage.TakeScreenshot("ScreenOne"); 
+            pageParams.TakeScreenshot("ScreenOne"); 
 
             registrationPage.CreateAccountButton.Click();
 
-            registrationPage.TakeScreenshot("ScreenTwo");
+            pageParams.TakeScreenshot("ScreenTwo");
         }
 
         internal ISet<string> GetCustomerIds(bool isNeedPrint = false, string printHeader = "")

@@ -12,12 +12,6 @@ namespace CsharpTestProject1
         {
             pageParams = _pageParams;
         }
-
-        public void TakeScreenshot(string fileNameWithoutExt = "")
-        {
-            pageParams.DrvBase.TakeScreenshot(fileNameWithoutExt);
-        }
-
     }
 
 }

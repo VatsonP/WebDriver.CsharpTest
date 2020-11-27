@@ -120,13 +120,14 @@ namespace CsharpTestProject1
         }
 
         public enum TestRunType { Local, Remote };
-        public TestRunType testRunType
+
+        public static TestRunType testRunType
         {
             get;
             private set;
         }
 
-        public WebDriverExtensions.WebDriverType webDriverType
+        public static WebDriverExtensions.WebDriverType webDriverType
         {
             get;
             private set;
@@ -614,6 +615,10 @@ namespace CsharpTestProject1
             driver.TakeScreenshot(CurrentTestFolder, CurrentTestName, fileNameWithoutExt);
         }
 
+        public void ClickElement(IWebElement element) 
+        {
+            element.ClickElement(webDriverType);
+        }
     }
 
 }

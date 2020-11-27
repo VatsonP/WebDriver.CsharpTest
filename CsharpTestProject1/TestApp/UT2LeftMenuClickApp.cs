@@ -84,7 +84,8 @@ namespace CsharpTestProject1
                         // определение списка пунктов подменю
                         submenuPoints = adminLeftMenuPage.getCss_menu_id_doc_Elements(menuPoint);//menuPoint.FindElements(By.CssSelector("[id^=doc-]"));
                         submenuPoint = submenuPoints[j]; //выбираем пункт подменю
-                        submenuPoint.ClickElement(pageParams.DrvBase.webDriverType);//кликаем по подменю submenuPoint.Click();  
+                        
+                        pageParams.ClickElement(submenuPoint);//кликаем по подменю submenuPoint.Click();  
 
                         var IsDisplayed = adminLeftMenuPage.Css_h1_Element.Displayed; // PageParams.Driver.FindElement(By.CssSelector("h1"));  //проверка наличия заголовка
 
