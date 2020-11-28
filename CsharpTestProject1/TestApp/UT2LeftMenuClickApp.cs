@@ -45,14 +45,13 @@ namespace CsharpTestProject1
             {
                 adminPanelLoginPage.EnterUsername(usrText).EnterPassword(passText).SubmitLogin();
             }
+
+            adminLeftMenuPage.waitUntilMyStore(); //подождать пока не загрузится страница с заголовком "My Store"
         }
 
         public void MyLeftMenuClick()
         {
             LoginAs(usrText: "admin", passText: "admin");//открыть страницу и выполнить коннект под пользователем
-
-            PageParams.DriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TitleIs("My Store"));
-            //подождать пока не загрузится страница с заголовком "My Store"
 
             menuPoints = adminLeftMenuPage.Id_app_Elements; 
 
