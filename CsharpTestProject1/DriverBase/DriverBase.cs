@@ -98,13 +98,6 @@ namespace CsharpTestProject1
         public string CurrentTestFolder { get; protected set; }
         protected DirectoryInfo BaseLogFolder { get; set; }
 
-
-        protected static string localHostStr = "localhost";    // LocalHost  
-        protected static string localIpStr = "192.168.0.101"; // Local Host Ip 
-        protected static string remoteIpStr = "192.168.203.128";
-
-        // Remote WinServer2019 with Docker "192.168.0.91"
-        // Remote Ubuntu 20.4   with Docker "192.168.203.128"
         public static string CurrentIpStr
         {
             get;
@@ -228,12 +221,12 @@ namespace CsharpTestProject1
         private String defineCurrentIpStr(TestRunType tRunType)
         {
             if (testRunType == TestRunType.Local)
-                return localHostStr;
+                return driverBaseParams.localHostStr;
             else
             if (testRunType == TestRunType.Remote)
-                return localIpStr;
+                return driverBaseParams.localIpStr;
             else
-                return localIpStr;
+                return driverBaseParams.localIpStr;
         }
 
         [OneTimeSetUp]
@@ -265,7 +258,7 @@ namespace CsharpTestProject1
             else
             if (testRunType == TestRunType.Remote)
             {   //RemoteWebDriver
-                var uriString = "http://" + remoteIpStr + ":4444/wd/hub/";
+                var uriString = "http://" + driverBaseParams.remoteIpStr + ":4444/wd/hub/";
                 webDrv = newRemoteWebDriverSetOptions(remoteAddress : new Uri(uriString), driverType : webDriverType);
             }
 
