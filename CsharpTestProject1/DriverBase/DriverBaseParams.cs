@@ -4,11 +4,11 @@ namespace CsharpTestProject1
     public class DriverBaseParams
     {
         // значение времени (в сек) общих неявных ожиданий
-        public int drvImplWaitTime;
+        public int drvImplWaitTime { get; private set; }
         // значение времени (в сек) для явных ожиданий
-        public int drvExplWaitTime;
+        public int drvExplWaitTime { get; private set; }
         // константа времени (в сек) для максимального времени неявного ожидания
-        public int drvMaxWaitTime;
+        public int drvMaxWaitTime { get; private set; }
 
         // Remote WinServer2019 with Docker "192.168.0.91"
         private const string remoteIpStr_WinServer2019 = "192.168.0.91";
