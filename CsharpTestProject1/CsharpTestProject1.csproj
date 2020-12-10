@@ -89,7 +89,6 @@
     <Compile Include="Tests\UT3CheckNewTabsTests.cs" />
     <Compile Include="Tests\UT4CheckCartTests.cs" />
     <Compile Include="UnitTest1CheckRegistration.cs" />
-    <Compile Include="UnitTest4CheckCart.cs" />
     <Compile Include="UnitTest5CheckCountries.cs" />
     <Compile Include="UnitTest7CheckNewProduct.cs" />
     <Compile Include="UnitTest8CheckProductPage.cs" />
