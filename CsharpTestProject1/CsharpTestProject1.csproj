@@ -79,6 +79,7 @@
     <Compile Include="DriverBase\LogWriter.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="TestApp\UT3CheckNewTabsApp.cs" />
+    <Compile Include="TestApp\UT4CheckCartApp.cs" />
     <Compile Include="Tests\DataProviders.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase\TestBase.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="DemoTests.cs" />
     <Compile Include="TestApp\UT2LeftMenuClickApp.cs" />
     <Compile Include="Tests\UT3CheckNewTabsTests.cs" />
+    <Compile Include="Tests\UT4CheckCartTests.cs" />
     <Compile Include="UnitTest1CheckRegistration.cs" />
     <Compile Include="UnitTest4CheckCart.cs" />
     <Compile Include="UnitTest5CheckCountries.cs" />
