@@ -20,23 +20,15 @@ namespace CsharpTestProject1
         private const int sleepTimeMSec = 500;
 
         private PageParams pageParams;
-        private AdminPanelLoginPage adminPanelLoginPage;
+        private MainLiteCartPage mainLiteCartPage;
 
         public void InitPages(DriverBase drvBase)
         {
             pageParams = new PageParams(drvBase);
 
-            adminPanelLoginPage = new AdminPanelLoginPage(pageParams);
+            mainLiteCartPage = new MainLiteCartPage(pageParams);
         }
 
-        private void LoginAs(string usrText, string passText)
-        {
-            if (adminPanelLoginPage.Open().IsOnThisPage())
-            {
-                adminPanelLoginPage.EnterUsername(usrText).EnterPassword(passText).SubmitLogin();
-            }
-
-        }
 
         public void myCheckCart()
         {
@@ -44,10 +36,9 @@ namespace CsharpTestProject1
 
             for (i = 0; i < prodCartCount; i++)
             {
-                PageParams.Driver.Navigate().GoToUrl("http://" + PageParams.CurrentIpStr + ":8080/litecart/en/"); //открыть главную страницу магазина
-                PageParams.DriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TitleContains("Online Store"));
+                mainLiteCartPage.Open().WaitUntilMainPage(); //открыть главную страницу магазина и подождать загрузки
 
-                prodList = PageParams.Driver.FindElements(By.CssSelector("li.product"));
+                prodList = mainLiteCartPage.FindByCss_li_product_Elements;
 
                 // определение списка товаров на главной странице
                 if (prodList.Count > 0)
@@ -59,7 +50,7 @@ namespace CsharpTestProject1
                         // выбираем конкретный продукт
                         productUnit = prodList[j];
 
-                        prodName[i] = productUnit.FindElement(By.CssSelector("div.name")).Text;
+                        prodName[i] = mainLiteCartPage.GetCss_div_name_Text(productUnit);
                         // получаем имя продукта
 
                         if (i == 1)
@@ -85,48 +76,42 @@ namespace CsharpTestProject1
 
                     productUnit.Click(); //щелкаем по странице продукта
 
-                    PageParams.DriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TitleContains(prodName[i]));
+                    mainLiteCartPage.WaitUntilProdNameStr(prodNameStr: prodName[i]);
 
-                    Cart = PageParams.DriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Id("cart"))); // нашли корзину
+                    Cart = mainLiteCartPage.PresenceOfElementLocatedById_cart; // нашли корзину
 
                     k = String.Compare(prodName[i], "Yellow Duck", StringComparison.OrdinalIgnoreCase);
                     // Проверяем, что выбранный товар не Yellow Duck - требует доп. обработки
                     if (k == 0) // Обработка Yellow Duck - выбираем размер
                     {
                         // select the drop down list
-                        var sizeElm = PageParams.Driver.FindElement(By.Name("options[Size]"));
+                        var sizeElm = mainLiteCartPage.FindByName_optionsSize;
                         //create select element object 
                         var selectElement = new SelectElement(sizeElm);
                         // select by text
                         selectElement.SelectByText("Small");
                     }
 
-                    PageParams.Driver.FindElement(By.Name("add_cart_product")).Click();
-                    // добавляем продукт в корзину
+                    mainLiteCartPage.FindByName_add_cart_product.Click(); // добавляем продукт в корзину
 
-                    PageParams.DriverWait.Until(
-                                SeleniumExtras.WaitHelpers.ExpectedConditions.TextToBePresentInElement(
-                                    PageParams.Driver.FindElement(By.CssSelector("span.quantity")),
-                                    Convert.ToString(i + 1))
-                              );
-                    // ждем изменения количества
+                    mainLiteCartPage.WaitUntil_textToBePresentInElement_Css_span_quantity(i + 1); // ждем изменения количества
                 }
             }
 
-            PageParams.Driver.Navigate().GoToUrl("http://" + PageParams.CurrentIpStr + ":8080/litecart/en/"); //открыть главную страницу магазина
+            mainLiteCartPage.Open().WaitUntilMainPage(); //открыть главную страницу магазина и подождать загрузки
 
-            PageParams.Driver.FindElement(By.Id("cart")).Click(); // открываем корзину
-            PageParams.DriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TitleContains("Checkout")); // ожидаем открытия страницы корзины
+            mainLiteCartPage.FindById_cart.Click(); // открываем корзину
+            mainLiteCartPage.WaitUntil_Checkout();  // ожидаем открытия страницы корзины
 
             for (int n = 1; n <= prodCartCount; n++)
             {
-                prodTable = PageParams.DriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Id("order_confirmation-wrapper")));
+                prodTable = mainLiteCartPage.GetPresenceOfElementLocatedById_order_conf_wrapper();
                 // находим таблицу товаров в корзине
 
-                if (PageParams.Driver.areElementsPresent(By.CssSelector("li.shortcut")))
+                if (mainLiteCartPage.AreElementsPresent_Css_li_shortcut_Elements)
                 {
                     PageParams.Driver.Sleep(sleepTimeMSec);
-                    prodList = PageParams.Driver.FindElements(By.CssSelector("li.shortcut"));
+                    prodList = mainLiteCartPage.FindByCss_li_shortcut_Elements; 
 
                     if (prodList.Count > 0)
                     {
@@ -138,17 +123,12 @@ namespace CsharpTestProject1
                         prodList[0].Click();
                     }
 
-                    PageParams.Driver.FindElement(By.Name("remove_cart_item")).Click();
-                    // кликнуть по кнопке удаления товара Remove
-                    PageParams.DriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.StalenessOf(prodTable.GetEnumerator().Current));
+                    mainLiteCartPage.FindbyName_remove_cart_item.Click(); // кликнуть по кнопке удаления товара Remove
+                    mainLiteCartPage.WaitUntilStalenessOfProdTable(prodTable);
                     // ожидаем обновления таблицы со списком товаров
                 }
             }
-
-            PageParams.Driver.Navigate().GoToUrl("http://" + PageParams.CurrentIpStr + ":8080/litecart/en/");
-            PageParams.DriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TitleContains("Online Store"));
-
+            mainLiteCartPage.Open().WaitUntilMainPage(); //открыть главную страницу магазина и подождать загрузки
         }
-
     }
 }

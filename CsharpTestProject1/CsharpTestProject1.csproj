@@ -70,6 +70,7 @@
     <Compile Include="DriverBase\DriverBaseParams.cs" />
     <Compile Include="Pages\AdminLeftMenuPage.cs" />
     <Compile Include="Pages\AdminPanelLoginPage.cs" />
+    <Compile Include="Pages\MainLiteCartPage.cs" />
     <Compile Include="Pages\PageParams.cs" />
     <Compile Include="Pages\CustomerListPage.cs" />
     <Compile Include="Pages\Page.cs" />
