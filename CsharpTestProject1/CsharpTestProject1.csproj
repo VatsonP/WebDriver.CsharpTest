@@ -93,7 +93,6 @@
     <Compile Include="Tests\UT4CheckCartTests.cs" />
     <Compile Include="Tests\UT5CheckCountriesTests.cs" />
     <Compile Include="UnitTest1CheckRegistration.cs" />
-    <Compile Include="UnitTest5CheckCountries.cs" />
     <Compile Include="UnitTest7CheckNewProduct.cs" />
     <Compile Include="UnitTest8CheckProductPage.cs" />
     <Compile Include="DriverBase\WebDriverExtensions.cs" />
