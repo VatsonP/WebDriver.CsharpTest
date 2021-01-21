@@ -22,8 +22,8 @@ namespace CsharpTestProject1
         [Test]
         public void myCheckNewProduct()
         {
-            //XAMPP litecart admin page - "http://" + CurrentIpStr + ":8080/litecart/admin/?app=customers&doc=customers"
-            var remoteAddress = "http://" + CurrentIpStr + ":8080/litecart/admin/?app=customers&doc=customers"; //открыть страницу
+            //XAMPP litecart admin page - "http://" + CurrentIpStr + ":8080/litecart/admin/"
+            var remoteAddress = "http://" + CurrentIpStr + ":8080/litecart/admin/"; //открыть страницу
 
             LoginAs(webDriver: driver, remoteUri: new Uri(remoteAddress), driverType: webDriverType,
                     usrLocator: By.Name("username"), usrText: "admin",
