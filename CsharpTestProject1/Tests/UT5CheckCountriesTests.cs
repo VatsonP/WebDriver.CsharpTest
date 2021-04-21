@@ -8,10 +8,6 @@ namespace CsharpTestProject1
     [TestFixture]
     public class UT5CheckCountriesTests : TestBase
     {
-        private const int sleepTimeMenuMSec = 100;
-        private const int sleepTimeSubmenuMSec = 200;
-        private const int sleepTimeMSec = 300;
-
         protected UT5CheckCountriesApp App
         {
             get;
