@@ -612,6 +612,16 @@ namespace CsharpTestProject1
         {
             element.ClickElement(webDriverType);
         }
+
+        public void FindElmAndClick(By locator)
+        {
+            driver.FindElmAndClick(locator, webDriverType);
+        }
+
+        public string GetFullDateStrForBrowserDateControl(int yyyy, int mm, int dd)
+        {
+            return driver.GetFullDateStrForBrowserDateControl(yyyy, mm, dd, webDriverType);
+        }
     }
 
 }
