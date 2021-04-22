@@ -20,11 +20,9 @@ namespace CsharpTestProject1
         }
 
         public void TakeScreenshot(string fileNameWithoutExt = "") => DrvBase.TakeScreenshot(fileNameWithoutExt);
-
-        public void ClickElement(IWebElement element) => DrvBase.ClickElement(element);
-
-        public void FindElmAndClick(By locator) => DrvBase.FindElmAndClick(locator);
-
-        public string GetFullDateStrForBrowserDateControl(int yyyy, int mm, int dd) => DrvBase.GetFullDateStrForBrowserDateControl(yyyy, mm, dd);
+        
+        public static void ClickElement(IWebElement element) => DriverBase.ClickElement(element);
+        public static void FindElmAndClick(By locator) => DriverBase.FindElmAndClick(locator);
+        public static string GetFullDateStrForBrowserDateControl(int yyyy, int mm, int dd) => DriverBase.GetFullDateStrForBrowserDateControl(yyyy, mm, dd);
     }
 }

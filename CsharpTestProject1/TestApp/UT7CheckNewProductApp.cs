@@ -57,57 +57,43 @@ namespace CsharpTestProject1
 			LoginAs(usrText: "admin", passText: "admin");//открыть страницу и выполнить коннект под пользователем + ждем страницу "My Store"
 
 			// читаем текущее время - добавляем его к фамилии и имеем уникальный e-mail и пароль каждый раз
-			DateTime curDate = DateTime.Now;
-			int yyyy = curDate.Year;
-			int mm = curDate.Month;
-			int dd = curDate.Day;
-			int h = curDate.Hour;
-			int m = curDate.Minute;
-			int s = curDate.Second;
+			var curDateTime = new AdminNewProdPage.CurDateTime(DateTime.Now);
 
-			Name = "Donald McDown";
-			prefix = WebDriverExtensions.PaddingLeft(h) + WebDriverExtensions.PaddingLeft(m) + WebDriverExtensions.PaddingLeft(s);
-			ProdName = Name + " " + prefix;
+			Name      = "Donald McDown";
+			prefix    = AdminNewProdPage.GetProdPrefix(curDateTime);
+			ProdName  = Name + " " + prefix;
 
-			validFrom = pageParams.GetFullDateStrForBrowserDateControl(yyyy, mm, dd);
-			validTo   = pageParams.GetFullDateStrForBrowserDateControl(yyyy + 2, mm, dd);
+			validFrom = AdminNewProdPage.GetProdValidFrom(curDateTime); 
+			validTo   = AdminNewProdPage.GetProdValidTo(curDateTime);
 
-			pageParams.FindElmAndClick(By.CssSelector("[href*=catalog]"));
-			// открыть каталог
+			adminNewProdPage.Css_catalog_ElementClick();// открыть каталог
 
-			pageParams.FindElmAndClick(By.LinkText("Add New Product"));
-			// открываем форму регистрации нового продукта
+			adminNewProdPage.LinkText_ElementClick("Add New Product");// открываем форму регистрации нового продукта
 
 			// даем время на загрузку  // Для задания явных ожиданий         
 			//wait = new WebDriverWait(driver, TimeSpan.FromSeconds(driverBaseParams.drvExplWaitTime));
 
-			pageParams.FindElmAndClick(By.Name("status"));
-			// устанавливаем статус Enabled
-			PageParams.Driver.FindElmAndClear(By.Name("name[en]"));
-			// очистка
-			PageParams.Driver.FindElmAndSendKeys(By.Name("name[en]"), ProdName);
-			// вводим название товара
-			PageParams.Driver.FindElmAndSendKeys(By.Name("code"), (prefix + Keys.Tab));
-			// вводим код товара
-			pageParams.FindElmAndClick(By.XPath("(//input[@name='categories[]'])[2]"));
-			// устанавливаем категорию Rubber Ducks
+			adminNewProdPage.Name_ElementClick("status"); // устанавливаем статус Enabled
 
-			pageParams.FindElmAndClick(By.XPath("(//input[@name='product_groups[]'])[3]"));
-			// Устанавливаем группу Unisex
+			adminNewProdPage.Name_ElementClear("name[en]"); // очистка
 
-			PageParams.Driver.FindElmAndSendKeys(By.Name("quantity"), "1");
-			// устанавливаем количество 1
+			adminNewProdPage.Name_ElementSendKeys("name[en]", ProdName); // вводим название товара
 
-			PageParams.Driver.FindElmAndSendKeys(By.Name("date_valid_from"), validFrom);
-			// устанавливаем дату начала годности
-			PageParams.Driver.FindElmAndSendKeys(By.Name("date_valid_to"), validTo);
-			// устанавливаем дату конца годности
+			adminNewProdPage.Name_ElementSendKeys("code", (prefix + Keys.Tab));// вводим код товара
+
+			adminNewProdPage.XPath_categories_RubberDucks_ElementClick(); // устанавливаем категорию Rubber Ducks
+
+			adminNewProdPage.XPath_categories_Unisex_ElementClick(); // Устанавливаем группу Unisex
+
+			adminNewProdPage.Name_ElementSendKeys("quantity", "1"); // устанавливаем количество 1
+
+			adminNewProdPage.Name_ElementSendKeys("date_valid_from", validFrom); // устанавливаем дату начала годности
+			adminNewProdPage.Name_ElementSendKeys("date_valid_to",   validTo);   // устанавливаем дату конца годности
 
 
 			PageParams.Sleep(sleepTimeMSec);
 
-			pageParams.FindElmAndClick(By.LinkText("Information"));
-			// переходим на вкладку Information
+			adminNewProdPage.LinkText_ElementClick("Information");// переходим на вкладку Information
 
 			// даем время на загрузку  // Для задания явных ожиданий         
 			//wait = new WebDriverWait(driver, TimeSpan.FromSeconds(driverBaseParams.drvExplWaitTime));
@@ -133,7 +119,7 @@ namespace CsharpTestProject1
 
 			PageParams.Sleep(sleepTimeMSec);
 
-			pageParams.FindElmAndClick(By.LinkText("Data"));
+			PageParams.FindElmAndClick(By.LinkText("Data"));
 			// переходим на вкладку Data
 
 			// даем время на загрузку  // Для задания явных ожиданий         
@@ -156,7 +142,7 @@ namespace CsharpTestProject1
 
 			PageParams.Sleep(sleepTimeMSec);
 
-			pageParams.FindElmAndClick(By.LinkText("Prices"));
+			PageParams.FindElmAndClick(By.LinkText("Prices"));
 			// переходим на вкладку Prices
 
 			// даем время на загрузку  // Для задания явных ожиданий         
@@ -179,7 +165,7 @@ namespace CsharpTestProject1
 
 			PageParams.Sleep(sleepTimeMSec);
 
-			pageParams.FindElmAndClick(By.Name("save"));
+			PageParams.FindElmAndClick(By.Name("save"));
 			// сохраняем продукт
 
 			// даем время на загрузку  // Для задания явных ожиданий         

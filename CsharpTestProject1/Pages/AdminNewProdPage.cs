@@ -8,9 +8,61 @@ namespace CsharpTestProject1
 {
     internal class AdminNewProdPage : Page
     {
+        internal struct CurDateTime
+        {
+            public DateTime curDate;
+            public int yyyy;
+            public int mm;
+            public int dd;
+            public int h;
+            public int m;
+            public int s;
+
+            public CurDateTime(DateTime date)
+            {
+                curDate = date;
+                yyyy    = curDate.Year;
+                mm      = curDate.Month;
+                dd      = curDate.Day;
+                h       = curDate.Hour;
+                m       = curDate.Minute;
+                s       = curDate.Second;
+            }
+        }
+
+        internal static string GetProdPrefix(CurDateTime curDateTime)
+        { 
+            return WebDriverExtensions.PaddingLeft(curDateTime.h) + 
+                   WebDriverExtensions.PaddingLeft(curDateTime.m) + 
+                   WebDriverExtensions.PaddingLeft(curDateTime.s);
+        }
+
+        internal static string GetProdValidFrom(CurDateTime curDateTime)
+        { 
+            return PageParams.GetFullDateStrForBrowserDateControl(curDateTime.yyyy, curDateTime.mm, curDateTime.dd);
+        }
+
+        internal static string GetProdValidTo(CurDateTime curDateTime)
+        { 
+            return PageParams.GetFullDateStrForBrowserDateControl(curDateTime.yyyy + 2, curDateTime.mm, curDateTime.dd);
+        }
+
+        internal void Css_catalog_ElementClick() => PageParams.FindElmAndClick(By.CssSelector("[href*=catalog]"));
+
+        internal void LinkText_ElementClick(string text) => PageParams.FindElmAndClick(By.LinkText(text));
+
+        internal void Name_ElementClick(string text) => PageParams.FindElmAndClick(By.Name(text));
+
+        internal void Name_ElementClear(string text) => PageParams.Driver.FindElmAndClear(By.Name(text));
+
+        internal void Name_ElementSendKeys(string text, string keyText) => PageParams.Driver.FindElmAndSendKeys(By.Name(text), keyText);
+
+        internal void XPath_categories_RubberDucks_ElementClick() => PageParams.FindElmAndClick(By.XPath("(//input[@name='categories[]'])[2]"));
+        internal void XPath_categories_Unisex_ElementClick() => PageParams.FindElmAndClick(By.XPath("(//input[@name='product_groups[]'])[3]"));
+
+
         internal IList<IWebElement> Id_app_Elements => PageParams.Driver.FindElements(By.Id("app-"));
 
-        internal IWebElement Css_h1_Element => PageParams.Driver.FindElement(By.CssSelector("h1"));
 
         internal IList<IWebElement> getCss_menu_id_doc_Elements(IWebElement menuPoint)
         {

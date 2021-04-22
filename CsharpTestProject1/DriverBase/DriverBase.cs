@@ -608,20 +608,15 @@ namespace CsharpTestProject1
             driver.TakeScreenshot(CurrentTestFolder, CurrentTestName, fileNameWithoutExt);
         }
 
-        public void ClickElement(IWebElement element) 
-        {
-            element.ClickElement(webDriverType);
-        }
+        public static void ClickElement(IWebElement element) => element.ClickElement(webDriverType);
 
-        public void FindElmAndClick(By locator)
-        {
-            driver.FindElmAndClick(locator, webDriverType);
-        }
+        public static void FindElmAndClick(By locator) => driver.FindElmAndClick(locator, webDriverType);
 
-        public string GetFullDateStrForBrowserDateControl(int yyyy, int mm, int dd)
+        public static string GetFullDateStrForBrowserDateControl(int yyyy, int mm, int dd)
         {
             return driver.GetFullDateStrForBrowserDateControl(yyyy, mm, dd, webDriverType);
         }
+
     }
 
 }
