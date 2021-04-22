@@ -70,6 +70,12 @@ namespace CsharpTestProject1
 
         //-------------------------------------------------------------------------
 
+        internal IWebElement Css_FirstProduct_Campains_Element() => PageParams.Driver.FindElement(By.CssSelector("[id=box-campaigns] li.product"));
+
+        internal IWebElement Css_Box_Product_Element() => PageParams.Driver.FindElement(By.CssSelector("[id=box-product]"));
+
+        //-------------------------------------------------------------------------
+
         public AdminNewProdPage(PageParams _pageParams) : base(_pageParams)
         {
             //Использование PageFactory устарело (Depricated ), 

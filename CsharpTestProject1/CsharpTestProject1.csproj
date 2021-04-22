@@ -88,6 +88,7 @@
     <Compile Include="TestApp\UT4CheckCartApp.cs" />
     <Compile Include="TestApp\UT5CheckCountriesApp.cs" />
     <Compile Include="TestApp\UT7CheckNewProductApp.cs" />
+    <Compile Include="TestApp\UT8CheckProductApp.cs" />
     <Compile Include="Tests\DataProviders.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase\TestBase.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Tests\UT4CheckCartTests.cs" />
     <Compile Include="Tests\UT5CheckCountriesTests.cs" />
     <Compile Include="Tests\UT7CheckNewProductTests.cs" />
+    <Compile Include="Tests\UT8CheckProductTests.cs" />
     <Compile Include="UnitTest1CheckRegistration.cs" />
     <Compile Include="UnitTest8CheckProductPage.cs" />
     <Compile Include="DriverBase\WebDriverExtensions.cs" />
