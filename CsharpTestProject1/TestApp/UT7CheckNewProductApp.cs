@@ -17,17 +17,7 @@ namespace CsharpTestProject1
 
 		String Name, ProdName, validFrom, validTo, prefix;
 
-		// количество стран в списке, зон в списке
-		private int countryQuantity { get; set; }
-
-
-		// строка по стране и по зоне
-		private IWebElement countryRow { get; set; }
-
-		// список стран, список зон
-		private IList<IWebElement> countryRows { get; set; }
-
-
+	
 		public UT7CheckNewProductApp(int sleepTimeMSec)
 		{
 			this.sleepTimeMSec = sleepTimeMSec;
