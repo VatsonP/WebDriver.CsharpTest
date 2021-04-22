@@ -101,7 +101,6 @@
     <Compile Include="Tests\UT7CheckNewProductTests.cs" />
     <Compile Include="Tests\UT8CheckProductTests.cs" />
     <Compile Include="UnitTest1CheckRegistration.cs" />
-    <Compile Include="UnitTest8CheckProductPage.cs" />
     <Compile Include="DriverBase\WebDriverExtensions.cs" />
     <Compile Include="Tests\UT1CustomerRegistrationTests.cs" />
   </ItemGroup>
