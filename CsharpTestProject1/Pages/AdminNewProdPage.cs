@@ -47,6 +47,8 @@ namespace CsharpTestProject1
             return PageParams.GetFullDateStrForBrowserDateControl(curDateTime.yyyy + 2, curDateTime.mm, curDateTime.dd);
         }
 
+        internal IList<IWebElement> Id_Elements(string text) => PageParams.Driver.FindElements(By.Id(text));
+
         internal void Css_catalog_ElementClick() => PageParams.FindElmAndClick(By.CssSelector("[href*=catalog]"));
 
         internal void LinkText_ElementClick(string text) => PageParams.FindElmAndClick(By.LinkText(text));
@@ -60,56 +62,21 @@ namespace CsharpTestProject1
         internal void XPath_categories_RubberDucks_ElementClick() => PageParams.FindElmAndClick(By.XPath("(//input[@name='categories[]'])[2]"));
         internal void XPath_categories_Unisex_ElementClick() => PageParams.FindElmAndClick(By.XPath("(//input[@name='product_groups[]'])[3]"));
 
+        internal IWebElement Name_manufacturerId_Element() => PageParams.Driver.FindElement(By.Name("manufacturer_id"));
 
-        internal IList<IWebElement> Id_app_Elements => PageParams.Driver.FindElements(By.Id("app-"));
+        internal IWebElement Name_currencyCode_Element() => PageParams.Driver.FindElement(By.Name("purchase_price_currency_code"));
 
+        internal void LinkText_FindElement(string text) => PageParams.Driver.FindElement(By.LinkText(text));
 
-        internal IList<IWebElement> getCss_menu_id_doc_Elements(IWebElement menuPoint)
-        {
-            return menuPoint.FindElements(By.CssSelector("[id^=doc-]"));
-        }
-
-
-        internal IWebElement Row_Css_a_Element(IWebElement row)
-        { 
-            return row.FindElement(By.CssSelector("a"));    
-        }
-
-
-        private static Func<IWebDriver, String> AnyWindowOtherThan(ReadOnlyCollection<String> oldWindows)
-        {
-            return (driver) =>
-            {
-                ReadOnlyCollection<string> handles = PageParams.Driver.WindowHandles;
-                handles.Except(oldWindows);
-                return handles.Count > 0 ? handles.AsEnumerable().Last() : null;
-            };
-
-        }
-
-        internal String waitUntilEditCountry(ReadOnlyCollection<String> existingWindows)
-        {
-            return PageParams.DriverWait.Until(AnyWindowOtherThan(existingWindows)); // ждем загрузки окна
-        }
-
-        internal void SwitchToWindow(String strWindow)
-        {
-            PageParams.Driver.SwitchTo().Window(strWindow);  // переключаемся в новое окно
-        }
-
-        internal void CloseCurWindow()
-        {
-            PageParams.Driver.Close();  // закрываем окно
-        }
         //-------------------------------------------------------------------------
 
-        public AdminNewProdPage(PageParams _pageParams) : base(_pageParams) 
+        public AdminNewProdPage(PageParams _pageParams) : base(_pageParams)
         {
             //Использование PageFactory устарело (Depricated ), 
             //т.к. заменяется свойствами, возвращающими нужный IWebElement
             //PageFactory.InitElements(PageParams.Driver, this);
         }
-              
+
         internal AdminNewProdPage waitUntilMyStore()
         {
             PageParams.DriverWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TitleIs("My Store"));

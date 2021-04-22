@@ -16,7 +16,7 @@ namespace CsharpTestProject1
             private set;
         }
 
-        public UT7CheckNewProductTests() : base(new DriverBaseParams(drvImplWaitTime: 3, drvExplWaitTime: 4))
+        public UT7CheckNewProductTests() : base(new DriverBaseParams(drvImplWaitTime: 3, drvExplWaitTime: 5))
         {
             App = new UT7CheckNewProductApp(sleepTimeMSec);
         }
