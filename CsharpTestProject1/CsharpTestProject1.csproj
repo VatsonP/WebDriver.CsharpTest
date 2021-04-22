@@ -99,7 +99,6 @@
     <Compile Include="Tests\UT5CheckCountriesTests.cs" />
     <Compile Include="Tests\UT7CheckNewProductTests.cs" />
     <Compile Include="UnitTest1CheckRegistration.cs" />
-    <Compile Include="UnitTest7CheckNewProduct.cs" />
     <Compile Include="UnitTest8CheckProductPage.cs" />
     <Compile Include="DriverBase\WebDriverExtensions.cs" />
     <Compile Include="Tests\UT1CustomerRegistrationTests.cs" />
