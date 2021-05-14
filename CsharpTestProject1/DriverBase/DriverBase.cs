@@ -94,9 +94,9 @@ namespace CsharpTestProject1
         protected LogWriter logWriter;
 
         // for write log file on error
-        public string CurrentTestName { get; protected set; }
-        public string CurrentTestFolder { get; protected set; }
-        protected DirectoryInfo BaseLogFolder { get; set; }
+        protected string CurrentTestName { get; private set; }
+        protected string CurrentTestFolder { get; private set; }
+        protected DirectoryInfo BaseLogFolder { get; private set; }
 
         public static string CurrentIpStr
         {
@@ -104,7 +104,7 @@ namespace CsharpTestProject1
             private set;
         }
 
-        // значение времени (в сек) общих неявных ожиданий, для явных ожиданий, ля максимального времени неявного ожидания
+        // значение времени (в сек) общих неявных ожиданий, для явных ожиданий, для максимального времени неявного ожидания
         protected DriverBaseParams driverBaseParams;
 
         public DriverBase(DriverBaseParams driverBaseParams)
@@ -112,9 +112,9 @@ namespace CsharpTestProject1
             this.driverBaseParams = driverBaseParams;
         }
 
-        public enum TestRunType { Local, Remote };
+        protected enum TestRunType { Local, Remote };
 
-        public static TestRunType testRunType
+        protected static TestRunType testRunType
         {
             get;
             private set;
