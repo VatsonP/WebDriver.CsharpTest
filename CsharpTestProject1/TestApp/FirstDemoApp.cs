@@ -144,8 +144,8 @@ namespace CsharpTestProject1
 				Console.WriteLine("prodNum (i): " + i);
 				Console.WriteLine("prodStickerQuantity: " + prodStickerQuantity);
 
-                //проверка что у товара не более одного стикера
-                NUnit.Framework.Assert.IsTrue(prodStickerQuantity <= 1);
+				//проверка что у товара не более одного стикера
+				NUnit.Framework.Assert.IsTrue(prodStickerQuantity <= 1);
 
 				if (prodStickerQuantity == 1)
 					allProdWithStickerQuantity = allProdWithStickerQuantity + 1;

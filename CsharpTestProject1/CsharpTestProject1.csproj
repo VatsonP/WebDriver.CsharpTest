@@ -71,6 +71,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DriverBase\DriverBaseParams.cs" />
+    <Compile Include="DriverBase\DriverBaseReal.cs" />
     <Compile Include="Pages\AdminLeftMenuPage.cs" />
     <Compile Include="Pages\AdminNewProdPage.cs" />
     <Compile Include="Pages\AdminPanelLoginPage.cs" />

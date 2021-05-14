@@ -16,7 +16,7 @@ namespace CsharpTestProject1
 
         public TestBase(DriverBaseParams driverBaseParams) 
         {
-            DrvBase = new DriverBase(driverBaseParams);
+            DrvBase = new DriverBaseReal(driverBaseParams);
         }
 
         [OneTimeSetUp]
