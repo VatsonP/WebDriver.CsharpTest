@@ -1,14 +1,12 @@
 ﻿using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium.Support.PageObjects;
+
 
 namespace CsharpTestProject1
 {
     internal class RegistrationPage : Page
     {
-        private const int sleepTimeMSec = 8000;
-
         public RegistrationPage(PageParams _pageParams) : base(_pageParams) 
         {
             //Использование PageFactory устарело (Depricated ), 
@@ -69,12 +67,6 @@ namespace CsharpTestProject1
             PageParams.DriverWait.Until(d => d.FindElement(
                     By.CssSelector(String.Format("select[name=zone_code] option[value={0}]", zone))));
             new SelectElement(PageParams.Driver.FindElement(By.CssSelector("select[name=zone_code]"))).SelectByValue(zone);
-        }
-
-
-        internal void DriverSleep()
-        {
-            PageParams.Driver.Sleep(sleepTimeMSec);
         }
 
     }

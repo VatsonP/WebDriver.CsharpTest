@@ -1,10 +1,5 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium.Support.PageObjects;
 
 
 namespace CsharpTestProject1
@@ -12,10 +7,18 @@ namespace CsharpTestProject1
 
     public class UT1CustomerRegistrationApp 
     {
+        private int sleepTimeMSec;
+
         private PageParams          pageParams;
         private RegistrationPage    registrationPage;
         private AdminPanelLoginPage adminPanelLoginPage;
         private CustomerListPage    customerListPage;
+
+        public UT1CustomerRegistrationApp(int sleepTimeMSec)
+        {
+            this.sleepTimeMSec = sleepTimeMSec;
+        }
+
 
         public void InitPages(DriverBase drvBase)
         {
@@ -43,8 +46,8 @@ namespace CsharpTestProject1
             registrationPage.PhoneInput.SendKeys(customer.Phone);
             registrationPage.PasswordInput.SendKeys(customer.Password);
             registrationPage.ConfirmedPasswordInput.SendKeys(customer.Password);
-            registrationPage.DriverSleep();
 
+            PageParams.Sleep(sleepTimeMSec);
 
             pageParams.TakeScreenshot("ScreenOne"); 
 

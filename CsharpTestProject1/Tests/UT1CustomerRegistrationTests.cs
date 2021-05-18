@@ -9,6 +9,8 @@ namespace CsharpTestProject1
     [TestFixture]
     public class UT1CustomerRegistrationTests : TestBase
     {
+        private const int sleepTimeMSec = 8000;
+
         protected UT1CustomerRegistrationApp App
         {
             get;
@@ -17,7 +19,7 @@ namespace CsharpTestProject1
 
         public UT1CustomerRegistrationTests() : base(new DriverBaseParams())
         {
-            App = new UT1CustomerRegistrationApp();
+            App = new UT1CustomerRegistrationApp(sleepTimeMSec);
         }
 
         [Test, TestCaseSource(typeof(DataProviders), "ValidCustomers")]
