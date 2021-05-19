@@ -91,7 +91,7 @@ namespace CsharpWebDriverLib
 
             DateTime curDate = DateTime.Now;
             String uniqFileNameExt = "_" + PaddingLeft(curDate.Year, 4) + "-" + PaddingLeft(curDate.Month) + "-" + PaddingLeft(curDate.Day) +
-                                     "_" + PaddingLeft(curDate.Hour) + PaddingLeft(curDate.Minute) + PaddingLeft(curDate.Second) + ".jpg";
+                                     "_" + PaddingLeft(curDate.Hour) + PaddingLeft(curDate.Minute) + PaddingLeft(curDate.Second) + ".png";
             String fullFileName;
             if (fileNameWithoutExt == "")
                 fullFileName = "ScreenShot" + uniqFileNameExt;
@@ -113,7 +113,7 @@ namespace CsharpWebDriverLib
 
             try
             {
-                ss.SaveAsFile(curScrFilePathName, ScreenshotImageFormat.Jpeg);
+                ss.SaveAsFile(curScrFilePathName, ScreenshotImageFormat.Png);
             }
             catch (IOException e)
             {
