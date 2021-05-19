@@ -3,7 +3,7 @@ using System.IO;
 
 namespace CsharpWebDriverLib
 {
-    public class LogWriter
+    internal class LogWriter
     {
         private DirectoryInfo BaseLogFolder { get; set; }
         private DirectoryInfo CurLogFolder  { get; set; }

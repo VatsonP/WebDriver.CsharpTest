@@ -7,23 +7,23 @@ namespace CsharpTestProject1.Pages
 {
     public class PageParams
     {
-        private DriverBase DrvBase { get; set; }
+        private IDriverBase DrvBase { get; set; }
 
-        public static IWebDriver Driver { get => DriverBase.driver; }
-        public static WebDriverWait DriverWait { get => DriverBase.wait; }
-        public static string CurrentIpStr { get => DriverBase.CurrentIpStr; }
+        public static IWebDriver Driver { get => IDriverBase.driver; }
+        public static WebDriverWait DriverWait { get => IDriverBase.wait; }
+        public static string CurrentIpStr { get => IDriverBase.CurrentIpStr; }
 
         public static void Sleep(int sleep_Msec) => Driver.Sleep(sleep_Msec);
 
-        public PageParams(DriverBase drvBase)
+        public PageParams(IDriverBase drvBase)
         {
             DrvBase = drvBase;
         }
 
         public void TakeScreenshot(string fileNameWithoutExt = "") => DrvBase.TakeScreenshot(fileNameWithoutExt);
         
-        public static void ClickElement(IWebElement element) => DriverBase.ClickElement(element);
-        public static void FindElmAndClick(By locator) => DriverBase.FindElmAndClick(locator);
-        public static string GetFullDateStrForBrowserDateControl(int yyyy, int mm, int dd) => DriverBase.GetFullDateStrForBrowserDateControl(yyyy, mm, dd);
+        public static void ClickElement(IWebElement element) => IDriverBase.ClickElement(element);
+        public static void FindElmAndClick(By locator) => IDriverBase.FindElmAndClick(locator);
+        public static string GetFullDateStrForBrowserDateControl(int yyyy, int mm, int dd) => IDriverBase.GetFullDateStrForBrowserDateControl(yyyy, mm, dd);
     }
 }

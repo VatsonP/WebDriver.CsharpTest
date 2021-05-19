@@ -24,7 +24,7 @@ namespace CsharpTestProject1.TestApp
         private PageParams pageParams;
         private MainLiteCartPage mainLiteCartPage;
 
-        public void InitPages(DriverBase drvBase)
+        public void InitPages(IDriverBase drvBase)
         {
             pageParams = new PageParams(drvBase);
 

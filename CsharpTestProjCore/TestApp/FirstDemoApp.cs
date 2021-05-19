@@ -16,7 +16,7 @@ namespace CsharpTestProject1.TestApp
 		private PageParams pageParams;
 		private AdminPanelLoginPage adminPanelLoginPage;
 
-		public void InitPages(DriverBase drvBase)
+		public void InitPages(IDriverBase drvBase)
 		{
 
 			pageParams = new PageParams(drvBase);
@@ -63,9 +63,9 @@ namespace CsharpTestProject1.TestApp
 			string searchingElementName = "q-q-q";
 
 			//Пример исключения InvalidSelectorException - eсли передан неправильный локатор
-			//DriverBase.isElementPresent(driver, By.CssSelector("1 2 3 notValidCss"), isWait: true);
+			//isElementPresent(driver, By.CssSelector("1 2 3 notValidCss"), isWait: true);
 			//Пример исключения NoSuchElementException - eсли элемент отсутствует в DOM на момент вызова
-			//DriverBase.isElementPresent(driver, By.Name(searchingElementName), isWait: true);
+			//isElementPresent(driver, By.Name(searchingElementName), isWait: true);
 
 			if (PageParams.Driver.isElementPresent(By.Name(searchingElementName), isWait: true))
 			{

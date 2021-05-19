@@ -9,59 +9,39 @@ namespace CsharpTestProject1.Test
     [TestFixture]
     public abstract class TestBase
     {
-        public DriverBase DrvBase
+        public IDriverBase DrvBase
         { 
             get;
             private set;
         }
 
         public TestBase(DriverBaseParams driverBaseParams) 
-        {
-            DrvBase = new DriverBaseReal(driverBaseParams);
-        }
+            => DrvBase = IDriverBase.CreateDriverBase(driverBaseParams);
 
         public static DriverBaseParams CreateDriverBaseParams()
-        { 
-            return new DriverBaseParams();
-        }
+            => DriverBaseParams.CreateDriverBaseParams();
 
         public static DriverBaseParams CreateDriverBaseParams(int drvImplWaitTime)
-        {
-            return new DriverBaseParams(drvImplWaitTime);
-        }
+            => DriverBaseParams.CreateDriverBaseParams(drvImplWaitTime);
 
         public static DriverBaseParams CreateDriverBaseParams(int drvImplWaitTime, int drvExplWaitTime)
-        {
-            return new DriverBaseParams(drvImplWaitTime, drvExplWaitTime);
-        }
+            => DriverBaseParams.CreateDriverBaseParams(drvImplWaitTime, drvExplWaitTime);
 
         public static DriverBaseParams CreateDriverBaseParams(int drvImplWaitTime, int drvExplWaitTime, int drvMaxWaitTime)
-        {
-            return new DriverBaseParams(drvImplWaitTime, drvExplWaitTime, drvMaxWaitTime);
-        }
+            => DriverBaseParams.CreateDriverBaseParams(drvImplWaitTime, drvExplWaitTime, drvMaxWaitTime);
+
 
         [OneTimeSetUp]
-        protected static void OneTimeSetUp()
-        {
-            DriverBase.OneTimeSetUp();
-        }
+        protected static void OneTimeSetUp() => IDriverBase.OneTimeSetUp();
 
         [SetUp]
-        protected void SetUp()
-        {
-            DrvBase.SetUp();
-        }
+        protected void SetUp() => DrvBase.SetUp();
 
         [TearDown]
-        protected void TearDown()
-        {
-            DrvBase.TearDown();
-        }
+        protected void TearDown() => DrvBase.TearDown();
 
         [OneTimeTearDown]
-        protected static void OneTimeTearDown()
-        {
-            DriverBase.OneTimeTearDown();
-        }
+        protected static void OneTimeTearDown() => IDriverBase.OneTimeTearDown();
+
     }
 }

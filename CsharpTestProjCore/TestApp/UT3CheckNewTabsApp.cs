@@ -28,7 +28,7 @@ namespace CsharpTestProject1.TestApp
 
         private const int sleepTimeMSec = 1000;
 
-        public void InitPages(DriverBase drvBase)
+        public void InitPages(IDriverBase drvBase)
         {
             pageParams = new PageParams(drvBase);
 

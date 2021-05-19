@@ -15,7 +15,7 @@ namespace CsharpTestProject1.Test
             private set;
         }
 
-        public FirstDemoTests() : base(new CsharpWebDriverLib.DriverBaseParams())
+        public FirstDemoTests() : base(CreateDriverBaseParams())
         {
             App = new FirstDemoApp();
         }

@@ -24,7 +24,7 @@ namespace CsharpWebDriverLib
         public string remoteIpStr { get; private set; }   // Remote Host Ip 
 
 
-        public DriverBaseParams(int drvImplWaitTime = WebDriverExtensions.drvImplWaitTime,
+        internal DriverBaseParams(int drvImplWaitTime = WebDriverExtensions.drvImplWaitTime,
                                 int drvExplWaitTime = WebDriverExtensions.drvExplWaitTime,
                                 int drvMaxWaitTime  = WebDriverExtensions.drvMaxWaitTime,
                                 string localIpStr   = localIpStr_Win,
@@ -41,6 +41,18 @@ namespace CsharpWebDriverLib
             // current Remote Ip
             this.remoteIpStr = remoteIpStr;
         }
+
+        public static DriverBaseParams CreateDriverBaseParams()
+            => new DriverBaseParams();
+
+        public static DriverBaseParams CreateDriverBaseParams(int drvImplWaitTime)
+            => new DriverBaseParams(drvImplWaitTime);
+
+        public static DriverBaseParams CreateDriverBaseParams(int drvImplWaitTime, int drvExplWaitTime)
+            => new DriverBaseParams(drvImplWaitTime, drvExplWaitTime);
+
+        public static DriverBaseParams CreateDriverBaseParams(int drvImplWaitTime, int drvExplWaitTime, int drvMaxWaitTime)
+            => new DriverBaseParams(drvImplWaitTime, drvExplWaitTime, drvMaxWaitTime);
 
     }
 }
