@@ -1,8 +1,9 @@
 using System;
 using NUnit.Framework;
+using CsharpTestProject1.TestApp;
 
 
-namespace CsharpTestProject1
+namespace CsharpTestProject1.Test
 {
 
     [TestFixture]
@@ -16,7 +17,7 @@ namespace CsharpTestProject1
             private set;
         }
 
-        public UT8CheckProductTests() : base(new DriverBaseParams(drvImplWaitTime: 3, drvExplWaitTime: 5))
+        public UT8CheckProductTests() : base(CreateDriverBaseParams(drvImplWaitTime: 3, drvExplWaitTime: 5))
         {
             App = new UT8CheckProductApp(sleepTimeMSec);
         }

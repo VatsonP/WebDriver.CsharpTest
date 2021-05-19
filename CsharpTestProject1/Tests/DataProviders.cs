@@ -1,30 +1,59 @@
 ﻿using System;
 using System.Collections;
+using CsharpWebDriverLib;
+using CsharpTestProject1.Model;
 
-namespace CsharpTestProject1
+
+namespace CsharpTestProject1.Test
 {
     internal class DataProviders
     {
-        private static DateTime curDate;
+        internal struct CurDateTime
+        {
+            public DateTime curDate;
+            public int yyyy;
+            public int mm;
+            public int dd;
+            public int h;
+            public int m;
+            public int s;
 
-        public static IEnumerable ValidCustomers
+            public CurDateTime(DateTime date)
+            {
+                curDate = date;
+                yyyy = curDate.Year;
+                mm = curDate.Month;
+                dd = curDate.Day;
+                h = curDate.Hour;
+                m = curDate.Minute;
+                s = curDate.Second;
+            }
+        }
+
+        internal static string GetTimePrefix(CurDateTime curDateTime)
+        {
+            return WebDriverExtensions.PaddingLeft(curDateTime.h) +
+                   WebDriverExtensions.PaddingLeft(curDateTime.m) +
+                   WebDriverExtensions.PaddingLeft(curDateTime.s);
+        }
+        internal static string GetTimeId(CurDateTime curDateTime)
+        {
+            return WebDriverExtensions.PaddingLeft(curDateTime.yyyy, 4) + "-" + WebDriverExtensions.PaddingLeft(curDateTime.mm) + "-" +
+                   WebDriverExtensions.PaddingLeft(curDateTime.dd) + "_" + 
+                   curDateTime.h.ToString() + curDateTime.m.ToString() + curDateTime.s.ToString(); ;
+        }
+
+        internal static IEnumerable ValidCustomers
         {
             get
             {
                 // читаем текущее время - добавляем его к фамилии и имеем уникальный e-mail и пароль каждый раз
-                curDate = DateTime.Now;
-                int yyyy = curDate.Year;
-                int mm = curDate.Month;
-                int dd = curDate.Day;
-                int h = curDate.Hour;
-                int m = curDate.Minute;
-                int s = curDate.Second;
+                var curDateTime = new CurDateTime(DateTime.Now);
 
                 var firstName = "Ivan";
                 var lastName = "Tankist";
-                var eMailName = firstName + WebDriverExtensions.PaddingLeft(h) + WebDriverExtensions.PaddingLeft(m) + WebDriverExtensions.PaddingLeft(s);
-                var taxId     = WebDriverExtensions.PaddingLeft(yyyy, 4) + "-" + WebDriverExtensions.PaddingLeft(mm) + "-" + 
-                                WebDriverExtensions.PaddingLeft(dd)      + "_" + h.ToString() + m.ToString() + s.ToString();
+                var eMailName = firstName + GetTimePrefix(curDateTime);
+                var taxId     = GetTimeId(curDateTime);
 
                 yield return new Customer()
                 {

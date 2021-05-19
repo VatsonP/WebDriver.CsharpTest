@@ -1,8 +1,9 @@
 using System;
 using NUnit.Framework;
+using CsharpTestProject1.TestApp;
 
 
-namespace CsharpTestProject1
+namespace CsharpTestProject1.Test
 {
 
     [TestFixture]
@@ -14,7 +15,7 @@ namespace CsharpTestProject1
             private set;
         }
 
-        public UT5CheckCountriesTests() : base(new DriverBaseParams(drvImplWaitTime: 3, drvExplWaitTime: 4))
+        public UT5CheckCountriesTests() : base(CreateDriverBaseParams())
         {
             App = new UT5CheckCountriesApp();
         }

@@ -3,11 +3,11 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Globalization;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
+using CsharpTestProject1.Pages;
+using CsharpWebDriverLib;
 
 
-
-namespace CsharpTestProject1
+namespace CsharpTestProject1.TestApp
 {
 
 	public class UT8CheckProductApp

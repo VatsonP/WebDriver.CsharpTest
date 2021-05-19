@@ -2,39 +2,41 @@ using System;
 using System.Collections.Generic;
 using OpenQA.Selenium;
 using NUnit.Framework;
+using CsharpTestProject1.Pages;
+using CsharpWebDriverLib;
 
 
-namespace CsharpTestProject1
+namespace CsharpTestProject1.TestApp
 {
 
-    public class UT5CheckCountriesApp
-    {
-        private PageParams          pageParams;
-        private AdminPanelLoginPage adminPanelLoginPage;
-        private AdminLeftMenuPage   adminLeftMenuPage;
+	public class UT5CheckCountriesApp
+	{
+		private PageParams          pageParams;
+		private AdminPanelLoginPage adminPanelLoginPage;
+		private AdminLeftMenuPage   adminLeftMenuPage;
 
-        // количество стран в списке, зон в списке
-        private int countryQuantity { get; set; }
-        private int zoneQuantity    { get; set; }  
-        private int geoZoneQuantity { get; set; }
+		// количество стран в списке, зон в списке
+		private int countryQuantity { get; set; }
+		private int zoneQuantity    { get; set; }  
+		private int geoZoneQuantity { get; set; }
 
-        // массив количества зон для списка стран
-        private int[] zones { get; set; }  
-        private int a, az;
-        
-        // строка по стране и по зоне
-        private IWebElement countryRow { get; set; }
-        private IWebElement zoneRow    { get; set; }
-        private IWebElement geoZoneRow { get; set; }
+		// массив количества зон для списка стран
+		private int[] zones { get; set; }  
+		private int a, az;
+		
+		// строка по стране и по зоне
+		private IWebElement countryRow { get; set; }
+		private IWebElement zoneRow    { get; set; }
+		private IWebElement geoZoneRow { get; set; }
 
-        // список стран, список зон
-        private IList<IWebElement> countryRows { get; set; }
-        private IList<IWebElement> zoneRows    { get; set; }
-        private IList<IWebElement> geoZoneRows { get; set; }
+		// список стран, список зон
+		private IList<IWebElement> countryRows { get; set; }
+		private IList<IWebElement> zoneRows    { get; set; }
+		private IList<IWebElement> geoZoneRows { get; set; }
 
-        // имена стран, имена зон
-        private String[] countryName { get; set; }
-        private String[] zoneName    { get; set; }
+		// имена стран, имена зон
+		private String[] countryName { get; set; }
+		private String[] zoneName    { get; set; }
 
 		// функция проверки, что строки в массиве идут по алфавиту
 		public static int testAlphabet(String[] testArr, int arrSize)
@@ -54,29 +56,29 @@ namespace CsharpTestProject1
 
 
 		public void InitPages(DriverBase drvBase)
-        {
-            pageParams = new PageParams(drvBase);
+		{
+			pageParams = new PageParams(drvBase);
 
-            adminPanelLoginPage = new AdminPanelLoginPage(pageParams);
-            adminLeftMenuPage   = new AdminLeftMenuPage(pageParams);
-        }
+			adminPanelLoginPage = new AdminPanelLoginPage(pageParams);
+			adminLeftMenuPage   = new AdminLeftMenuPage(pageParams);
+		}
 
-        private void LoginAs(string usrText, string passText)
-        {
-            if (adminPanelLoginPage.Open().IsOnThisPage())
-            {
-                adminPanelLoginPage.EnterUsername(usrText).EnterPassword(passText).SubmitLogin();
-            }
+		private void LoginAs(string usrText, string passText)
+		{
+			if (adminPanelLoginPage.Open().IsOnThisPage())
+			{
+				adminPanelLoginPage.EnterUsername(usrText).EnterPassword(passText).SubmitLogin();
+			}
 
-            adminLeftMenuPage.waitUntilMyStore(); //подождать пока не загрузится страница с заголовком "My Store"
-        }
+			adminLeftMenuPage.waitUntilMyStore(); //подождать пока не загрузится страница с заголовком "My Store"
+		}
 
-        public void MyCheckCountries()
-        {
-            LoginAs(usrText: "admin", passText: "admin");//открыть страницу и выполнить коннект под пользователем + ждем страницу "My Store"
+		public void MyCheckCountries()
+		{
+			LoginAs(usrText: "admin", passText: "admin");//открыть страницу и выполнить коннект под пользователем + ждем страницу "My Store"
 
-            //открыть страницу со списком стран
-            adminLeftMenuPage.OpenCountries().waitUntilCountries(); // и ждем загрузки страницы
+			//открыть страницу со списком стран
+			adminLeftMenuPage.OpenCountries().waitUntilCountries(); // и ждем загрузки страницы
 
 			//определение списка строк в таблице стран
 			countryRows = adminLeftMenuPage.Css_countries_row_Elements;
@@ -97,7 +99,7 @@ namespace CsharpTestProject1
 
 			a = testAlphabet(countryName, countryQuantity);
 
-            Assert.True(a == 1);
+			Assert.True(a == 1);
 			// проверка алфавитного порядка - если он нарушен, тест провалится
 
 			for (int i = 0; i < countryQuantity; i++)
@@ -135,9 +137,9 @@ namespace CsharpTestProject1
 					// проверка алфавитного порядка перечня зон
 
 					/* опять возвращаемся на страницу со списком стран, поскольку
-	                 при проверке списка зон мы зашли на страницу отдельной страны,
-	                 и если не вернуться к списку стран, то мы не сможем проверить список
-	                 зон у другой страны, у которой число зон больше 0 */
+					 при проверке списка зон мы зашли на страницу отдельной страны,
+					 и если не вернуться к списку стран, то мы не сможем проверить список
+					 зон у другой страны, у которой число зон больше 0 */
 					adminLeftMenuPage.OpenCountries().waitUntilCountries(); // и ждем загрузки страницы
 				}
 			}

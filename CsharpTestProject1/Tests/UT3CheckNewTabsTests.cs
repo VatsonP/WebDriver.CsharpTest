@@ -1,8 +1,9 @@
 using System;
 using NUnit.Framework;
+using CsharpTestProject1.TestApp;
 
 
-namespace CsharpTestProject1
+namespace CsharpTestProject1.Test
 {
 
     [TestFixture]
@@ -14,7 +15,7 @@ namespace CsharpTestProject1
             private set;
         }
 
-        public UT3CheckNewTabsTests() : base(new DriverBaseParams())
+        public UT3CheckNewTabsTests() : base(CreateDriverBaseParams())
         {
             App = new UT3CheckNewTabsApp(); 
         }

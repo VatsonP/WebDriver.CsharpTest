@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpTestProject1", "CsharpTestProject1\CsharpTestProject1.csproj", "{7E7CD538-CA96-44DC-A983-3F9CFD21C4AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpWebDriverLib", "CsharpWebDriverLib\CsharpWebDriverLib.csproj", "{C29AD1AF-4179-41BE-823C-800D04112C4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{7E7CD538-CA96-44DC-A983-3F9CFD21C4AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E7CD538-CA96-44DC-A983-3F9CFD21C4AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E7CD538-CA96-44DC-A983-3F9CFD21C4AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C29AD1AF-4179-41BE-823C-800D04112C4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C29AD1AF-4179-41BE-823C-800D04112C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C29AD1AF-4179-41BE-823C-800D04112C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C29AD1AF-4179-41BE-823C-800D04112C4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7576FD94-4776-4726-82F4-BC4FB7E73432}
 	EndGlobalSection
 EndGlobal

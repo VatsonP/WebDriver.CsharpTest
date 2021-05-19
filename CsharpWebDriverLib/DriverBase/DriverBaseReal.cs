@@ -12,7 +12,7 @@ using OpenQA.Selenium.Support.Events;
 using NUnit.Framework.Interfaces;
 
 
-namespace CsharpTestProject1
+namespace CsharpWebDriverLib
 {
     public class DriverBaseReal : DriverBase
     {

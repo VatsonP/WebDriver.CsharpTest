@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace CsharpTestProject1
+namespace CsharpWebDriverLib
 {
     public class LogWriter
     {
@@ -19,16 +19,16 @@ namespace CsharpTestProject1
             CurLogFolder = Directory.CreateDirectory(Path.Combine(BaseLogFolder.FullName, CurrentTestName));
         }
 
-        public LogWriter(DirectoryInfo curLogFolder, string currentTestName)
+        internal LogWriter(DirectoryInfo curLogFolder, string currentTestName)
         {
             Constructor(curLogFolder, currentTestName, currentTestName);
         }
-        public LogWriter(DirectoryInfo curLogFolder, string currentTestName, string currentFileName)
+        internal LogWriter(DirectoryInfo curLogFolder, string currentTestName, string currentFileName)
         {
             Constructor(curLogFolder, currentTestName, currentFileName);
         }
 
-        public void LogWrite(string eventName, string logMessage)
+        internal void LogWrite(string eventName, string logMessage)
         {
             try
             {
@@ -43,7 +43,7 @@ namespace CsharpTestProject1
             }
         }
 
-        public void Log(string eventName, string logMessage, TextWriter txtWriter)
+        internal void Log(string eventName, string logMessage, TextWriter txtWriter)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace CsharpTestProject1
             }
         }
 
-        public void FinalLogWrite()
+        internal void FinalLogWrite()
         {
             LogWrite("================================================",
                      "================================================");

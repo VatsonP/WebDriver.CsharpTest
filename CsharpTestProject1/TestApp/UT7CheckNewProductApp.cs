@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using CsharpTestProject1.Pages;
+using CsharpWebDriverLib;
 
-
-namespace CsharpTestProject1
+namespace CsharpTestProject1.TestApp
 {
 
 	public class UT7CheckNewProductApp

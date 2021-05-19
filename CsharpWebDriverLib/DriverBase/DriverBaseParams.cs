@@ -1,5 +1,7 @@
 ﻿
-namespace CsharpTestProject1
+using System;
+
+namespace CsharpWebDriverLib
 {
     public class DriverBaseParams
     {

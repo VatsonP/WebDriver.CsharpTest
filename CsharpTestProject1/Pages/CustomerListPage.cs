@@ -5,7 +5,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace CsharpTestProject1
+namespace CsharpTestProject1.Pages
 {
     internal class CustomerListPage : Page
     {

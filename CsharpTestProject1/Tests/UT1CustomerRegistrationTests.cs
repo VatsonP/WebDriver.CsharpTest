@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
 using NUnit.Framework;
+using CsharpTestProject1.Model;
+using CsharpTestProject1.TestApp;
 
-
-namespace CsharpTestProject1
+namespace CsharpTestProject1.Test
 {
 
     [TestFixture]
@@ -17,7 +18,7 @@ namespace CsharpTestProject1
             private set;
         }
 
-        public UT1CustomerRegistrationTests() : base(new DriverBaseParams())
+        public UT1CustomerRegistrationTests() : base(CreateDriverBaseParams())
         {
             App = new UT1CustomerRegistrationApp(sleepTimeMSec);
         }

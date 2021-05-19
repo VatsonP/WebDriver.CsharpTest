@@ -3,9 +3,11 @@ using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
+using CsharpTestProject1.Pages;
+using CsharpWebDriverLib;
 
 
-namespace CsharpTestProject1
+namespace CsharpTestProject1.TestApp
 {
 
     public class UT4CheckCartApp

@@ -1,8 +1,9 @@
 ﻿using System;
 using NUnit.Framework;
+using CsharpTestProject1.TestApp;
 
 
-namespace CsharpTestProject1
+namespace CsharpTestProject1.Test
 {
     [TestFixture]
     /*Parallelizable(ParallelScope.Children)*/
@@ -14,7 +15,7 @@ namespace CsharpTestProject1
             private set;
         }
 
-        public FirstDemoTests() : base(new DriverBaseParams())
+        public FirstDemoTests() : base(new CsharpWebDriverLib.DriverBaseParams())
         {
             App = new FirstDemoApp();
         }

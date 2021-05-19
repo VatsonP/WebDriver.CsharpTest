@@ -2,34 +2,12 @@
 using OpenQA.Selenium;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
-using System.Linq;
+using CsharpWebDriverLib;
 
-namespace CsharpTestProject1
+namespace CsharpTestProject1.Pages
 {
     internal class AdminNewProdPage : Page
     {
-        internal struct CurDateTime
-        {
-            public DateTime curDate;
-            public int yyyy;
-            public int mm;
-            public int dd;
-            public int h;
-            public int m;
-            public int s;
-
-            public CurDateTime(DateTime date)
-            {
-                curDate = date;
-                yyyy    = curDate.Year;
-                mm      = curDate.Month;
-                dd      = curDate.Day;
-                h       = curDate.Hour;
-                m       = curDate.Minute;
-                s       = curDate.Second;
-            }
-        }
-
         internal static string GetProdPrefix(CurDateTime curDateTime)
         { 
             return WebDriverExtensions.PaddingLeft(curDateTime.h) + 

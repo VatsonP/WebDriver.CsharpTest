@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CsharpTestProject1
+namespace CsharpTestProject1.Pages
 {
     internal class AdminLeftMenuPage : Page
     {

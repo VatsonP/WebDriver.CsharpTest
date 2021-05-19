@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using NUnit.Framework.Constraints;
 
-namespace CsharpTestProject1
+namespace CsharpWebDriverLib
 {
     public static class WebDriverExtensions
     {

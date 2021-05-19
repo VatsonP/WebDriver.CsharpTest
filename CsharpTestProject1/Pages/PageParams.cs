@@ -1,8 +1,9 @@
 ﻿using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using CsharpWebDriverLib;
 
-namespace CsharpTestProject1
+namespace CsharpTestProject1.Pages
 {
     public class PageParams
     {

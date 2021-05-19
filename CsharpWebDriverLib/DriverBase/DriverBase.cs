@@ -6,9 +6,8 @@ using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Support.Events;
 
 
-namespace CsharpTestProject1
+namespace CsharpWebDriverLib
 {
-
     public abstract class DriverBase
     {
         //Для возможности повторного использования драйвера - инициализация хранилища драйверов tlDrver <IWebDriver>
