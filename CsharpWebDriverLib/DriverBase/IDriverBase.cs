@@ -83,29 +83,7 @@ namespace CsharpWebDriverLib
         public static string CurrentIpStr { get; set; }
         public static WebDriverExtensions.WebDriverType webDriverType { get; set; }
 
-        /*
-
-        // for write log file on error
-        protected string CurrentTestName { get; set; }
-        protected string CurrentTestFolder { get; set; }
-        protected DirectoryInfo BaseLogFolder { get; set; }
-
-
-        // значение времени (в сек) общих неявных ожиданий, для явных ожиданий, для максимального времени неявного ожидания
-        protected DriverBaseParams driverBaseParams { get; set; }
-
-
-        protected enum TestRunType { Local, Remote };
-
-        protected static TestRunType testRunType { get; set; }
-
-        //must be initilize after the WebDriver create
-        protected ICapabilities wdCapabilities { get; set; }
-
-        //must be initilize after the WebDriver create
-        protected ILogs wdLogs { get; set; }
-        */
-
+ 
         public static void OneTimeSetUp()
         {
             tlDriver = new ThreadLocal<IWebDriver>(true);
@@ -125,7 +103,6 @@ namespace CsharpWebDriverLib
             tlDriverDispose();
             eftlDriverDispose();
         }
-
 
         // ---------------------------------------------------------------------------------------------------------------------------
 
