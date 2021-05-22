@@ -186,7 +186,9 @@ namespace CsharpWebDriverLib
             catch (InvalidSelectorException ex)
             {
                 WriteCurMethodMessage(MethodInfo.GetCurrentMethod(), ex.GetType(), ex.Message);
+#pragma warning disable CA2200
                 throw ex;
+#pragma warning restore CA2200
             }
             //Если элемент отсутствует в DOM на момент вызова
             catch (NoSuchElementException ex)
