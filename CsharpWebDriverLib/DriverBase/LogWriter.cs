@@ -38,9 +38,11 @@ namespace CsharpWebDriverLib
                     Log(eventName, logMessage, w);
                 }
             }
+#pragma warning disable CS0168
             catch (Exception ex)
             {
             }
+#pragma warning restore CS0168
         }
 
         internal void Log(string eventName, string logMessage, TextWriter txtWriter)
@@ -53,9 +55,11 @@ namespace CsharpWebDriverLib
                 txtWriter.WriteLine("     : {0}", logMessage);
                 txtWriter.WriteLine("-------------------------------------------------------");
             }
+#pragma warning disable CS0168
             catch (Exception ex)
             {
             }
+#pragma warning restore CS0168
         }
 
         internal void FinalLogWrite()
