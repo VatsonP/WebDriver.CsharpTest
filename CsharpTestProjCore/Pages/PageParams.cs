@@ -5,9 +5,9 @@ using CsharpWebDriverLib;
 
 namespace CsharpTestProject1.Pages
 {
-    public class PageParams
+    public record PageParams
     {
-        private IDriverBase DrvBase { get; set; }
+        private IDriverBase DrvBase { get; init; }
 
         public static IWebDriver Driver { get => IDriverBase.driver; }
         public static WebDriverWait DriverWait { get => IDriverBase.wait; }
