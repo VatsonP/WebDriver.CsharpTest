@@ -12,12 +12,13 @@ namespace CsharpWebDriverLib
     {
         //Для возможности повторного использования драйвера - инициализация хранилища драйверов tlDrver <IWebDriver>
         private static ThreadLocal<IWebDriver> tlDriver;// = new ThreadLocal<IWebDriver>(true);
-        private ThreadLocal<IWebDriver> tlDriverCreate()
+        private static ThreadLocal<IWebDriver> tlDriverCreate()
         {
             return new ThreadLocal<IWebDriver>(true);
         }
         private static void tlDriverDispose()
         {
+            tlDriver?.Value?.Dispose();
             tlDriver?.Dispose();
         }
         protected static Boolean tlDriverIsValueCreated()
@@ -41,12 +42,13 @@ namespace CsharpWebDriverLib
 
         //Для возможности повторного использования драйвера - инициализация хранилища драйверов eftlDriver <EventFiringWebDriver>
         private static ThreadLocal<EventFiringWebDriver> eftlDriver;// = new ThreadLocal<EventFiringWebDriver>(true);
-        private ThreadLocal<EventFiringWebDriver> eftlDriverCreate()
+        private static ThreadLocal<EventFiringWebDriver> eftlDriverCreate()
         {
             return new ThreadLocal<EventFiringWebDriver>(true);
         }
         private static void eftlDriverDispose()
         {
+            eftlDriver?.Value?.Dispose();
             eftlDriver?.Dispose();
         }
         protected static Boolean eftlDriverIsValueCreated()
@@ -86,8 +88,8 @@ namespace CsharpWebDriverLib
  
         public static void OneTimeSetUp()
         {
-            tlDriver = new ThreadLocal<IWebDriver>(true);
-            eftlDriver = new ThreadLocal<EventFiringWebDriver>(true);
+            tlDriver = tlDriverCreate();
+            eftlDriver = eftlDriverCreate();
         }
 
         public void SetUp();
