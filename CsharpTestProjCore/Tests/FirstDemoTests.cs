@@ -6,7 +6,7 @@ using CsharpTestProject1.TestApp;
 namespace CsharpTestProject1.Test
 {
     [TestFixture]
-    /*Parallelizable(ParallelScope.Children)*/
+    
     public class FirstDemoTests : TestBase
     {
         protected FirstDemoApp App
