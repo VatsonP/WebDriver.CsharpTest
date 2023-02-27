@@ -307,13 +307,16 @@ namespace CsharpWebDriverLib
         private InternetExplorerOptions getIEOptions()
         {
             InternetExplorerOptions ieOptions = new InternetExplorerOptions();
-            var capabilityName = "unexpectedAlertBehavior";
-            ieOptions.AddAdditionalCapability(capabilityName, "ignore");
+
+            // Для задания опции unexpectedAlertBehavior
+            ieOptions.AddAdditionalInternetExplorerOption("unexpectedAlertBehavior", "ignore");
+
             // Для задания опции UnhandledPromptBehavior
             ieOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Ignore;
-            //установка опций для игнорировния отличия масштаба от 100%
+
+            //установка опций для игнорирования отличия масштаба от 100%
             ieOptions.IgnoreZoomLevel = true;
-            //установка опций для игнорировния отличия настройки защищенного режима в разных зонах (не надежная работа)
+            //установка опций для игнорирования отличия настройки защищенного режима в разных зонах (не надежная работа)
             //ieOptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
             return ieOptions;
         }
@@ -388,14 +391,18 @@ namespace CsharpWebDriverLib
         private InternetExplorerOptions getRemoteIEOptions()
         {
             InternetExplorerOptions ieOptions = new InternetExplorerOptions();
+            /*
             var capabilityName = "platform";
             ieOptions.AddAdditionalCapability(capabilityName, new Platform(PlatformType.Vista)); ;
-
+            */
+            ieOptions.PlatformName = "Windows 7";
+            ieOptions.BrowserVersion = "109.0.5414.120";
+            
             // Для задания опции UnhandledPromptBehavior
             ieOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Ignore;
-            //установка опций для игнорировния отличия масштаба от 100%
+            //установка опций для игнорирования отличия масштаба от 100%
             ieOptions.IgnoreZoomLevel = true;
-            //установка опций для игнорировния отличия настройки защищенного режима в разных зонах (не надежная работа)
+            //установка опций для игнорирования отличия настройки защищенного режима в разных зонах (не надежная работа)
             //ieOptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
             return ieOptions;
         }
@@ -404,10 +411,24 @@ namespace CsharpWebDriverLib
         private ChromeOptions getRemoteChromeOptions()
         {
             ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.BrowserVersion = "85.0";
+            chromeOptions.PlatformName = "Windows 7";
+            chromeOptions.BrowserVersion = "109.0.5414.120";
+            // Для задания опции UnhandledPromptBehavior
+            chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.DismissAndNotify;
+            chromeOptions.AddArgument("--lang=ru");
 
             var runName = GetType().Assembly.GetName().Name;
             var timestamp = $"{DateTime.Now:yyyyMMdd.HHmm}";
+
+            chromeOptions.AddAdditionalChromeOption("name", runName);
+            chromeOptions.AddAdditionalChromeOption("videoName", $"{runName}.{timestamp}.mp4");
+            chromeOptions.AddAdditionalChromeOption("enableVNC", true);
+            chromeOptions.AddAdditionalChromeOption("enableVideo", true);
+            chromeOptions.AddAdditionalChromeOption("videoScreenSize", "1280x720");
+            chromeOptions.AddAdditionalChromeOption("enableLog", true);
+            chromeOptions.AddAdditionalChromeOption("screenResolution", "1920x1080x24");
+
+            /*
             chromeOptions.AddAdditionalCapability("name", runName, true);
             chromeOptions.AddAdditionalCapability("videoName", $"{runName}.{timestamp}.mp4", true);
             //chromeOptions.AddAdditionalCapability("logName", $"{runName}.{timestamp}.log", true);
@@ -416,13 +437,10 @@ namespace CsharpWebDriverLib
             chromeOptions.AddAdditionalCapability("videoScreenSize", "1280x720", true);
             //chromeOptions.AddAdditionalCapability("enableLog", true, true);
             chromeOptions.AddAdditionalCapability("screenResolution", "1920x1080x24", true);
-
-            // Для задания опции UnhandledPromptBehavior
-            chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.DismissAndNotify;
-            chromeOptions.AddArgument("--lang=ru");
+            */
             // Для задания опции расположения EXE
             //chromeOptions.BinaryLocation = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\Chrome.exe";
-            //--Задаем опции коммандной строки соотв. браузера
+            //--Задаем опции командной строки соотв. браузера
             //chromeOptions.AddArguments("start-fullscreen");
             //Use custom profile(also called user data directory)
             //chromeOptions.AddArguments("user-data-dir=c:\\Users\\AdminVadim\\AppData\\Local\\Google\\Chrome\\User Data");
@@ -438,6 +456,17 @@ namespace CsharpWebDriverLib
 
             var runName = GetType().Assembly.GetName().Name;
             var timestamp = $"{DateTime.Now:yyyyMMdd.HHmm}";
+
+            firefoxOptions.AddAdditionalFirefoxOption("name", runName);
+            firefoxOptions.AddAdditionalFirefoxOption("videoName", $"{runName}.{timestamp}.mp4");
+            firefoxOptions.AddAdditionalFirefoxOption("enableVNC", true);
+            firefoxOptions.AddAdditionalFirefoxOption("enableVideo", true);
+            firefoxOptions.AddAdditionalFirefoxOption("videoScreenSize", "1280x720");
+            //firefoxOptions.AddAdditionalFirefoxOption("logName", $"{runName}.{timestamp}.log");
+            firefoxOptions.AddAdditionalFirefoxOption("enableLog", true);
+            firefoxOptions.AddAdditionalFirefoxOption("screenResolution", "1920x1080x24");
+
+            /*
             firefoxOptions.AddAdditionalCapability("name", runName, true);
             firefoxOptions.AddAdditionalCapability("videoName", $"{runName}.{timestamp}.mp4", true);
             //firefoxOptions.AddAdditionalCapability("logName", $"{runName}.{timestamp}.log", true);
@@ -446,7 +475,7 @@ namespace CsharpWebDriverLib
             firefoxOptions.AddAdditionalCapability("videoScreenSize", "1280x720", true);
             //firefoxOptions.AddAdditionalCapability("enableLog", true, true);
             firefoxOptions.AddAdditionalCapability("screenResolution", "1920x1080x24", true);
-
+            */
             // Для задания опции acceptInsecureCerts
             var preferenceName = "acceptInsecureCerts";
             firefoxOptions.SetPreference(preferenceName, false);
