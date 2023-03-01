@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -8,72 +7,95 @@ using OpenQA.Selenium.Support.Events;
 
 namespace CsharpWebDriverLib
 {
-    public interface IDriverBase
+    public interface IDriverBaseCore
+    {
+        public void SetUp();
+
+        public void TearDown();
+
+        public void TakeScreenshot(String fileNameWithoutExt);
+    }
+
+
+    public interface IDriverBase : IDriverBaseCore
     {
         //Для возможности повторного использования драйвера - инициализация хранилища драйверов tlDrver <IWebDriver>
-        private static ThreadLocal<IWebDriver> tlDriver;// = new ThreadLocal<IWebDriver>(true);
+        private static ThreadLocal<IWebDriver> _tlDriver;// = new ThreadLocal<IWebDriver>(true);
         private static ThreadLocal<IWebDriver> tlDriverCreate()
         {
             return new ThreadLocal<IWebDriver>(true);
         }
         private static void tlDriverDispose()
         {
-            tlDriver?.Value?.Dispose();
-            tlDriver?.Dispose();
+            _tlDriver?.Value?.Dispose();
+            _tlDriver?.Dispose();
         }
         protected static Boolean tlDriverIsValueCreated()
         {
-            return tlDriver.IsValueCreated;
+            return _tlDriver.IsValueCreated;
         }
         protected static IWebDriver webDrv
         {
             get
             {
-                if (!tlDriver.IsValueCreated)
-                    throw new ArgumentNullException("Драйвер <IWebDriver> не проинициализирован!");
-                return (IWebDriver)tlDriver.Value;
+                if (!_tlDriver.IsValueCreated)
+                    throw new ArgumentNullException("Driver <IWebDriver> not initialized!");
+                return (IWebDriver)_tlDriver.Value;
             }
             set
             {
-                if (!tlDriver.IsValueCreated)
-                    tlDriver.Value = (IWebDriver)value;
+                if (!_tlDriver.IsValueCreated)
+                    _tlDriver.Value = (IWebDriver)value;
             }
         }
 
-        //Для возможности повторного использования драйвера - инициализация хранилища драйверов eftlDriver <EventFiringWebDriver>
-        private static ThreadLocal<EventFiringWebDriver> eftlDriver;// = new ThreadLocal<EventFiringWebDriver>(true);
+        //Для возможности повторного использования драйвера - инициализация хранилища драйверов _eftlDriver <EventFiringWebDriver>
+        private static ThreadLocal<EventFiringWebDriver> _eftlDriver;// = new ThreadLocal<EventFiringWebDriver>(true);
         private static ThreadLocal<EventFiringWebDriver> eftlDriverCreate()
         {
             return new ThreadLocal<EventFiringWebDriver>(true);
         }
         private static void eftlDriverDispose()
         {
-            eftlDriver?.Value?.Dispose();
-            eftlDriver?.Dispose();
+            _eftlDriver?.Value?.Dispose();
+            _eftlDriver?.Dispose();
         }
         protected static Boolean eftlDriverIsValueCreated()
         {
-            return eftlDriver.IsValueCreated;
+            return _eftlDriver.IsValueCreated;
         }
 
         public static EventFiringWebDriver driver
         {
             get
             {
-                if (!eftlDriver.IsValueCreated)
-                    throw new ArgumentNullException("Драйвер <EventFiringWebDriver> не проинициализирован!");
-                return eftlDriver.Value;
+                if (!_eftlDriver.IsValueCreated)
+                    throw new ArgumentNullException("Driver <EventFiringWebDriver> not initialized!");
+                return _eftlDriver.Value;
             }
             set
             {
-                if (!eftlDriver.IsValueCreated)
-                    eftlDriver.Value = value;
+                if (!_eftlDriver.IsValueCreated)
+                    _eftlDriver.Value = value;
             }
         }
+
         private static void driverQuit(IWebDriver d)
         {
             d.Quit();
             d.Dispose();
+        }
+
+        private static void eventFiringCreate()
+        {
+            _tlDriver = tlDriverCreate();
+            _eftlDriver = eftlDriverCreate();
+        }
+
+        private static void eventFiringDispose()
+        {
+            tlDriverDispose();
+            eftlDriverDispose();
         }
 
         public static WebDriverWait wait
@@ -88,27 +110,18 @@ namespace CsharpWebDriverLib
  
         public static void OneTimeSetUp()
         {
-            tlDriver = tlDriverCreate();
-            eftlDriver = eftlDriverCreate();
+            eventFiringCreate();
         }
-
-        public void SetUp();
-
-        public void TearDown();
 
         public static void OneTimeTearDown()
         {
             // Функционал теоретически может быть (?) перенесен в Hook AppDomain events (domain_ProcessExit) 
             // для выполнения только один раз в конце всех тестов
             driverQuit(driver);
-
-            tlDriverDispose();
-            eftlDriverDispose();
+            eventFiringDispose();
         }
 
         // ---------------------------------------------------------------------------------------------------------------------------
-
-        public void TakeScreenshot(String fileNameWithoutExt);
 
         public static void ClickElement(IWebElement element) => element.ClickElement(webDriverType);
 
@@ -116,12 +129,6 @@ namespace CsharpWebDriverLib
 
         public static string GetFullDateStrForBrowserDateControl(int yyyy, int mm, int dd) =>
             driver.GetFullDateStrForBrowserDateControl(yyyy, mm, dd, webDriverType);
-
-
-        public static IDriverBase CreateDriverBase(DriverBaseParams driverBaseParams)
-        {
-            return new DriverBase(driverBaseParams);
-        }
     }
 
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using CsharpWebDriverLib;
 
 
@@ -16,7 +15,7 @@ namespace CsharpTestProject1.Test
         }
 
         public TestBase(DriverBaseParams driverBaseParams) 
-            => DrvBase = IDriverBase.CreateDriverBase(driverBaseParams);
+            => DrvBase = DriverBaseFactory.CreateDriverBase(driverBaseParams);
 
         public static DriverBaseParams CreateDriverBaseParams()
             => DriverBaseParams.CreateDriverBaseParams();
