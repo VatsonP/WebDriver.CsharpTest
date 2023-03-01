@@ -1,11 +1,11 @@
 using System;
 using OpenQA.Selenium;
 using System.Collections.Generic;
-using CsharpTestProject1.Pages;
-using CsharpWebDriverLib;
+using CsharpTestProjCore.Pages;
+using CsharpWebDriverLib.DriverBase;
 
 
-namespace CsharpTestProject1.TestApp
+namespace CsharpTestProjCore.TestApp
 {
 
     public class UT2LeftMenuClickApp

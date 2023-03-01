@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
-using CsharpWebDriverLib;
+using CsharpWebDriverLib.DriverBase;
 
 
-namespace CsharpTestProject1.Test
+namespace CsharpTestProjCore.Test
 {
 
     [TestFixture]

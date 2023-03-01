@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using OpenQA.Selenium;
-using CsharpWebDriverLib;
-using CsharpTestProject1.Pages;
+using CsharpWebDriverLib.DriverBase;
+using CsharpTestProjCore.Pages;
 
 
-namespace CsharpTestProject1.TestApp
+namespace CsharpTestProjCore.TestApp
 {
 
 	public class FirstDemoApp

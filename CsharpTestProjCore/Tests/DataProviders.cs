@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections;
-using CsharpWebDriverLib;
-using CsharpTestProject1.Model;
+using CsharpWebDriverLib.DriverBase;
+using CsharpTestProjCore.Model;
 
 
-namespace CsharpTestProject1.Test
+namespace CsharpTestProjCore.Test
 {
     internal class DataProviders
     {

@@ -1,9 +1,10 @@
 ﻿using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using CsharpWebDriverLib;
+using CsharpWebDriverLib.DriverBase;
 
-namespace CsharpTestProject1.Pages
+
+namespace CsharpTestProjCore.Pages
 {
     public record PageParams
     {

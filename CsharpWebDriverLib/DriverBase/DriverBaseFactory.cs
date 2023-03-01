@@ -1,6 +1,6 @@
 ﻿
 
-namespace CsharpWebDriverLib
+namespace CsharpWebDriverLib.DriverBase
 {
     public abstract class DriverBaseFactory
     {

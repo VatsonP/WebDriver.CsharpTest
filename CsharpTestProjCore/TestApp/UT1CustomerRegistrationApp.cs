@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using CsharpWebDriverLib;
-using CsharpTestProject1.Pages;
-using CsharpTestProject1.Model;
+using CsharpWebDriverLib.DriverBase;
+using CsharpTestProjCore.Pages;
+using CsharpTestProjCore.Model;
 
 
-namespace CsharpTestProject1.TestApp
+namespace CsharpTestProjCore.TestApp
 {
 
     public class UT1CustomerRegistrationApp 

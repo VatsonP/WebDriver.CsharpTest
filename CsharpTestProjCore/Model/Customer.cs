@@ -1,4 +1,4 @@
-﻿namespace CsharpTestProject1.Model
+﻿namespace CsharpTestProjCore.Model
 {
     public class Customer
     {

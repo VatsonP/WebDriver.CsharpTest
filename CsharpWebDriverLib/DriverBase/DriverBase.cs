@@ -12,7 +12,7 @@ using OpenQA.Selenium.Support.Events;
 using NUnit.Framework.Interfaces;
 
 
-namespace CsharpWebDriverLib
+namespace CsharpWebDriverLib.DriverBase
 {
     internal class DriverBase : IDriverBase
     {

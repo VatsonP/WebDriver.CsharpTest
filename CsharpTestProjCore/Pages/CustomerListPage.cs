@@ -3,7 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using OpenQA.Selenium;
 
-namespace CsharpTestProject1.Pages
+namespace CsharpTestProjCore.Pages
 {
     internal class CustomerListPage : Page
     {

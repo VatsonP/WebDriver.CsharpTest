@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using NUnit.Framework;
-using CsharpTestProject1.Model;
-using CsharpTestProject1.TestApp;
+using CsharpTestProjCore.Model;
+using CsharpTestProjCore.TestApp;
 
 
-namespace CsharpTestProject1.Test
+namespace CsharpTestProjCore.Test
 {
 
     [TestFixture]

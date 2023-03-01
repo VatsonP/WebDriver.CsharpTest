@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace CsharpWebDriverLib
+namespace CsharpWebDriverLib.DriverBase
 {
     internal class LogWriter
     {

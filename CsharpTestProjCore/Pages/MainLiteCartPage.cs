@@ -2,10 +2,10 @@ using System;
 using OpenQA.Selenium;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
-using CsharpWebDriverLib;
+using CsharpWebDriverLib.DriverBase;
 
 
-namespace CsharpTestProject1.Pages
+namespace CsharpTestProjCore.Pages
 {
 
     internal class MainLiteCartPage : Page 

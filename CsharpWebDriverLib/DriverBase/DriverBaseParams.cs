@@ -1,7 +1,8 @@
 ﻿
 using System;
 
-namespace CsharpWebDriverLib
+
+namespace CsharpWebDriverLib.DriverBase
 {
     public record DriverBaseParams
     {

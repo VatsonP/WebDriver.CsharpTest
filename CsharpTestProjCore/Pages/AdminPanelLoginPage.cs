@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace CsharpTestProject1.Pages
+namespace CsharpTestProjCore.Pages
 {
     internal class AdminPanelLoginPage : Page
     {

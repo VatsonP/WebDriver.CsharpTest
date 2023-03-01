@@ -5,7 +5,7 @@ using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Support.Events;
 
 
-namespace CsharpWebDriverLib
+namespace CsharpWebDriverLib.DriverBase
 {
     public interface IDriverBaseCore
     {

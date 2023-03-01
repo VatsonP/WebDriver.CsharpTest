@@ -1,13 +1,12 @@
 using System;
 using NUnit.Framework;
-using System.Collections.Generic;
 using System.Globalization;
 using OpenQA.Selenium;
-using CsharpTestProject1.Pages;
-using CsharpWebDriverLib;
+using CsharpTestProjCore.Pages;
+using CsharpWebDriverLib.DriverBase;
 
 
-namespace CsharpTestProject1.TestApp
+namespace CsharpTestProjCore.TestApp
 {
 
 	public class UT8CheckProductApp

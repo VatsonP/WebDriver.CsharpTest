@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using OpenQA.Selenium;
 using NUnit.Framework;
-using CsharpTestProject1.Pages;
-using CsharpWebDriverLib;
+using CsharpTestProjCore.Pages;
+using CsharpWebDriverLib.DriverBase;
 
 
-namespace CsharpTestProject1.TestApp
+namespace CsharpTestProjCore.TestApp
 {
 
 	public class UT5CheckCountriesApp
