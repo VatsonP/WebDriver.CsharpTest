@@ -347,7 +347,7 @@ namespace CsharpWebDriverLib
             firefoxOptions.SetPreference(capabilityName, false);
             // Для задания опции расположения EXE
             firefoxOptions.BrowserExecutableLocation = "C:\\Program Files\\Mozilla Firefox\\firefox.exe";
-            //--Задаем опции коммандной строки соотв. браузера
+            //--Задаем опции командной строки соотв. браузера
             firefoxOptions.AddArguments("-private-window");
             //установка профиля пользователя для запуска браузера (копирует указанный профиль во временный для работы)
             //FirefoxProfile firefoxProfile = new FirefoxProfile("C:\\Users\\AdminVadim\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\ltebh6bi.default");
@@ -391,10 +391,7 @@ namespace CsharpWebDriverLib
         private InternetExplorerOptions getRemoteIEOptions()
         {
             InternetExplorerOptions ieOptions = new InternetExplorerOptions();
-            /*
-            var capabilityName = "platform";
-            ieOptions.AddAdditionalCapability(capabilityName, new Platform(PlatformType.Vista)); ;
-            */
+
             ieOptions.PlatformName = "Windows 7";
             ieOptions.BrowserVersion = "109.0.5414.120";
             
@@ -428,16 +425,6 @@ namespace CsharpWebDriverLib
             chromeOptions.AddAdditionalChromeOption("enableLog", true);
             chromeOptions.AddAdditionalChromeOption("screenResolution", "1920x1080x24");
 
-            /*
-            chromeOptions.AddAdditionalCapability("name", runName, true);
-            chromeOptions.AddAdditionalCapability("videoName", $"{runName}.{timestamp}.mp4", true);
-            //chromeOptions.AddAdditionalCapability("logName", $"{runName}.{timestamp}.log", true);
-            chromeOptions.AddAdditionalCapability("enableVNC", true, true);
-            chromeOptions.AddAdditionalCapability("enableVideo", true, true);
-            chromeOptions.AddAdditionalCapability("videoScreenSize", "1280x720", true);
-            //chromeOptions.AddAdditionalCapability("enableLog", true, true);
-            chromeOptions.AddAdditionalCapability("screenResolution", "1920x1080x24", true);
-            */
             // Для задания опции расположения EXE
             //chromeOptions.BinaryLocation = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\Chrome.exe";
             //--Задаем опции командной строки соотв. браузера
@@ -466,22 +453,12 @@ namespace CsharpWebDriverLib
             firefoxOptions.AddAdditionalFirefoxOption("enableLog", true);
             firefoxOptions.AddAdditionalFirefoxOption("screenResolution", "1920x1080x24");
 
-            /*
-            firefoxOptions.AddAdditionalCapability("name", runName, true);
-            firefoxOptions.AddAdditionalCapability("videoName", $"{runName}.{timestamp}.mp4", true);
-            //firefoxOptions.AddAdditionalCapability("logName", $"{runName}.{timestamp}.log", true);
-            firefoxOptions.AddAdditionalCapability("enableVNC", true, true);
-            firefoxOptions.AddAdditionalCapability("enableVideo", true, true);
-            firefoxOptions.AddAdditionalCapability("videoScreenSize", "1280x720", true);
-            //firefoxOptions.AddAdditionalCapability("enableLog", true, true);
-            firefoxOptions.AddAdditionalCapability("screenResolution", "1920x1080x24", true);
-            */
             // Для задания опции acceptInsecureCerts
             var preferenceName = "acceptInsecureCerts";
             firefoxOptions.SetPreference(preferenceName, false);
             // Для задания опции расположения EXE
             //firefoxOptions.BrowserExecutableLocation = "C:\\Program Files\\Mozilla Firefox\\firefox.exe";            
-            //--Задаем опции коммандной строки соотв. браузера
+            //--Задаем опции командной строки соотв. браузера
             //firefoxOptions.AddArguments("-private-window");
             //установка профиля пользователя для запуска браузера (копирует указанный профиль во временный для работы)
             //FirefoxProfile firefoxProfile = new FirefoxProfile("C:\\Users\\AdminVadim\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\ltebh6bi.default");
