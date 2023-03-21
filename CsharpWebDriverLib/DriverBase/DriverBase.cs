@@ -31,10 +31,10 @@ namespace CsharpWebDriverLib.DriverBase
         protected string CurrentTestName { get; set; }
         protected string CurrentTestFolder { get; set; }
         protected DirectoryInfo BaseLogFolder { get; set; }
-                
+
         // значение времени (в сек) общих неявных ожиданий, для явных ожиданий, для максимального времени неявного ожидания
         protected DriverBaseParams driverBaseParams { get; set; }
-         
+
         protected enum TestRunType { Local, Remote };
 
         protected static TestRunType testRunType { get; set; }
@@ -317,7 +317,7 @@ namespace CsharpWebDriverLib.DriverBase
             //установка опций для игнорирования отличия масштаба от 100%
             ieOptions.IgnoreZoomLevel = true;
             //установка опций для игнорирования отличия настройки защищенного режима в разных зонах (не надежная работа)
-            //ieOptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+            ieOptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
             return ieOptions;
         }
 
@@ -330,10 +330,11 @@ namespace CsharpWebDriverLib.DriverBase
             chromeOptions.AddArgument("--lang=ru");
             // Для задания опции расположения EXE
             chromeOptions.BinaryLocation = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\Chrome.exe";
-            //--Задаем опции коммандной строки соотв. браузера
+            //--Задаем опции командной строки соотв. браузера
             //chromeOptions.AddArguments("start-fullscreen");
             //Use custom profile(also called user data directory)
-            chromeOptions.AddArguments("user-data-dir=c:\\Users\\AdminVadim\\AppData\\Local\\Google\\Chrome\\User Data");
+            chromeOptions.AddArguments("--profile-directory=Default");
+            chromeOptions.AddArguments("--user-data-dir=C:/Temp/ChromeProfile");
 
             return chromeOptions;
         }
@@ -350,8 +351,13 @@ namespace CsharpWebDriverLib.DriverBase
             //--Задаем опции командной строки соотв. браузера
             firefoxOptions.AddArguments("-private-window");
             //установка профиля пользователя для запуска браузера (копирует указанный профиль во временный для работы)
-            //FirefoxProfile firefoxProfile = new FirefoxProfile("C:\\Users\\AdminVadim\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\ltebh6bi.default");
-            //firefoxOptions.Profile = firefoxProfile;
+            string userProfileFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            /* string firefoxProfileFolderPath = Path.Combine(userProfileFolderPath, @"AppData\Roaming\Mozilla\Firefox\Profiles"); */
+            string firefoxProfileFolderPath = Path.Combine(userProfileFolderPath, @"AppData\Local\Mozilla\Firefox\Profiles"); 
+            string[] profileDirectories = Directory.GetDirectories(firefoxProfileFolderPath, "*.default");
+            string fullProfilePath = profileDirectories[0];
+            FirefoxProfile firefoxProfile = new FirefoxProfile(fullProfilePath);
+
             return firefoxOptions;
         }
 
@@ -394,7 +400,7 @@ namespace CsharpWebDriverLib.DriverBase
 
             ieOptions.PlatformName = "Windows 7";
             ieOptions.BrowserVersion = "109.0.5414.120";
-            
+
             // Для задания опции UnhandledPromptBehavior
             ieOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Ignore;
             //установка опций для игнорирования отличия масштаба от 100%
@@ -430,7 +436,8 @@ namespace CsharpWebDriverLib.DriverBase
             //--Задаем опции командной строки соотв. браузера
             //chromeOptions.AddArguments("start-fullscreen");
             //Use custom profile(also called user data directory)
-            //chromeOptions.AddArguments("user-data-dir=c:\\Users\\AdminVadim\\AppData\\Local\\Google\\Chrome\\User Data");
+            //chromeOptions.AddArguments("--profile-directory=Default");
+            //chromeOptions.AddArguments("--user-data-dir=C:/Temp/ChromeProfile");
 
             return chromeOptions;
         }
