@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30717.126
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsharpWebDriverLib", "CsharpWebDriverLib\CsharpWebDriverLib.csproj", "{C29AD1AF-4179-41BE-823C-800D04112C4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpTestProjCore", "CsharpTestProjCore\CsharpTestProjCore.csproj", "{D0BC9F9E-2249-4FB2-AFA8-6155673807BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsharpTestProjCore", "CsharpTestProjCore\CsharpTestProjCore.csproj", "{D0BC9F9E-2249-4FB2-AFA8-6155673807BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
