@@ -43,7 +43,7 @@ namespace CsharpWebDriverLib.DriverBase
         protected ICapabilities wdCapabilities { get; set; }
 
         //must be initilize after the WebDriver create
-        protected ILogs wdLogs { get; set; }
+        private ILogs wdLogs { get; set; }
 
 
         /*
@@ -86,18 +86,17 @@ namespace CsharpWebDriverLib.DriverBase
             Console.WriteLine(msg + " " + eventName);
             saveLogOnAppEnd(currentTestName: "DomainUnload", eventName: eventName, eventMessage: msg);
         }
-        */
 
         private void saveLogOnAppEnd(string currentTestName, string eventName, string eventMessage)
         {
             // for write log file with Browser logging
             DirectoryInfo baseLogFolder = createBaseLogDir(TestContext.CurrentContext.TestDirectory);
 
-            LogWriter lw = new LogWriter(baseLogFolder, currentTestName);
+            LogWriter lw = new LogWriter(wdLogs, baseLogFolder, currentTestName);
 
             lw.LogWrite("eventName", eventMessage);
         }
-
+        */
 
         private void initWebDriverCapabilities(IWebDriver webDriver)
         {
@@ -117,7 +116,7 @@ namespace CsharpWebDriverLib.DriverBase
             Console.WriteLine("Starting test: " + CurrentTestName);
 
             BaseLogFolder = createBaseLogDir(CurrentTestFolder);
-            logWriter = new LogWriter(BaseLogFolder, CurrentTestName);
+            logWriter = new LogWriter(wdLogs, BaseLogFolder, CurrentTestName);
 
             // Для установки общих неявных ожиданий
             webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(driverBaseParams.drvImplWaitTime);
@@ -212,7 +211,19 @@ namespace CsharpWebDriverLib.DriverBase
         private void saveBrowserLog(TestRunType testRunType, WebDriverExtensions.WebDriverType webDriverType,
                                   IWebDriver webDrv, ICapabilities capabilities, string currentTestName)
         {
-            if (webDriverType == WebDriverExtensions.WebDriverType.Chrome | webDriverType == WebDriverExtensions.WebDriverType.Firefox)
+            switch (webDriverType)
+            {
+                case WebDriverExtensions.WebDriverType.Chrome:
+                    browserLog();
+                    break;
+                case WebDriverExtensions.WebDriverType.Firefox:
+                    browserLog();
+                    break;
+                default:
+                    break;
+            }
+
+            void browserLog()
             {
                 Console.WriteLine("testRunType = " + testRunType.ToString());
                 Console.WriteLine("driverType  = " + webDriverType.ToString());
@@ -220,7 +231,7 @@ namespace CsharpWebDriverLib.DriverBase
                 // for write log file with Browser logging
                 DirectoryInfo baseLogFolder = createBaseLogDir(TestContext.CurrentContext.TestDirectory);
 
-                LogWriter lw = new LogWriter(baseLogFolder, currentTestName);
+                LogWriter lw = new LogWriter(wdLogs, baseLogFolder, currentTestName);
                 lw.LogWrite("currentTestName", currentTestName);
 
                 lw.LogWrite("Capabilities", capabilities.ToString());
@@ -228,41 +239,10 @@ namespace CsharpWebDriverLib.DriverBase
                 lw.LogWrite("testRunType", testRunType.ToString());
                 lw.LogWrite("driverType", webDriverType.ToString());
 
-                saveCurLogs(LogType.Browser, lw);
+                lw.saveCurLogs(LogType.Browser);
 
                 lw.FinalLogWrite();
             }
-        }
-
-        private void saveCurLogs(string logType, LogWriter lw)
-        {
-            try
-            {
-                if (wdLogs != null)
-                {
-                    var browserLogs = wdLogs.GetLog(logType);
-                    if (browserLogs.Count > 0)
-                    {
-                        foreach (var log in browserLogs)
-                        {
-                            lw.LogWrite(logType, log.Message);
-                        }
-                    }
-                }
-            }
-            catch
-            {
-                //There are no log types present
-            }
-        }
-
-        private void saveAllCurLogs(LogWriter lw)
-        {
-            saveCurLogs(LogType.Server, lw);
-            saveCurLogs(LogType.Browser, lw);
-            saveCurLogs(LogType.Client, lw);
-            saveCurLogs(LogType.Driver, lw);
-            saveCurLogs(LogType.Profiler, lw);
         }
 
         private DirectoryInfo createBaseLogDir(string currentTestFolder, string newSubFolder = "Log")

@@ -1,17 +1,20 @@
 ﻿using System;
 using System.IO;
+using OpenQA.Selenium;
 
 namespace CsharpWebDriverLib.DriverBase
 {
     internal class LogWriter
     {
+        private ILogs DriverLogs { get; set; }
         private DirectoryInfo BaseLogFolder { get; set; }
         private DirectoryInfo CurLogFolder  { get; set; }
         private string CurrentTestName { get; set; }
         private string CurrentFileName { get; set; }
 
-        private void Constructor(DirectoryInfo baseLogFolder, string currentTestName, string currentFileName)
+        private void Constructor(ILogs driverLogs, DirectoryInfo baseLogFolder, string currentTestName, string currentFileName)
         {
+            DriverLogs = driverLogs;
             BaseLogFolder = baseLogFolder;
             CurrentTestName = currentTestName;
             CurrentFileName = currentFileName;
@@ -19,13 +22,13 @@ namespace CsharpWebDriverLib.DriverBase
             CurLogFolder = Directory.CreateDirectory(Path.Combine(BaseLogFolder.FullName, CurrentTestName));
         }
 
-        internal LogWriter(DirectoryInfo curLogFolder, string currentTestName)
+        internal LogWriter(ILogs driverLogs, DirectoryInfo curLogFolder, string currentTestName)
         {
-            Constructor(curLogFolder, currentTestName, currentTestName);
+            Constructor(driverLogs, curLogFolder, currentTestName, currentTestName);
         }
-        internal LogWriter(DirectoryInfo curLogFolder, string currentTestName, string currentFileName)
+        internal LogWriter(ILogs driverLogs, DirectoryInfo curLogFolder, string currentTestName, string currentFileName)
         {
-            Constructor(curLogFolder, currentTestName, currentFileName);
+            Constructor(driverLogs, curLogFolder, currentTestName, currentFileName);
         }
 
         internal void LogWrite(string eventName, string logMessage)
@@ -66,6 +69,37 @@ namespace CsharpWebDriverLib.DriverBase
         {
             LogWrite("================================================",
                      "================================================");
+        }
+
+        internal void saveCurLogs(string logType)
+        {
+            try
+            {
+                if (DriverLogs != null)
+                {
+                    var browserLogs = DriverLogs.GetLog(logType);
+                    if (browserLogs.Count > 0)
+                    {
+                        foreach (var log in browserLogs)
+                        {
+                            LogWrite(logType, log.Message);
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                //There are no log types present
+            }
+        }
+
+        internal void saveAllCurLogs()
+        {
+            saveCurLogs(LogType.Server);
+            saveCurLogs(LogType.Browser);
+            saveCurLogs(LogType.Client);
+            saveCurLogs(LogType.Driver);
+            saveCurLogs(LogType.Profiler);
         }
     }
 
