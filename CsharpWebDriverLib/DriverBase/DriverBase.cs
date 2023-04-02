@@ -10,6 +10,7 @@ using System.Reflection;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Support.Events;
 using NUnit.Framework.Interfaces;
+using OpenQA.Selenium.Interactions;
 
 
 namespace CsharpWebDriverLib.DriverBase
@@ -309,7 +310,7 @@ namespace CsharpWebDriverLib.DriverBase
             chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.DismissAndNotify;
             chromeOptions.AddArgument("--lang=ru");
             // Для задания опции расположения EXE
-            chromeOptions.BinaryLocation = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\Chrome.exe";
+            chromeOptions.BinaryLocation = getChromePathStr();
             //--Задаем опции командной строки соотв. браузера
             //chromeOptions.AddArguments("start-fullscreen");
             //Use custom profile(also called user data directory)
@@ -319,6 +320,27 @@ namespace CsharpWebDriverLib.DriverBase
             return chromeOptions;
         }
 
+        private string getChromePathStr()
+        {
+            const string path_usr = @"%HOMEPATH%\Local Settings\Application Data\Google\Chrome\Application\chrome.exe";
+            const string path_x86 = @"C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe";
+            const string path_x64 = @"C:\Program Files\Google\Chrome\Application\Chrome.exe";
+
+            if (File.Exists(path_usr))
+            {
+                return path_usr;
+            }
+            else if(File.Exists(path_x86))
+            {
+                return path_x86;
+            }
+            else if (File.Exists(path_x64))
+            {
+                return path_x64;
+            }
+            else
+                throw new FileNotFoundException("Chrome.exe file was not found.");
+        }
 
         private FirefoxOptions getFirefoxOptions()
         {
@@ -327,9 +349,10 @@ namespace CsharpWebDriverLib.DriverBase
             // Для задания опции acceptInsecureCerts
             firefoxOptions.SetPreference(capabilityName, false);
             // Для задания опции расположения EXE
-            firefoxOptions.BrowserExecutableLocation = "C:\\Program Files\\Mozilla Firefox\\firefox.exe";
+            firefoxOptions.BrowserExecutableLocation = getFirefoxPathStr();
             //--Задаем опции командной строки соотв. браузера
             firefoxOptions.AddArguments("-private-window");
+
             //установка профиля пользователя для запуска браузера (копирует указанный профиль во временный для работы)
             string userProfileFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             /* string firefoxProfileFolderPath = Path.Combine(userProfileFolderPath, @"AppData\Roaming\Mozilla\Firefox\Profiles"); */
@@ -337,8 +360,25 @@ namespace CsharpWebDriverLib.DriverBase
             string[] profileDirectories = Directory.GetDirectories(firefoxProfileFolderPath, "*.default");
             string fullProfilePath = profileDirectories[0];
             FirefoxProfile firefoxProfile = new FirefoxProfile(fullProfilePath);
+            firefoxOptions.Profile = firefoxProfile;
 
             return firefoxOptions;
+        }
+        private string getFirefoxPathStr()
+        {
+            const string path_x86 = @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
+            const string path_x64 = @"C:\Program Files\Mozilla Firefox\firefox.exe";
+
+            if (File.Exists(path_x86))
+            {
+                return path_x86;
+            }
+            else if (File.Exists(path_x64))
+            {
+                return path_x64;
+            }
+            else
+                throw new FileNotFoundException("firefox.exe file was not found.");
         }
 
         private IWebDriver newRemoteWebDriverSetOptions(Uri remoteAddress, WebDriverExtensions.WebDriverType driverType)
@@ -412,7 +452,7 @@ namespace CsharpWebDriverLib.DriverBase
             chromeOptions.AddAdditionalChromeOption("screenResolution", "1920x1080x24");
 
             // Для задания опции расположения EXE
-            //chromeOptions.BinaryLocation = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\Chrome.exe";
+            //chromeOptions.BinaryLocation = getChromePathStr();
             //--Задаем опции командной строки соотв. браузера
             //chromeOptions.AddArguments("start-fullscreen");
             //Use custom profile(also called user data directory)
@@ -444,12 +484,17 @@ namespace CsharpWebDriverLib.DriverBase
             var preferenceName = "acceptInsecureCerts";
             firefoxOptions.SetPreference(preferenceName, false);
             // Для задания опции расположения EXE
-            //firefoxOptions.BrowserExecutableLocation = "C:\\Program Files\\Mozilla Firefox\\firefox.exe";            
+            //firefoxOptions.BrowserExecutableLocation = getFirefoxPathStr();            
             //--Задаем опции командной строки соотв. браузера
             //firefoxOptions.AddArguments("-private-window");
             //установка профиля пользователя для запуска браузера (копирует указанный профиль во временный для работы)
-            //FirefoxProfile firefoxProfile = new FirefoxProfile("C:\\Users\\AdminVadim\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\ltebh6bi.default");
+            //string userProfileFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            //string firefoxProfileFolderPath = Path.Combine(userProfileFolderPath, @"AppData\Local\Mozilla\Firefox\Profiles");
+            //string[] profileDirectories = Directory.GetDirectories(firefoxProfileFolderPath, "*.default");
+            //string fullProfilePath = profileDirectories[0];
+            //FirefoxProfile firefoxProfile = new FirefoxProfile(fullProfilePath);
             //firefoxOptions.Profile = firefoxProfile;
+
             return firefoxOptions;
         }
 
