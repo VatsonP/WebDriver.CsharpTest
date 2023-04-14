@@ -147,6 +147,7 @@ namespace CsharpWebDriverLib.DriverBase
         public void SetUp()
         {
             testRunType = TestRunType.Local;
+            // SET initial WebDriverType
             IDriverBase.webDriverType = WebDriverExtensions.WebDriverType.Chrome;
 
             IDriverBase.CurrentIpStr = defineCurrentIpStr(testRunType);
@@ -261,13 +262,12 @@ namespace CsharpWebDriverLib.DriverBase
             switch (driverType)
             {
                 case WebDriverExtensions.WebDriverType.IE:
-                    webDriver = new InternetExplorerDriver(getIEOptions());
+                    webDriver = new InternetExplorerDriver(internetExplorerDriverServerDirectory: "C:\\Tools", getIEOptions());
                     break;
 
                 case WebDriverExtensions.WebDriverType.Chrome:
                     webDriver = new ChromeDriver(chromeDriverDirectory: "C:\\Tools", options: getChromeOptions());
                     //webDriver.Navigate().GoToUrl("chrome://settings/clearBrowserData");
-                    //webDriver.FindElmAndSendKeys(By.XPath("//settings-ui"), Keys.Return);
                     break;
 
                 case WebDriverExtensions.WebDriverType.Firefox:
