@@ -204,47 +204,31 @@ namespace CsharpWebDriverLib.DriverBase
             Console.WriteLine(testMessage);
             Console.WriteLine("Finish test: " + CurrentTestName);
 
-            saveBrowserLog(testRunType, IDriverBase.webDriverType, IDriverBase.driver, wdCapabilities, CurrentTestName);
+            saveBrowserLog();
         }
 
 
         // ---------------------------------------------------------------------------------------------------------------------------
 
-        private void saveBrowserLog(TestRunType testRunType, WebDriverExtensions.WebDriverType webDriverType,
-                                  IWebDriver webDrv, ICapabilities capabilities, string currentTestName)
+        private void saveBrowserLog()
         {
-            switch (webDriverType)
-            {
-                case WebDriverExtensions.WebDriverType.Chrome:
-                    browserLog();
-                    break;
-                case WebDriverExtensions.WebDriverType.Firefox:
-                    browserLog();
-                    break;
-                default:
-                    break;
-            }
+            Console.WriteLine("testRunType = " + testRunType.ToString());
+            Console.WriteLine("driverType  = " + IDriverBase.webDriverType.ToString());
 
-            void browserLog()
-            {
-                Console.WriteLine("testRunType = " + testRunType.ToString());
-                Console.WriteLine("driverType  = " + webDriverType.ToString());
+            // for write log file with Browser logging
+            DirectoryInfo baseLogFolder = createBaseLogDir(TestContext.CurrentContext.TestDirectory);
 
-                // for write log file with Browser logging
-                DirectoryInfo baseLogFolder = createBaseLogDir(TestContext.CurrentContext.TestDirectory);
+            LogWriter lw = new LogWriter(wdLogs, baseLogFolder, CurrentTestName);
+            lw.LogWrite("currentTestName", CurrentTestName);
 
-                LogWriter lw = new LogWriter(wdLogs, baseLogFolder, currentTestName);
-                lw.LogWrite("currentTestName", currentTestName);
+            lw.LogWrite("Capabilities", wdCapabilities.ToString());
 
-                lw.LogWrite("Capabilities", capabilities.ToString());
+            lw.LogWrite("testRunType", testRunType.ToString());
+            lw.LogWrite("driverType", IDriverBase.webDriverType.ToString());
 
-                lw.LogWrite("testRunType", testRunType.ToString());
-                lw.LogWrite("driverType", webDriverType.ToString());
+            lw.saveCurLogs(LogType.Browser);
 
-                lw.saveCurLogs(LogType.Browser);
-
-                lw.FinalLogWrite();
-            }
+            lw.FinalLogWrite();
         }
 
         private DirectoryInfo createBaseLogDir(string currentTestFolder, string newSubFolder = "Log")
