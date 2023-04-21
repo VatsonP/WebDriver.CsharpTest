@@ -16,7 +16,7 @@ namespace CsharpWebDriverLib.DriverBase
         // Remote WinServer2019 with Docker "192.168.0.91"
         private const string remoteIpStr_WinServer2019 = "192.168.0.91";
         // Remote Ubuntu 20.4   with Docker "192.168.203.128"
-        private const string remoteIpStr_Ubuntu_20_4 = "192.168.203.128";
+        private const string remoteIpStr_Ubuntu_20_4 = "192.168.0.96";
         // Local Windows Ip  
         private const string localIpStr_Win = "192.168.0.101";
 
@@ -24,6 +24,9 @@ namespace CsharpWebDriverLib.DriverBase
         public string localIpStr { get; init; }     // Local Host Ip 
         public string remoteIpStr { get; init; }   // Remote Host Ip 
 
+        // SETUP value for: TestRunType and WebDriverType
+        public TestRunType getTestRunType { get => TestRunType.Local; }
+        public WebDriverExtensions.WebDriverType getWebDriverType { get => WebDriverExtensions.WebDriverType.Firefox; }
 
         private DriverBaseParams(int drvImplWaitTime,
                                  int drvExplWaitTime,

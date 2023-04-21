@@ -7,6 +7,8 @@ using OpenQA.Selenium.Support.Events;
 
 namespace CsharpWebDriverLib.DriverBase
 {
+    public enum TestRunType { Local, Remote };
+
     public interface IDriverBaseCore
     {
         public void SetUp();
@@ -15,7 +17,6 @@ namespace CsharpWebDriverLib.DriverBase
 
         public void TakeScreenshot(String fileNameWithoutExt);
     }
-
 
     public interface IDriverBase : IDriverBaseCore
     {
@@ -105,6 +106,9 @@ namespace CsharpWebDriverLib.DriverBase
         }
 
         public static string CurrentIpStr { get; set; }
+
+        public static TestRunType testRunType { get; set; }
+
         public static WebDriverExtensions.WebDriverType webDriverType { get; set; }
 
  

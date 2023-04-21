@@ -11,7 +11,7 @@ using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Support.Events;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium.Interactions;
-
+using System.Collections.Generic;
 
 namespace CsharpWebDriverLib.DriverBase
 {
@@ -35,10 +35,6 @@ namespace CsharpWebDriverLib.DriverBase
 
         // значение времени (в сек) общих неявных ожиданий, для явных ожиданий, для максимального времени неявного ожидания
         protected DriverBaseParams driverBaseParams { get; set; }
-
-        protected enum TestRunType { Local, Remote };
-
-        protected static TestRunType testRunType { get; set; }
 
         //must be initilize after the WebDriver create
         protected ICapabilities wdCapabilities { get; set; }
@@ -128,10 +124,10 @@ namespace CsharpWebDriverLib.DriverBase
 
         private String defineCurrentIpStr(TestRunType tRunType)
         {
-            if (testRunType == TestRunType.Local)
+            if (IDriverBase.testRunType == TestRunType.Local)
                 return driverBaseParams.localHostStr;
             else
-            if (testRunType == TestRunType.Remote)
+            if (IDriverBase.testRunType == TestRunType.Remote)
                 return driverBaseParams.localIpStr;
             else
                 return driverBaseParams.localIpStr;
@@ -146,11 +142,10 @@ namespace CsharpWebDriverLib.DriverBase
 
         public void SetUp()
         {
-            testRunType = TestRunType.Local;
-            // SET initial WebDriverType
-            IDriverBase.webDriverType = WebDriverExtensions.WebDriverType.Chrome;
-
-            IDriverBase.CurrentIpStr = defineCurrentIpStr(testRunType);
+            // SET initial parameter
+            IDriverBase.testRunType   = driverBaseParams.getTestRunType;
+            IDriverBase.webDriverType = driverBaseParams.getWebDriverType;
+            IDriverBase.CurrentIpStr  = defineCurrentIpStr(IDriverBase.testRunType);
 
             if (IDriverBase.tlDriverIsValueCreated() & IDriverBase.eftlDriverIsValueCreated())
             {
@@ -159,18 +154,17 @@ namespace CsharpWebDriverLib.DriverBase
                 return;
             }
 
-            if (testRunType == TestRunType.Local)
+            if (IDriverBase.testRunType == TestRunType.Local)
             {
                 IDriverBase.webDrv = newDriverSetOptions(IDriverBase.webDriverType);
             }
             else
-            if (testRunType == TestRunType.Remote)
+            if (IDriverBase.testRunType == TestRunType.Remote)
             {   //RemoteWebDriver
                 var uriString = "http://" + driverBaseParams.remoteIpStr + ":4444/wd/hub/";
                 IDriverBase.webDrv = newRemoteWebDriverSetOptions(remoteAddress: new Uri(uriString), driverType: IDriverBase.webDriverType);
             }
 
-            // Создаем обертку класса WebDriver для последующего сохранения  логов
             //A wrapper around an arbitrary IWebDriver instance which supports registering for events, e.g. for logging purposes. 
             IDriverBase.driver = new EventFiringWebDriver(IDriverBase.webDrv);
 
@@ -212,7 +206,7 @@ namespace CsharpWebDriverLib.DriverBase
 
         private void saveBrowserLog()
         {
-            Console.WriteLine("testRunType = " + testRunType.ToString());
+            Console.WriteLine("testRunType = " + IDriverBase.testRunType.ToString());
             Console.WriteLine("driverType  = " + IDriverBase.webDriverType.ToString());
 
             // for write log file with Browser logging
@@ -223,7 +217,7 @@ namespace CsharpWebDriverLib.DriverBase
 
             lw.LogWrite("Capabilities", wdCapabilities.ToString());
 
-            lw.LogWrite("testRunType", testRunType.ToString());
+            lw.LogWrite("testRunType", IDriverBase.testRunType.ToString());
             lw.LogWrite("driverType", IDriverBase.webDriverType.ToString());
 
             lw.saveCurLogs(LogType.Browser);
@@ -402,7 +396,7 @@ namespace CsharpWebDriverLib.DriverBase
         {
             InternetExplorerOptions ieOptions = new InternetExplorerOptions();
 
-            ieOptions.PlatformName = "Windows 7";
+            ieOptions.PlatformName = "Windows 10";
             ieOptions.BrowserVersion = "109.0.5414.120";
 
             // Для задания опции UnhandledPromptBehavior
@@ -418,8 +412,8 @@ namespace CsharpWebDriverLib.DriverBase
         private ChromeOptions getRemoteChromeOptions()
         {
             ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.PlatformName = "Windows 7";
-            chromeOptions.BrowserVersion = "109.0.5414.120";
+            chromeOptions.PlatformName = "Windows 10";
+            chromeOptions.BrowserVersion = "85.0";
             // Для задания опции UnhandledPromptBehavior
             chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.DismissAndNotify;
             chromeOptions.AddArgument("--lang=ru");
@@ -450,11 +444,16 @@ namespace CsharpWebDriverLib.DriverBase
         private FirefoxOptions getRemoteFirefoxOptions()
         {
             FirefoxOptions firefoxOptions = new FirefoxOptions();
+            firefoxOptions.PlatformName = "Windows 10";
             firefoxOptions.BrowserVersion = "80.0";
-
+            
             var runName = GetType().Assembly.GetName().Name;
             var timestamp = $"{DateTime.Now:yyyyMMdd.HHmm}";
 
+            // Set the MOZ_LOG environment variable to enable logging
+            Environment.SetEnvironmentVariable("MOZ_LOG", $"{timestamp},nsHttp:5,nsSocketTransport:5");
+            
+            // * Variant 1
             firefoxOptions.AddAdditionalFirefoxOption("name", runName);
             firefoxOptions.AddAdditionalFirefoxOption("videoName", $"{runName}.{timestamp}.mp4");
             firefoxOptions.AddAdditionalFirefoxOption("enableVNC", true);
@@ -464,6 +463,32 @@ namespace CsharpWebDriverLib.DriverBase
             firefoxOptions.AddAdditionalFirefoxOption("enableLog", true);
             firefoxOptions.AddAdditionalFirefoxOption("screenResolution", "1920x1080x24");
 
+            /*
+            // -------------------------------------------------------------------------
+            // * Variant 2 -------------------------------------------------------------
+            firefoxOptions.AddAdditionalFirefoxOption("selenoid:options", new Dictionary<string, object>
+            {
+                ["name"] = runName,
+                ["videoName"] = $"{runName}.{timestamp}.mp4",
+                ["enableVNC"] = true,
+                ["enableVideo"] = true,
+                ["videoScreenSize"] = "1280x720",
+                //["logName"] = $"{runName}.{timestamp}.log",
+                ["enableLog"] = true,
+                ["screenResolution"] = "1920x1080x24"
+            });
+            
+            // -------------------------------------------------------------------------
+            // * Variant 3 -------------------------------------------------------------
+            // Set the selenoid:options capability in the moz:firefoxOptions dictionary
+            Dictionary<string, object> selenoidOptions = new Dictionary<string, object>();
+            selenoidOptions.Add("videoName", $"{runName}.{timestamp}.mp4");
+            selenoidOptions.Add("enableVNC", true);
+            selenoidOptions.Add("enableVideo", true);
+            selenoidOptions.Add("videoScreenSize", "1280x720");
+            selenoidOptions.Add("enableLog"), true);
+            firefoxOptions.AddAdditionalFirefoxOption("selenoid:options", selenoidOptions);
+            */
             // Для задания опции acceptInsecureCerts
             var preferenceName = "acceptInsecureCerts";
             firefoxOptions.SetPreference(preferenceName, false);
