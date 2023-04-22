@@ -12,6 +12,7 @@ using OpenQA.Selenium.Support.Events;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium.Interactions;
 using System.Collections.Generic;
+using System.IO.Pipes;
 
 namespace CsharpWebDriverLib.DriverBase
 {
@@ -394,9 +395,11 @@ namespace CsharpWebDriverLib.DriverBase
 
         private InternetExplorerOptions getRemoteIEOptions()
         {
+            throw new ArgumentOutOfRangeException("Remote Options for InternetExplorer.exe is Rejected.");
+            /*
             InternetExplorerOptions ieOptions = new InternetExplorerOptions();
 
-            ieOptions.PlatformName = "Windows 10";
+            ieOptions.PlatformName = "linux";
             ieOptions.BrowserVersion = "109.0.5414.120";
 
             // Для задания опции UnhandledPromptBehavior
@@ -406,14 +409,15 @@ namespace CsharpWebDriverLib.DriverBase
             //установка опций для игнорирования отличия настройки защищенного режима в разных зонах (не надежная работа)
             //ieOptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
             return ieOptions;
+            */
         }
 
 
         private ChromeOptions getRemoteChromeOptions()
         {
             ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.PlatformName = "Windows 10";
-            chromeOptions.BrowserVersion = "85.0";
+            chromeOptions.PlatformName = "linux";
+            chromeOptions.BrowserVersion = "112.0";
             // Для задания опции UnhandledPromptBehavior
             chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.DismissAndNotify;
             chromeOptions.AddArgument("--lang=ru");
@@ -421,13 +425,18 @@ namespace CsharpWebDriverLib.DriverBase
             var runName = GetType().Assembly.GetName().Name;
             var timestamp = $"{DateTime.Now:yyyyMMdd.HHmm}";
 
-            chromeOptions.AddAdditionalChromeOption("name", runName);
-            chromeOptions.AddAdditionalChromeOption("videoName", $"{runName}.{timestamp}.mp4");
-            chromeOptions.AddAdditionalChromeOption("enableVNC", true);
-            chromeOptions.AddAdditionalChromeOption("enableVideo", true);
-            chromeOptions.AddAdditionalChromeOption("videoScreenSize", "1280x720");
-            chromeOptions.AddAdditionalChromeOption("enableLog", true);
-            chromeOptions.AddAdditionalChromeOption("screenResolution", "1920x1080x24");
+            chromeOptions.AddAdditionalOption("selenoid:options", new Dictionary<string, object>
+            {
+                ["name"] = runName,
+                ["sessionTimeout"] = "5m",/* How to set session timeout */
+                ["videoName"] = $"{runName}.{timestamp}.mp4",
+                ["enableVNC"] = true,
+                ["enableVideo"] = true,
+                ["videoScreenSize"] = "1280x720",
+                ["logName"] = $"{runName}.{timestamp}.log",
+                ["enableLog"] = true,
+                ["screenResolution"] = "1920x1080x24"
+            });
 
             // Для задания опции расположения EXE
             //chromeOptions.BinaryLocation = getChromePathStr();
@@ -444,51 +453,39 @@ namespace CsharpWebDriverLib.DriverBase
         private FirefoxOptions getRemoteFirefoxOptions()
         {
             FirefoxOptions firefoxOptions = new FirefoxOptions();
-            firefoxOptions.PlatformName = "Windows 10";
-            firefoxOptions.BrowserVersion = "80.0";
+            firefoxOptions.PlatformName = "linux";
+            firefoxOptions.BrowserVersion = "112.0";
             
             var runName = GetType().Assembly.GetName().Name;
             var timestamp = $"{DateTime.Now:yyyyMMdd.HHmm}";
 
-            // Set the MOZ_LOG environment variable to enable logging
-            Environment.SetEnvironmentVariable("MOZ_LOG", $"{timestamp},nsHttp:5,nsSocketTransport:5");
-            
-            // * Variant 1
-            firefoxOptions.AddAdditionalFirefoxOption("name", runName);
-            firefoxOptions.AddAdditionalFirefoxOption("videoName", $"{runName}.{timestamp}.mp4");
-            firefoxOptions.AddAdditionalFirefoxOption("enableVNC", true);
-            firefoxOptions.AddAdditionalFirefoxOption("enableVideo", true);
-            firefoxOptions.AddAdditionalFirefoxOption("videoScreenSize", "1280x720");
-            //firefoxOptions.AddAdditionalFirefoxOption("logName", $"{runName}.{timestamp}.log");
-            firefoxOptions.AddAdditionalFirefoxOption("enableLog", true);
-            firefoxOptions.AddAdditionalFirefoxOption("screenResolution", "1920x1080x24");
-
-            /*
-            // -------------------------------------------------------------------------
-            // * Variant 2 -------------------------------------------------------------
-            firefoxOptions.AddAdditionalFirefoxOption("selenoid:options", new Dictionary<string, object>
+            // * Variant 1 -------------------------------------------------------------
+            firefoxOptions.AddAdditionalOption("selenoid:options", new Dictionary<string, object>
             {
                 ["name"] = runName,
+                ["sessionTimeout"] = "5m", /* How to set session timeout */
                 ["videoName"] = $"{runName}.{timestamp}.mp4",
                 ["enableVNC"] = true,
                 ["enableVideo"] = true,
                 ["videoScreenSize"] = "1280x720",
-                //["logName"] = $"{runName}.{timestamp}.log",
+                ["logName"] = $"{runName}.{timestamp}.log",
                 ["enableLog"] = true,
                 ["screenResolution"] = "1920x1080x24"
             });
-            
-            // -------------------------------------------------------------------------
-            // * Variant 3 -------------------------------------------------------------
+
+            /*
+            // * Variant 2 -------------------------------------------------------------
             // Set the selenoid:options capability in the moz:firefoxOptions dictionary
             Dictionary<string, object> selenoidOptions = new Dictionary<string, object>();
             selenoidOptions.Add("videoName", $"{runName}.{timestamp}.mp4");
             selenoidOptions.Add("enableVNC", true);
             selenoidOptions.Add("enableVideo", true);
             selenoidOptions.Add("videoScreenSize", "1280x720");
+            selenoidOptions.Add("logName", $"{runName}.{timestamp}.log");
             selenoidOptions.Add("enableLog"), true);
-            firefoxOptions.AddAdditionalFirefoxOption("selenoid:options", selenoidOptions);
+            firefoxOptions.AddAdditionalOption("selenoid:options", selenoidOptions);
             */
+
             // Для задания опции acceptInsecureCerts
             var preferenceName = "acceptInsecureCerts";
             firefoxOptions.SetPreference(preferenceName, false);
