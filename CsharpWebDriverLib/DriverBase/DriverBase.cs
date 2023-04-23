@@ -10,9 +10,8 @@ using System.Reflection;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Support.Events;
 using NUnit.Framework.Interfaces;
-using OpenQA.Selenium.Interactions;
 using System.Collections.Generic;
-using System.IO.Pipes;
+using System.Diagnostics;
 
 namespace CsharpWebDriverLib.DriverBase
 {
@@ -43,7 +42,7 @@ namespace CsharpWebDriverLib.DriverBase
         //must be initilize after the WebDriver create
         private ILogs wdLogs { get; set; }
 
-
+        private Process selenoidProcess { get; set; }
         /*
         //Hook AppDomain events for attach an event handler to the current application domain's events:
         private void setHookAppDomainEvents(AppDomain aDom)
@@ -161,9 +160,14 @@ namespace CsharpWebDriverLib.DriverBase
             }
             else
             if (IDriverBase.testRunType == TestRunType.Remote)
-            {   //RemoteWebDriver
-                var uriString = "http://" + driverBaseParams.remoteIpStr + ":4444/wd/hub/";
-                IDriverBase.webDrv = newRemoteWebDriverSetOptions(remoteAddress: new Uri(uriString), driverType: IDriverBase.webDriverType);
+            {
+                var hostStr = driverBaseParams.remoteIpStr;
+                if (IDriverBase.webDriverType == WebDriverExtensions.WebDriverType.IE)  
+                    hostStr = driverBaseParams.localHostStr; //Local Host
+
+                var uriString = "http://" + hostStr + ":4444/wd/hub/";
+
+                IDriverBase.webDrv = newRemoteWebDriverSetOptions(uriAddress: new Uri(uriString), driverType: IDriverBase.webDriverType);
             }
 
             //A wrapper around an arbitrary IWebDriver instance which supports registering for events, e.g. for logging purposes. 
@@ -189,41 +193,53 @@ namespace CsharpWebDriverLib.DriverBase
 
         public void TearDown()
         {
-            var testResult = TestContext.CurrentContext.Result.Outcome;
-            var testMessage = "Stop() - OK";
-            if (Equals(testResult, ResultState.Failure) ||
-                Equals(testResult == ResultState.Error))
+            try
             {
-                testMessage = "Stop() - ResultState.Failure or ResultState.Error";
+                var testResult = TestContext.CurrentContext.Result.Outcome;
+                var testMessage = "Stop() - OK";
+                if (Equals(testResult, ResultState.Failure) ||
+                    Equals(testResult == ResultState.Error))
+                {
+                    testMessage = "Stop() - ResultState.Failure or ResultState.Error";
+                }
+                Console.WriteLine(testMessage);
+                Console.WriteLine("Finish test: " + CurrentTestName);
+
+                saveBrowserLog(logWriter);
             }
-            Console.WriteLine(testMessage);
-            Console.WriteLine("Finish test: " + CurrentTestName);
-
-            saveBrowserLog();
+            finally
+            {
+                if ((IDriverBase.testRunType == TestRunType.Remote) &
+                   (IDriverBase.webDriverType == WebDriverExtensions.WebDriverType.IE) &
+                   (selenoidProcess != null))
+                {
+                    selenoidProcess.Close();
+                    selenoidProcess.Dispose();
+                }
+            }
         }
-
 
         // ---------------------------------------------------------------------------------------------------------------------------
 
-        private void saveBrowserLog()
+        private void saveBrowserLog(LogWriter lw)
         {
             Console.WriteLine("testRunType = " + IDriverBase.testRunType.ToString());
             Console.WriteLine("driverType  = " + IDriverBase.webDriverType.ToString());
 
             // for write log file with Browser logging
-            DirectoryInfo baseLogFolder = createBaseLogDir(TestContext.CurrentContext.TestDirectory);
+            if (lw != null)
+            {
+                lw.LogWrite("currentTestName", CurrentTestName);
 
-            LogWriter lw = new LogWriter(wdLogs, baseLogFolder, CurrentTestName);
-            lw.LogWrite("currentTestName", CurrentTestName);
+                lw.LogWrite("Capabilities", wdCapabilities.ToString());
 
-            lw.LogWrite("Capabilities", wdCapabilities.ToString());
+                lw.LogWrite("testRunType", IDriverBase.testRunType.ToString());
+                lw.LogWrite("driverType", IDriverBase.webDriverType.ToString());
 
-            lw.LogWrite("testRunType", IDriverBase.testRunType.ToString());
-            lw.LogWrite("driverType", IDriverBase.webDriverType.ToString());
+                lw.saveCurLogs(LogType.Browser);
 
-            lw.saveCurLogs(LogType.Browser);
-
-            lw.FinalLogWrite();
+                lw.FinalLogWrite();
+            }
         }
 
         private DirectoryInfo createBaseLogDir(string currentTestFolder, string newSubFolder = "Log")
@@ -241,22 +257,19 @@ namespace CsharpWebDriverLib.DriverBase
             switch (driverType)
             {
                 case WebDriverExtensions.WebDriverType.IE:
-                    webDriver = new InternetExplorerDriver(internetExplorerDriverServerDirectory: "C:\\Tools", getIEOptions());
+                    webDriver = new InternetExplorerDriver(internetExplorerDriverServerDirectory: @"C:\Tools", getIEOptions());
                     break;
 
                 case WebDriverExtensions.WebDriverType.Chrome:
-                    webDriver = new ChromeDriver(chromeDriverDirectory: "C:\\Tools", options: getChromeOptions());
-                    //webDriver.Navigate().GoToUrl("chrome://settings/clearBrowserData");
+                    webDriver = new ChromeDriver(chromeDriverDirectory: @"C:\Tools", options: getChromeOptions());
                     break;
 
                 case WebDriverExtensions.WebDriverType.Firefox:
-                    webDriver = new FirefoxDriver(geckoDriverDirectory: "C:\\Tools", options: getFirefoxOptions());
+                    webDriver = new FirefoxDriver(geckoDriverDirectory: @"C:\Tools", options: getFirefoxOptions());
                     break;
 
                 default:
-                    webDriver = new InternetExplorerDriver(getIEOptions());
-                    IDriverBase.webDriverType = WebDriverExtensions.WebDriverType.IE;
-                    break;
+                    throw new ArgumentOutOfRangeException("Not valid WebDriverType value: " + IDriverBase.webDriverType);
             }
 
             initWebDriverCapabilities(webDriver);
@@ -360,7 +373,7 @@ namespace CsharpWebDriverLib.DriverBase
                 throw new FileNotFoundException("firefox.exe file was not found.");
         }
 
-        private IWebDriver newRemoteWebDriverSetOptions(Uri remoteAddress, WebDriverExtensions.WebDriverType driverType)
+        private IWebDriver newRemoteWebDriverSetOptions(Uri uriAddress, WebDriverExtensions.WebDriverType driverType)
         {
             IWebDriver webDriver;
 
@@ -369,23 +382,20 @@ namespace CsharpWebDriverLib.DriverBase
             switch (driverType)
             {
                 case WebDriverExtensions.WebDriverType.IE:
-                    webDriver = new RemoteWebDriver(remoteAddress, getRemoteIEOptions());
+                    selenoidProcess = StartLocalSelenoidServerForIE();
+                    webDriver = new RemoteWebDriver(uriAddress, getRemoteIEOptions());
                     break;
 
                 case WebDriverExtensions.WebDriverType.Chrome:
-                    webDriver = new RemoteWebDriver(remoteAddress, getRemoteChromeOptions());
-                    //webDriver.Navigate().GoToUrl("chrome://settings/clearBrowserData");
-                    //webDriver.FindElmAndSendKeys(By.XPath("//settings-ui"), Keys.Return);
+                    webDriver = new RemoteWebDriver(uriAddress, getRemoteChromeOptions());
                     break;
 
                 case WebDriverExtensions.WebDriverType.Firefox:
-                    webDriver = new RemoteWebDriver(remoteAddress, getRemoteFirefoxOptions());
+                    webDriver = new RemoteWebDriver(uriAddress, getRemoteFirefoxOptions());
                     break;
 
                 default:
-                    webDriver = new RemoteWebDriver(remoteAddress, getIEOptions());
-                    IDriverBase.webDriverType = WebDriverExtensions.WebDriverType.IE;
-                    break;
+                    throw new ArgumentOutOfRangeException("Not valid WebDriverType value: " + IDriverBase.webDriverType);
             }
 
             initWebDriverCapabilities(webDriver);
@@ -393,23 +403,65 @@ namespace CsharpWebDriverLib.DriverBase
             return webDriver;
         }
 
+        private Process StartLocalSelenoidServerForIE()
+        {
+            // Start the Selenoid server using the selenoid.bat file on local Windows machine
+            var startInfo = new ProcessStartInfo
+            {
+                FileName = @"C:\Tools\selenoid.bat",
+                Arguments = "start",
+                WorkingDirectory = @"C:\Tools\",
+                CreateNoWindow = false,
+                UseShellExecute = false
+                //RedirectStandardOutput = true,
+                //RedirectStandardError = true
+            };
+            var process = new Process { StartInfo = startInfo };
+
+            process.Start();
+
+            ProcessStartInfo processStartInfo = process.StartInfo;
+
+            saveStartLocalSelenoidLog(logWriter, processStartInfo);
+
+            return process;
+        }
+
+        private void saveStartLocalSelenoidLog(LogWriter lw, ProcessStartInfo processStartInfo)
+        {
+            Console.WriteLine("ProcessStartInfo      -> ArgumentList = " + processStartInfo.ArgumentList.ToString());
+
+            // for write log file with Browser logging
+            if (lw != null)
+            {
+                lw.LogWrite("ProcessStartInfo      -> ArgumentList = ", processStartInfo.ArgumentList.ToString());
+            }
+        }
+
         private InternetExplorerOptions getRemoteIEOptions()
         {
-            throw new ArgumentOutOfRangeException("Remote Options for InternetExplorer.exe is Rejected.");
-            /*
             InternetExplorerOptions ieOptions = new InternetExplorerOptions();
 
-            ieOptions.PlatformName = "linux";
-            ieOptions.BrowserVersion = "109.0.5414.120";
+            ieOptions.PlatformName = "windows";
+            ieOptions.BrowserVersion = "11";
 
             // Для задания опции UnhandledPromptBehavior
             ieOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Ignore;
             //установка опций для игнорирования отличия масштаба от 100%
             ieOptions.IgnoreZoomLevel = true;
+
+            var runName = GetType().Assembly.GetName().Name;
+
+            ieOptions.AddAdditionalOption("selenoid:options", new Dictionary<string, object>
+            {
+                ["name"] = runName,
+                ["sessionTimeout"] = "1m"/* How to set session timeout */
+            });
+            
             //установка опций для игнорирования отличия настройки защищенного режима в разных зонах (не надежная работа)
             //ieOptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+
             return ieOptions;
-            */
         }
 
 
@@ -428,7 +480,7 @@ namespace CsharpWebDriverLib.DriverBase
             chromeOptions.AddAdditionalOption("selenoid:options", new Dictionary<string, object>
             {
                 ["name"] = runName,
-                ["sessionTimeout"] = "5m",/* How to set session timeout */
+                ["sessionTimeout"] = "1m",/* How to set session timeout */
                 ["videoName"] = $"{runName}.{timestamp}.mp4",
                 ["enableVNC"] = true,
                 ["enableVideo"] = true,
@@ -438,13 +490,8 @@ namespace CsharpWebDriverLib.DriverBase
                 ["screenResolution"] = "1920x1080x24"
             });
 
-            // Для задания опции расположения EXE
-            //chromeOptions.BinaryLocation = getChromePathStr();
             //--Задаем опции командной строки соотв. браузера
             //chromeOptions.AddArguments("start-fullscreen");
-            //Use custom profile(also called user data directory)
-            //chromeOptions.AddArguments("--profile-directory=Default");
-            //chromeOptions.AddArguments("--user-data-dir=C:/Temp/ChromeProfile");
 
             return chromeOptions;
         }
@@ -463,7 +510,7 @@ namespace CsharpWebDriverLib.DriverBase
             firefoxOptions.AddAdditionalOption("selenoid:options", new Dictionary<string, object>
             {
                 ["name"] = runName,
-                ["sessionTimeout"] = "5m", /* How to set session timeout */
+                ["sessionTimeout"] = "1m", /* How to set session timeout */
                 ["videoName"] = $"{runName}.{timestamp}.mp4",
                 ["enableVNC"] = true,
                 ["enableVideo"] = true,
@@ -489,17 +536,6 @@ namespace CsharpWebDriverLib.DriverBase
             // Для задания опции acceptInsecureCerts
             var preferenceName = "acceptInsecureCerts";
             firefoxOptions.SetPreference(preferenceName, false);
-            // Для задания опции расположения EXE
-            //firefoxOptions.BrowserExecutableLocation = getFirefoxPathStr();            
-            //--Задаем опции командной строки соотв. браузера
-            //firefoxOptions.AddArguments("-private-window");
-            //установка профиля пользователя для запуска браузера (копирует указанный профиль во временный для работы)
-            //string userProfileFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-            //string firefoxProfileFolderPath = Path.Combine(userProfileFolderPath, @"AppData\Local\Mozilla\Firefox\Profiles");
-            //string[] profileDirectories = Directory.GetDirectories(firefoxProfileFolderPath, "*.default");
-            //string fullProfilePath = profileDirectories[0];
-            //FirefoxProfile firefoxProfile = new FirefoxProfile(fullProfilePath);
-            //firefoxOptions.Profile = firefoxProfile;
 
             return firefoxOptions;
         }
