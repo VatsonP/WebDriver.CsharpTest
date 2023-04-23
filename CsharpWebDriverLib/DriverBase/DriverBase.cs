@@ -124,13 +124,24 @@ namespace CsharpWebDriverLib.DriverBase
 
         private String defineCurrentIpStr(TestRunType tRunType)
         {
-            if (IDriverBase.testRunType == TestRunType.Local)
-                return driverBaseParams.localHostStr;
-            else
-            if (IDriverBase.testRunType == TestRunType.Remote)
-                return driverBaseParams.localIpStr;
-            else
-                return driverBaseParams.localIpStr;
+            string retstr = "";
+
+            switch (tRunType)
+            {
+                case TestRunType.Local:
+                    retstr = driverBaseParams.localHostStr;
+                    break;
+
+                case TestRunType.RemoteWin:
+                    retstr = driverBaseParams.localIpStr;
+                    break;
+
+                case TestRunType.RemoteUbuntu:
+                    retstr = driverBaseParams.localIpStr;
+                    break;
+            }
+
+            return retstr;
         }
 
         // ---------------------------------------------------------------------------------------------------------------------------
@@ -159,15 +170,9 @@ namespace CsharpWebDriverLib.DriverBase
                 IDriverBase.webDrv = newDriverSetOptions(IDriverBase.webDriverType);
             }
             else
-            if (IDriverBase.testRunType == TestRunType.Remote)
+            if ((IDriverBase.testRunType == TestRunType.RemoteWin) || (IDriverBase.testRunType == TestRunType.RemoteUbuntu))
             {
-                var hostStr = driverBaseParams.remoteIpStr;
-                if (IDriverBase.webDriverType == WebDriverExtensions.WebDriverType.IE)  
-                    hostStr = driverBaseParams.localHostStr; //Local Host
-
-                var uriString = "http://" + hostStr + ":4444/wd/hub/";
-
-                IDriverBase.webDrv = newRemoteWebDriverSetOptions(uriAddress: new Uri(uriString), driverType: IDriverBase.webDriverType);
+                IDriverBase.webDrv = newRemoteWebDriverSetOptions(IDriverBase.testRunType, driverType: IDriverBase.webDriverType);
             }
 
             //A wrapper around an arbitrary IWebDriver instance which supports registering for events, e.g. for logging purposes. 
@@ -209,7 +214,7 @@ namespace CsharpWebDriverLib.DriverBase
             }
             finally
             {
-                if ((IDriverBase.testRunType == TestRunType.Remote) &
+                if ((IDriverBase.testRunType != TestRunType.Local) &
                    (IDriverBase.webDriverType == WebDriverExtensions.WebDriverType.IE) &
                    (selenoidProcess != null))
                 {
@@ -373,25 +378,44 @@ namespace CsharpWebDriverLib.DriverBase
                 throw new FileNotFoundException("firefox.exe file was not found.");
         }
 
-        private IWebDriver newRemoteWebDriverSetOptions(Uri uriAddress, WebDriverExtensions.WebDriverType driverType)
+        private IWebDriver newRemoteWebDriverSetOptions(TestRunType testRunType, WebDriverExtensions.WebDriverType driverType)
         {
             IWebDriver webDriver;
-
             IDriverBase.webDriverType = driverType;
+
+            bool useSelenoid = false;
+            string uriString = "";
+            string hostStr = driverBaseParams.remoteIpStr;
+
+            if (IDriverBase.testRunType == TestRunType.RemoteWin)
+            {
+                uriString = "http://" + hostStr + ":4444/wd/hub/";
+                useSelenoid = false;
+            }
+            if (IDriverBase.testRunType == TestRunType.RemoteUbuntu)
+            {
+                if (IDriverBase.webDriverType == WebDriverExtensions.WebDriverType.IE)
+                    hostStr = IDriverBase.CurrentIpStr;
+
+                uriString = "http://" + hostStr + ":4444/wd/hub/";
+                useSelenoid = true;
+            }
 
             switch (driverType)
             {
                 case WebDriverExtensions.WebDriverType.IE:
-                    selenoidProcess = StartLocalSelenoidServerForIE();
-                    webDriver = new RemoteWebDriver(uriAddress, getRemoteIEOptions());
+                    if (useSelenoid)
+                        selenoidProcess = StartLocalSelenoidServerForIE();
+
+                    webDriver = new RemoteWebDriver(new Uri(uriString), getRemoteIEOptions(useSelenoid));
                     break;
 
                 case WebDriverExtensions.WebDriverType.Chrome:
-                    webDriver = new RemoteWebDriver(uriAddress, getRemoteChromeOptions());
+                    webDriver = new RemoteWebDriver(new Uri(uriString), getRemoteChromeOptions());
                     break;
 
                 case WebDriverExtensions.WebDriverType.Firefox:
-                    webDriver = new RemoteWebDriver(uriAddress, getRemoteFirefoxOptions());
+                    webDriver = new RemoteWebDriver(new Uri(uriString), getRemoteFirefoxOptions());
                     break;
 
                 default:
@@ -445,26 +469,28 @@ namespace CsharpWebDriverLib.DriverBase
             }
         }
 
-        private InternetExplorerOptions getRemoteIEOptions()
+        private InternetExplorerOptions getRemoteIEOptions(Boolean useSelenoid = false)
         {
             InternetExplorerOptions ieOptions = new InternetExplorerOptions();
 
             ieOptions.PlatformName = "windows";
             ieOptions.BrowserVersion = "11";
 
+            if (useSelenoid)
+            {
+                var runName = GetType().Assembly.GetName().Name;
+
+                ieOptions.AddAdditionalOption("selenoid:options", new Dictionary<string, object>
+                {
+                    ["name"] = runName,
+                    ["sessionTimeout"] = "1m"/* How to set session timeout */
+                });
+            }
             // Для задания опции UnhandledPromptBehavior
             ieOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Ignore;
             //установка опций для игнорирования отличия масштаба от 100%
             ieOptions.IgnoreZoomLevel = true;
 
-            var runName = GetType().Assembly.GetName().Name;
-
-            ieOptions.AddAdditionalOption("selenoid:options", new Dictionary<string, object>
-            {
-                ["name"] = runName,
-                ["sessionTimeout"] = "1m"/* How to set session timeout */
-            });
-            
             //установка опций для игнорирования отличия настройки защищенного режима в разных зонах (не надежная работа)
             //ieOptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
 

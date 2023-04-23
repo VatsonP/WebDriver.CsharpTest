@@ -7,7 +7,7 @@ using OpenQA.Selenium.Support.Events;
 
 namespace CsharpWebDriverLib.DriverBase
 {
-    public enum TestRunType { Local, Remote };
+    public enum TestRunType { Local, RemoteWin, RemoteUbuntu };
 
     public interface IDriverBaseCore
     {
