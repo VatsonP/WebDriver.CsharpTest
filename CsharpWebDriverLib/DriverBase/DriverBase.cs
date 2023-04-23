@@ -412,29 +412,36 @@ namespace CsharpWebDriverLib.DriverBase
                 Arguments = "start",
                 WorkingDirectory = @"C:\Tools\",
                 CreateNoWindow = false,
-                UseShellExecute = false
-                //RedirectStandardOutput = true,
-                //RedirectStandardError = true
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true
             };
             var process = new Process { StartInfo = startInfo };
 
             process.Start();
+            process.WaitForExitAsync();
 
             ProcessStartInfo processStartInfo = process.StartInfo;
+            //string output = process.StandardOutput.ReadToEnd();
+            //string error = process.StandardError.ReadToEnd();
 
-            saveStartLocalSelenoidLog(logWriter, processStartInfo);
+            saveStartLocalSelenoidLog(logWriter, processStartInfo /*, output, error */);
 
             return process;
         }
 
-        private void saveStartLocalSelenoidLog(LogWriter lw, ProcessStartInfo processStartInfo)
+        private void saveStartLocalSelenoidLog(LogWriter lw, ProcessStartInfo processStartInfo /*, string output, string error */)
         {
             Console.WriteLine("ProcessStartInfo      -> ArgumentList = " + processStartInfo.ArgumentList.ToString());
+            //Console.WriteLine("StartLocalSelenoidLog -> Output = " + output);
+            //Console.WriteLine("StartLocalSelenoidLog -> Error  = " + error);
 
             // for write log file with Browser logging
             if (lw != null)
             {
                 lw.LogWrite("ProcessStartInfo      -> ArgumentList = ", processStartInfo.ArgumentList.ToString());
+                //lw.LogWrite("StartLocalSelenoidLog -> Output = ", output);
+                //lw.LogWrite("StartLocalSelenoidLog -> Error  = ", error);
             }
         }
 
