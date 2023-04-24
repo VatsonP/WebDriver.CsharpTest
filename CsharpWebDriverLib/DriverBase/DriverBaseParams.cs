@@ -26,8 +26,8 @@ namespace CsharpWebDriverLib.DriverBase
         public string remoteIpStr { get; init; }   // Remote Host Ip 
 
         public static string chromeDriverExeName = "chromedriver";
-        public static string firefoxDriverExeName = "localhost";
-        public static string ieDriverExeName = "geckodriver";
+        public static string firefoxDriverExeName = "geckodriver";
+        public static string ieDriverExeName = "IEDriverServer";
         public static string selenoidDriverExeName = "selenoid";
         public static string selenoidBatFilePathName = @"C:\Tools\selenoid.bat";
         public static string selenoidBatFileWorkingDirectory = @"C:\Tools\";
