@@ -3,6 +3,7 @@ using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Support.Events;
+using System.Diagnostics;
 
 
 namespace CsharpWebDriverLib.DriverBase
@@ -14,8 +15,6 @@ namespace CsharpWebDriverLib.DriverBase
         public void SetUp();
 
         public void TearDown();
-
-        public void OneTimeTearDown();
 
         public void TakeScreenshot(String fileNameWithoutExt);
     }
@@ -100,6 +99,7 @@ namespace CsharpWebDriverLib.DriverBase
             tlDriverDispose();
             eftlDriverDispose();
         }
+        protected static Process selenoidProcess { get; set; }
 
         public static WebDriverWait wait
         {
@@ -113,7 +113,7 @@ namespace CsharpWebDriverLib.DriverBase
 
         public static WebDriverExtensions.WebDriverType webDriverType { get; set; }
 
- 
+
         public static void BeforeOneTimeSetUp()
         {
             eventFiringCreate();
@@ -125,6 +125,76 @@ namespace CsharpWebDriverLib.DriverBase
             // для выполнения только один раз в конце всех тестов
             driverQuit(driver);
             eventFiringDispose();
+        }
+
+        // ---------------------------------------------------------------------------------------------------------------------------
+
+        public static void OneTimeTearDown()
+        {
+            TerminateLocalSeleniumBrowsersServer(IDriverBase.testRunType, IDriverBase.webDriverType);
+            TerminateLocalSelenoidServerForIE(IDriverBase.testRunType, IDriverBase.webDriverType);
+        }
+
+        private static void TerminateLocalSeleniumBrowsersServer(TestRunType testRunType,
+                                                          WebDriverExtensions.WebDriverType driverType)
+        {
+            Process[] processes;
+            // Terminate the associated Selenium driver Windows process from memory
+            switch (driverType)
+            {
+                case WebDriverExtensions.WebDriverType.IE:
+                    processes = Process.GetProcessesByName(DriverBaseParams.ieDriverExeName);
+                    foreach (Process p in processes)
+                        p.Kill();
+
+                    break;
+
+                case WebDriverExtensions.WebDriverType.Chrome:
+                    if (testRunType == TestRunType.Local)
+                    {
+                        processes = Process.GetProcessesByName(DriverBaseParams.chromeDriverExeName);
+                        foreach (Process p in processes)
+                            p.Kill();
+                    }
+                    break;
+
+                case WebDriverExtensions.WebDriverType.Firefox:
+                    if (testRunType == TestRunType.Local)
+                    {
+                        processes = Process.GetProcessesByName(DriverBaseParams.firefoxDriverExeName);
+                        foreach (Process p in processes)
+                            p.Kill();
+                    }
+                    break;
+
+                default:
+                    throw new ArgumentOutOfRangeException("Not valid WebDriverType value: " + driverType);
+            }
+        }
+
+        private static void TerminateLocalSelenoidServerForIE(TestRunType testRunType,
+                                                       WebDriverExtensions.WebDriverType driverType)
+        {
+            if ((testRunType != TestRunType.Local) &
+                (driverType == WebDriverExtensions.WebDriverType.IE) &
+                (selenoidProcess != null)
+               )
+            {
+                // Stop the Selenoid.exe process
+                selenoidProcess.CloseMainWindow();
+                if (!selenoidProcess.HasExited)
+                {
+                    selenoidProcess.Kill();
+                }
+                selenoidProcess.Dispose();
+
+                // Terminate the associated Windows process from memory
+                Process[] processes = Process.GetProcessesByName(DriverBaseParams.selenoidDriverExeName);
+                foreach (Process p in processes)
+                {
+                    p.Kill();
+                }
+            }
         }
 
         // ---------------------------------------------------------------------------------------------------------------------------

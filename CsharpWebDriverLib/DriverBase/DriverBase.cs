@@ -43,8 +43,7 @@ namespace CsharpWebDriverLib.DriverBase
 
         //must be initilize after the WebDriver create
         private ILogs wdLogs { get; set; }
-
-        private Process selenoidProcess { get; set; }
+                
         /*
         //Hook AppDomain events for attach an event handler to the current application domain's events:
         private void setHookAppDomainEvents(AppDomain aDom)
@@ -215,74 +214,6 @@ namespace CsharpWebDriverLib.DriverBase
             Console.WriteLine("Finish test: " + CurrentTestName);
 
             saveBrowserLog(logWriter);
-        }
-
-        public void OneTimeTearDown()
-        {
-            TerminateLocalSeleniumBrowsersServer(IDriverBase.testRunType, IDriverBase.webDriverType);
-            TerminateLocalSelenoidServerForIE(IDriverBase.testRunType, IDriverBase.webDriverType);
-        }
-
-        private void TerminateLocalSeleniumBrowsersServer(TestRunType testRunType, 
-                                                          WebDriverExtensions.WebDriverType driverType)
-        {
-            Process[] processes;
-            // Terminate the associated Selenium driver Windows process from memory
-            switch (driverType)
-            {
-                case WebDriverExtensions.WebDriverType.IE:
-                    processes = Process.GetProcessesByName(driverBaseParams.ieDriverExeName);
-                    foreach (Process p in processes)
-                        p.Kill();
-
-                    break;
-
-                case WebDriverExtensions.WebDriverType.Chrome:
-                    if (testRunType == TestRunType.Local)
-                    {
-                        processes = Process.GetProcessesByName(driverBaseParams.chromeDriverExeName);
-                        foreach (Process p in processes)
-                            p.Kill();
-                    }
-                    break;
-
-                case WebDriverExtensions.WebDriverType.Firefox:
-                    if (testRunType == TestRunType.Local)
-                    {
-                        processes = Process.GetProcessesByName(driverBaseParams.firefoxDriverExeName);
-                        foreach (Process p in processes)
-                            p.Kill();
-                    }
-                    break;
-
-                default:
-                    throw new ArgumentOutOfRangeException("Not valid WebDriverType value: " + driverType);
-            }
-        }
-
-        private void TerminateLocalSelenoidServerForIE(TestRunType testRunType,
-                                                       WebDriverExtensions.WebDriverType driverType)
-        {
-            if ((testRunType != TestRunType.Local) &
-                (driverType == WebDriverType.IE) &
-                (selenoidProcess != null)
-               )
-            {
-                // Stop the Selenoid.exe process
-                selenoidProcess.CloseMainWindow();
-                if (!selenoidProcess.HasExited)
-                {
-                    selenoidProcess.Kill();
-                }
-                selenoidProcess.Dispose();
-
-                // Terminate the associated Windows process from memory
-                Process[] processes = Process.GetProcessesByName(driverBaseParams.selenoidDriverExeName);
-                foreach (Process p in processes)
-                {
-                    p.Kill();
-                }
-            }
         }
 
         // ---------------------------------------------------------------------------------------------------------------------------
@@ -474,7 +405,7 @@ namespace CsharpWebDriverLib.DriverBase
             {
                 case WebDriverExtensions.WebDriverType.IE:
                     if (useSelenoid)
-                        selenoidProcess = StartLocalSelenoidServerForIE();
+                        IDriverBase.selenoidProcess = StartLocalSelenoidServerForIE();
 
                     webDriver = new RemoteWebDriver(new Uri(uriString), getRemoteIEOptions(useSelenoid));
                     break;
@@ -503,9 +434,9 @@ namespace CsharpWebDriverLib.DriverBase
             // Start the Selenoid.exe server using the selenoid.bat file on local Windows machine
             var startInfo = new ProcessStartInfo
             {
-                FileName = driverBaseParams.selenoidBatFilePathName,
+                FileName = DriverBaseParams.selenoidBatFilePathName,
                 Arguments = "start",
-                WorkingDirectory = driverBaseParams.selenoidBatFileWorkingDirectory,
+                WorkingDirectory = DriverBaseParams.selenoidBatFileWorkingDirectory,
                 CreateNoWindow = false,
                 UseShellExecute = false,
                 RedirectStandardOutput = true,

@@ -31,7 +31,7 @@ namespace CsharpTestProjCore.Test
 
 
         [OneTimeSetUp]
-        protected void OneTimeSetUp() => IDriverBase.BeforeOneTimeSetUp();
+        protected static void OneTimeSetUp() => IDriverBase.BeforeOneTimeSetUp();
 
         [SetUp]
         protected void SetUp() => DrvBase.SetUp();
@@ -40,10 +40,10 @@ namespace CsharpTestProjCore.Test
         protected void TearDown() => DrvBase.TearDown();
 
         [OneTimeTearDown]
-        protected void OneTimeTearDown()
+        protected static void OneTimeTearDown()
         {
             IDriverBase.BeforeOneTimeTearDown();
-            DrvBase.OneTimeTearDown();
+            IDriverBase.OneTimeTearDown();
         }
 
     }

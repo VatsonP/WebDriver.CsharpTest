@@ -25,12 +25,12 @@ namespace CsharpWebDriverLib.DriverBase
         public string localIpStr { get; init; }     // Local Host Ip 
         public string remoteIpStr { get; init; }   // Remote Host Ip 
 
-        public string chromeDriverExeName = "chromedriver";
-        public string firefoxDriverExeName = "localhost";
-        public string ieDriverExeName = "geckodriver";
-        public string selenoidDriverExeName = "selenoid";
-        public string selenoidBatFilePathName = @"C:\Tools\selenoid.bat";
-        public string selenoidBatFileWorkingDirectory = @"C:\Tools\";
+        public static string chromeDriverExeName = "chromedriver";
+        public static string firefoxDriverExeName = "localhost";
+        public static string ieDriverExeName = "geckodriver";
+        public static string selenoidDriverExeName = "selenoid";
+        public static string selenoidBatFilePathName = @"C:\Tools\selenoid.bat";
+        public static string selenoidBatFileWorkingDirectory = @"C:\Tools\";
 
         // SETUP value for: TestRunType and WebDriverType
         public static TestRunType getTestRunType() => TestRunType.Local; 
