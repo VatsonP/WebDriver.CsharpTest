@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.IO;
 
 
 namespace CsharpWebDriverLib.DriverBase
@@ -24,9 +25,17 @@ namespace CsharpWebDriverLib.DriverBase
         public string localIpStr { get; init; }     // Local Host Ip 
         public string remoteIpStr { get; init; }   // Remote Host Ip 
 
+        public string chromeDriverExeName = "chromedriver";
+        public string firefoxDriverExeName = "localhost";
+        public string ieDriverExeName = "geckodriver";
+        public string selenoidDriverExeName = "selenoid";
+        public string selenoidBatFilePathName = @"C:\Tools\selenoid.bat";
+        public string selenoidBatFileWorkingDirectory = @"C:\Tools\";
+
         // SETUP value for: TestRunType and WebDriverType
-        public TestRunType getTestRunType { get => TestRunType.Local; }
-        public WebDriverExtensions.WebDriverType getWebDriverType { get => WebDriverExtensions.WebDriverType.Firefox; }
+        public static TestRunType getTestRunType() => TestRunType.Local; 
+        public static WebDriverExtensions.WebDriverType getWebDriverType() => WebDriverExtensions.WebDriverType.IE;
+
 
         private DriverBaseParams(int drvImplWaitTime,
                                  int drvExplWaitTime,
@@ -49,10 +58,28 @@ namespace CsharpWebDriverLib.DriverBase
         public static DriverBaseParams CreateDriverBaseParams(
                                 int drvImplWaitTime = WebDriverExtensions.drvImplWaitTime,
                                 int drvExplWaitTime = WebDriverExtensions.drvExplWaitTime,
-                                int drvMaxWaitTime = WebDriverExtensions.drvMaxWaitTime,
-                                string localIpStr = localIpStr_Win,
-                                string remoteIpStr = remoteIpStr_Ubuntu_20_4)
-            => new DriverBaseParams(drvImplWaitTime, drvExplWaitTime, drvMaxWaitTime, localIpStr, remoteIpStr);
+                                int drvMaxWaitTime = WebDriverExtensions.drvMaxWaitTime)
+        {
+            string      remoteIpStr = "";
+            TestRunType testRunType = getTestRunType();
+
+            switch (testRunType)
+            {
+                case TestRunType.RemoteWin:
+                    remoteIpStr = remoteIpStr_WinServer2019;
+                    break;
+
+                case TestRunType.RemoteUbuntu:
+                    remoteIpStr = remoteIpStr_Ubuntu_20_4;
+                    break;
+
+                default:
+                    remoteIpStr = remoteIpStr_Ubuntu_20_4;
+                    break;
+            }
+
+            return new DriverBaseParams(drvImplWaitTime, drvExplWaitTime, drvMaxWaitTime, localIpStr_Win, remoteIpStr);
+        }
 
     }
 }

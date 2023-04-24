@@ -15,6 +15,8 @@ namespace CsharpWebDriverLib.DriverBase
 
         public void TearDown();
 
+        public void OneTimeTearDown();
+
         public void TakeScreenshot(String fileNameWithoutExt);
     }
 
@@ -112,12 +114,12 @@ namespace CsharpWebDriverLib.DriverBase
         public static WebDriverExtensions.WebDriverType webDriverType { get; set; }
 
  
-        public static void OneTimeSetUp()
+        public static void BeforeOneTimeSetUp()
         {
             eventFiringCreate();
         }
 
-        public static void OneTimeTearDown()
+        public static void BeforeOneTimeTearDown()
         {
             // Функционал теоретически может быть (?) перенесен в Hook AppDomain events (domain_ProcessExit) 
             // для выполнения только один раз в конце всех тестов

@@ -12,6 +12,8 @@ using OpenQA.Selenium.Support.Events;
 using NUnit.Framework.Interfaces;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading;
+using static CsharpWebDriverLib.DriverBase.WebDriverExtensions;
 
 namespace CsharpWebDriverLib.DriverBase
 {
@@ -102,7 +104,8 @@ namespace CsharpWebDriverLib.DriverBase
             driverCapabilitiesPrint(webDriver, wdCapabilities);//TODO
         }
 
-        private void initLogWriterAndWait(IWebDriver webDriver)
+
+        private void initLogWriter(IWebDriver webDriver)
         {
             wdLogs = webDriver.Manage().Logs;
 
@@ -115,6 +118,9 @@ namespace CsharpWebDriverLib.DriverBase
             BaseLogFolder = createBaseLogDir(CurrentTestFolder);
             logWriter = new LogWriter(wdLogs, BaseLogFolder, CurrentTestName);
 
+        }
+        private void initWebDriverWait(IWebDriver webDriver)
+        {
             // Для установки общих неявных ожиданий
             webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(driverBaseParams.drvImplWaitTime);
 
@@ -154,14 +160,15 @@ namespace CsharpWebDriverLib.DriverBase
         public void SetUp()
         {
             // SET initial parameter
-            IDriverBase.testRunType   = driverBaseParams.getTestRunType;
-            IDriverBase.webDriverType = driverBaseParams.getWebDriverType;
+            IDriverBase.testRunType   = DriverBaseParams.getTestRunType();
+            IDriverBase.webDriverType = DriverBaseParams.getWebDriverType();
             IDriverBase.CurrentIpStr  = defineCurrentIpStr(IDriverBase.testRunType);
 
             if (IDriverBase.tlDriverIsValueCreated() & IDriverBase.eftlDriverIsValueCreated())
             {
+                initLogWriter(IDriverBase.webDrv);
                 initWebDriverCapabilities(IDriverBase.webDrv);
-                initLogWriterAndWait(IDriverBase.webDrv);
+                initWebDriverWait(IDriverBase.webDrv);
                 return;
             }
 
@@ -195,31 +202,85 @@ namespace CsharpWebDriverLib.DriverBase
             */
         }
 
-
         public void TearDown()
         {
-            try
+            var testResult = TestContext.CurrentContext.Result.Outcome;
+            var testMessage = "Stop() - OK";
+            if (Equals(testResult, ResultState.Failure) ||
+                Equals(testResult == ResultState.Error))
             {
-                var testResult = TestContext.CurrentContext.Result.Outcome;
-                var testMessage = "Stop() - OK";
-                if (Equals(testResult, ResultState.Failure) ||
-                    Equals(testResult == ResultState.Error))
-                {
-                    testMessage = "Stop() - ResultState.Failure or ResultState.Error";
-                }
-                Console.WriteLine(testMessage);
-                Console.WriteLine("Finish test: " + CurrentTestName);
-
-                saveBrowserLog(logWriter);
+                testMessage = "Stop() - ResultState.Failure or ResultState.Error";
             }
-            finally
+            Console.WriteLine(testMessage);
+            Console.WriteLine("Finish test: " + CurrentTestName);
+
+            saveBrowserLog(logWriter);
+        }
+
+        public void OneTimeTearDown()
+        {
+            TerminateLocalSeleniumBrowsersServer(IDriverBase.testRunType, IDriverBase.webDriverType);
+            TerminateLocalSelenoidServerForIE(IDriverBase.testRunType, IDriverBase.webDriverType);
+        }
+
+        private void TerminateLocalSeleniumBrowsersServer(TestRunType testRunType, 
+                                                          WebDriverExtensions.WebDriverType driverType)
+        {
+            Process[] processes;
+            // Terminate the associated Selenium driver Windows process from memory
+            switch (driverType)
             {
-                if ((IDriverBase.testRunType != TestRunType.Local) &
-                   (IDriverBase.webDriverType == WebDriverExtensions.WebDriverType.IE) &
-                   (selenoidProcess != null))
+                case WebDriverExtensions.WebDriverType.IE:
+                    processes = Process.GetProcessesByName(driverBaseParams.ieDriverExeName);
+                    foreach (Process p in processes)
+                        p.Kill();
+
+                    break;
+
+                case WebDriverExtensions.WebDriverType.Chrome:
+                    if (testRunType == TestRunType.Local)
+                    {
+                        processes = Process.GetProcessesByName(driverBaseParams.chromeDriverExeName);
+                        foreach (Process p in processes)
+                            p.Kill();
+                    }
+                    break;
+
+                case WebDriverExtensions.WebDriverType.Firefox:
+                    if (testRunType == TestRunType.Local)
+                    {
+                        processes = Process.GetProcessesByName(driverBaseParams.firefoxDriverExeName);
+                        foreach (Process p in processes)
+                            p.Kill();
+                    }
+                    break;
+
+                default:
+                    throw new ArgumentOutOfRangeException("Not valid WebDriverType value: " + driverType);
+            }
+        }
+
+        private void TerminateLocalSelenoidServerForIE(TestRunType testRunType,
+                                                       WebDriverExtensions.WebDriverType driverType)
+        {
+            if ((testRunType != TestRunType.Local) &
+                (driverType == WebDriverType.IE) &
+                (selenoidProcess != null)
+               )
+            {
+                // Stop the Selenoid.exe process
+                selenoidProcess.CloseMainWindow();
+                if (!selenoidProcess.HasExited)
                 {
-                    selenoidProcess.Close();
-                    selenoidProcess.Dispose();
+                    selenoidProcess.Kill();
+                }
+                selenoidProcess.Dispose();
+
+                // Terminate the associated Windows process from memory
+                Process[] processes = Process.GetProcessesByName(driverBaseParams.selenoidDriverExeName);
+                foreach (Process p in processes)
+                {
+                    p.Kill();
                 }
             }
         }
@@ -277,8 +338,10 @@ namespace CsharpWebDriverLib.DriverBase
                     throw new ArgumentOutOfRangeException("Not valid WebDriverType value: " + IDriverBase.webDriverType);
             }
 
+            initLogWriter(webDriver); 
             initWebDriverCapabilities(webDriver);
-            initLogWriterAndWait(webDriver);
+            initWebDriverWait(webDriver);
+
             return webDriver;
         }
 
@@ -387,18 +450,24 @@ namespace CsharpWebDriverLib.DriverBase
             string uriString = "";
             string hostStr = driverBaseParams.remoteIpStr;
 
-            if (IDriverBase.testRunType == TestRunType.RemoteWin)
-            {
-                uriString = "http://" + hostStr + ":4444/wd/hub/";
-                useSelenoid = false;
-            }
-            if (IDriverBase.testRunType == TestRunType.RemoteUbuntu)
-            {
-                if (IDriverBase.webDriverType == WebDriverExtensions.WebDriverType.IE)
-                    hostStr = IDriverBase.CurrentIpStr;
 
-                uriString = "http://" + hostStr + ":4444/wd/hub/";
-                useSelenoid = true;
+            switch (testRunType)
+            {
+                case TestRunType.RemoteWin:
+                    uriString = "http://" + hostStr + ":4444/wd/hub/";
+                    useSelenoid = false;
+                    break;
+
+                case TestRunType.RemoteUbuntu:
+                    if (driverType == WebDriverExtensions.WebDriverType.IE)
+                        hostStr = IDriverBase.CurrentIpStr;
+
+                    uriString = "http://" + hostStr + ":4444/wd/hub/";
+                    useSelenoid = true;
+                    break;
+
+                default:
+                    throw new ArgumentOutOfRangeException("Not valid TestRunType value: " + testRunType);
             }
 
             switch (driverType)
@@ -419,22 +488,24 @@ namespace CsharpWebDriverLib.DriverBase
                     break;
 
                 default:
-                    throw new ArgumentOutOfRangeException("Not valid WebDriverType value: " + IDriverBase.webDriverType);
+                    throw new ArgumentOutOfRangeException("Not valid WebDriverType value: " + driverType);
             }
 
+            initLogWriter(webDriver); 
             initWebDriverCapabilities(webDriver);
-            initLogWriterAndWait(webDriver);
+            initWebDriverWait(webDriver);
+
             return webDriver;
         }
 
         private Process StartLocalSelenoidServerForIE()
         {
-            // Start the Selenoid server using the selenoid.bat file on local Windows machine
+            // Start the Selenoid.exe server using the selenoid.bat file on local Windows machine
             var startInfo = new ProcessStartInfo
             {
-                FileName = @"C:\Tools\selenoid.bat",
+                FileName = driverBaseParams.selenoidBatFilePathName,
                 Arguments = "start",
-                WorkingDirectory = @"C:\Tools\",
+                WorkingDirectory = driverBaseParams.selenoidBatFileWorkingDirectory,
                 CreateNoWindow = false,
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
@@ -443,40 +514,24 @@ namespace CsharpWebDriverLib.DriverBase
             var process = new Process { StartInfo = startInfo };
 
             process.Start();
+            //Sleep for the Selenoid.exe process to start up
+            Thread.Sleep(1000);
+
             process.WaitForExitAsync();
 
             ProcessStartInfo processStartInfo = process.StartInfo;
-            //string output = process.StandardOutput.ReadToEnd();
-            //string error = process.StandardError.ReadToEnd();
-
-            saveStartLocalSelenoidLog(logWriter, processStartInfo /*, output, error */);
 
             return process;
         }
 
-        private void saveStartLocalSelenoidLog(LogWriter lw, ProcessStartInfo processStartInfo /*, string output, string error */)
-        {
-            Console.WriteLine("ProcessStartInfo      -> ArgumentList = " + processStartInfo.ArgumentList.ToString());
-            //Console.WriteLine("StartLocalSelenoidLog -> Output = " + output);
-            //Console.WriteLine("StartLocalSelenoidLog -> Error  = " + error);
-
-            // for write log file with Browser logging
-            if (lw != null)
-            {
-                lw.LogWrite("ProcessStartInfo      -> ArgumentList = ", processStartInfo.ArgumentList.ToString());
-                //lw.LogWrite("StartLocalSelenoidLog -> Output = ", output);
-                //lw.LogWrite("StartLocalSelenoidLog -> Error  = ", error);
-            }
-        }
-
-        private InternetExplorerOptions getRemoteIEOptions(Boolean useSelenoid = false)
+        private InternetExplorerOptions getRemoteIEOptions(Boolean useSelenoidExe = false)
         {
             InternetExplorerOptions ieOptions = new InternetExplorerOptions();
 
             ieOptions.PlatformName = "windows";
             ieOptions.BrowserVersion = "11";
 
-            if (useSelenoid)
+            if (useSelenoidExe)
             {
                 var runName = GetType().Assembly.GetName().Name;
 
@@ -491,8 +546,9 @@ namespace CsharpWebDriverLib.DriverBase
             //установка опций для игнорирования отличия масштаба от 100%
             ieOptions.IgnoreZoomLevel = true;
 
-            //установка опций для игнорирования отличия настройки защищенного режима в разных зонах (не надежная работа)
-            //ieOptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+            //установка опций для игнорирования отличия настройки защищенного режима в разных зонах
+            // if (useSelenoidExe = true), enabling this options required !!!
+            ieOptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
 
             return ieOptions;
         }
