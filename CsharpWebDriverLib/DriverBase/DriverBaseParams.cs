@@ -32,6 +32,9 @@ namespace CsharpWebDriverLib.DriverBase
         public static string selenoidBatFilePathName = @"C:\Tools\selenoid.bat";
         public static string selenoidBatFileWorkingDirectory = @"C:\Tools\";
 
+        public static string driverSelenoidPlatformNameLinux = "linux";
+        public static string driverSelenoidPlatformNameWindows = "windows";
+
         // SETUP value for: TestRunType and WebDriverType
         public static TestRunType getTestRunType() => TestRunType.Local; 
         public static WebDriverExtensions.WebDriverType getWebDriverType() => WebDriverExtensions.WebDriverType.IE;

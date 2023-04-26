@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using static CsharpWebDriverLib.DriverBase.WebDriverExtensions;
+using OpenQA.Selenium.Interactions;
 
 namespace CsharpWebDriverLib.DriverBase
 {
@@ -178,7 +179,7 @@ namespace CsharpWebDriverLib.DriverBase
             else
             if ((IDriverBase.testRunType == TestRunType.RemoteWin) || (IDriverBase.testRunType == TestRunType.RemoteUbuntu))
             {
-                IDriverBase.webDrv = newRemoteWebDriverSetOptions(IDriverBase.testRunType, driverType: IDriverBase.webDriverType);
+                IDriverBase.webDrv = newRemoteWebDriverSetOptions(driverType: IDriverBase.webDriverType);
             }
 
             //A wrapper around an arbitrary IWebDriver instance which supports registering for events, e.g. for logging purposes. 
@@ -196,6 +197,10 @@ namespace CsharpWebDriverLib.DriverBase
                                                                             WebDriverExtensions.linkCurMethodMessage(MethodInfo.GetCurrentMethod(),
                                                                                                                     e.GetType(),
                                                                                                                     e.ThrownException.Message));
+            initLogWriter(IDriverBase.webDrv);
+            initWebDriverCapabilities(IDriverBase.webDrv);
+            initWebDriverWait(IDriverBase.webDrv);
+
             /*
             setHookAppDomainEvents(AppDomain.CurrentDomain);
             */
@@ -269,10 +274,6 @@ namespace CsharpWebDriverLib.DriverBase
                     throw new ArgumentOutOfRangeException("Not valid WebDriverType value: " + IDriverBase.webDriverType);
             }
 
-            initLogWriter(webDriver); 
-            initWebDriverCapabilities(webDriver);
-            initWebDriverWait(webDriver);
-
             return webDriver;
         }
 
@@ -296,7 +297,8 @@ namespace CsharpWebDriverLib.DriverBase
 
         private ChromeOptions getChromeOptions()
         {
-            ChromeOptions chromeOptions = new ChromeOptions();
+            ChromeOptions chromeOptions = new ChromeOptions(); 
+
             // Для задания опции UnhandledPromptBehavior
             chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.DismissAndNotify;
             chromeOptions.AddArgument("--lang=ru");
@@ -336,6 +338,7 @@ namespace CsharpWebDriverLib.DriverBase
         private FirefoxOptions getFirefoxOptions()
         {
             FirefoxOptions firefoxOptions = new FirefoxOptions();
+
             var capabilityName = "acceptInsecureCerts";
             // Для задания опции acceptInsecureCerts
             firefoxOptions.SetPreference(capabilityName, false);
@@ -372,42 +375,25 @@ namespace CsharpWebDriverLib.DriverBase
                 throw new FileNotFoundException("firefox.exe file was not found.");
         }
 
-        private IWebDriver newRemoteWebDriverSetOptions(TestRunType testRunType, WebDriverExtensions.WebDriverType driverType)
+        private IWebDriver newRemoteWebDriverSetOptions(WebDriverExtensions.WebDriverType driverType)
         {
             IWebDriver webDriver;
             IDriverBase.webDriverType = driverType;
 
-            bool useSelenoid = false;
-            string uriString = "";
-            string hostStr = driverBaseParams.remoteIpStr;
+            string hostStr = "";
 
+            if (driverType == WebDriverExtensions.WebDriverType.IE)
+                hostStr = IDriverBase.CurrentIpStr;
+            else
+                hostStr = driverBaseParams.remoteIpStr;
 
-            switch (testRunType)
-            {
-                case TestRunType.RemoteWin:
-                    uriString = "http://" + hostStr + ":4444/wd/hub/";
-                    useSelenoid = false;
-                    break;
-
-                case TestRunType.RemoteUbuntu:
-                    if (driverType == WebDriverExtensions.WebDriverType.IE)
-                        hostStr = IDriverBase.CurrentIpStr;
-
-                    uriString = "http://" + hostStr + ":4444/wd/hub/";
-                    useSelenoid = true;
-                    break;
-
-                default:
-                    throw new ArgumentOutOfRangeException("Not valid TestRunType value: " + testRunType);
-            }
+            var uriString = "http://" + hostStr + ":4444/wd/hub/";
 
             switch (driverType)
             {
                 case WebDriverExtensions.WebDriverType.IE:
-                    if (useSelenoid)
-                        IDriverBase.selenoidProcess = StartLocalSelenoidServerForIE();
-
-                    webDriver = new RemoteWebDriver(new Uri(uriString), getRemoteIEOptions(useSelenoid));
+                    IDriverBase.selenoidProcess = StartLocalSelenoidServerForIE();
+                    webDriver = new RemoteWebDriver(new Uri(uriString), getRemoteIEOptions());
                     break;
 
                 case WebDriverExtensions.WebDriverType.Chrome:
@@ -421,10 +407,6 @@ namespace CsharpWebDriverLib.DriverBase
                 default:
                     throw new ArgumentOutOfRangeException("Not valid WebDriverType value: " + driverType);
             }
-
-            initLogWriter(webDriver); 
-            initWebDriverCapabilities(webDriver);
-            initWebDriverWait(webDriver);
 
             return webDriver;
         }
@@ -455,23 +437,21 @@ namespace CsharpWebDriverLib.DriverBase
             return process;
         }
 
-        private InternetExplorerOptions getRemoteIEOptions(Boolean useSelenoidExe = false)
+        private InternetExplorerOptions getRemoteIEOptions()
         {
             InternetExplorerOptions ieOptions = new InternetExplorerOptions();
 
-            ieOptions.PlatformName = "windows";
             ieOptions.BrowserVersion = "11";
+            ieOptions.PlatformName = DriverBaseParams.driverSelenoidPlatformNameWindows;
 
-            if (useSelenoidExe)
+            var runName = GetType().Assembly.GetName().Name;
+
+            ieOptions.AddAdditionalOption("selenoid:options", new Dictionary<string, object>
             {
-                var runName = GetType().Assembly.GetName().Name;
+                ["name"] = runName,
+                ["sessionTimeout"] = "1m"/* How to set session timeout */
+            });
 
-                ieOptions.AddAdditionalOption("selenoid:options", new Dictionary<string, object>
-                {
-                    ["name"] = runName,
-                    ["sessionTimeout"] = "1m"/* How to set session timeout */
-                });
-            }
             // Для задания опции UnhandledPromptBehavior
             ieOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.Ignore;
             //установка опций для игнорирования отличия масштаба от 100%
@@ -488,11 +468,9 @@ namespace CsharpWebDriverLib.DriverBase
         private ChromeOptions getRemoteChromeOptions()
         {
             ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.PlatformName = "linux";
+
             chromeOptions.BrowserVersion = "112.0";
-            // Для задания опции UnhandledPromptBehavior
-            chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.DismissAndNotify;
-            chromeOptions.AddArgument("--lang=ru");
+            chromeOptions.PlatformName = DriverBaseParams.driverSelenoidPlatformNameLinux;
 
             var runName = GetType().Assembly.GetName().Name;
             var timestamp = $"{DateTime.Now:yyyyMMdd.HHmm}";
@@ -509,9 +487,12 @@ namespace CsharpWebDriverLib.DriverBase
                 ["enableLog"] = true,
                 ["screenResolution"] = "1920x1080x24"
             });
-
             //--Задаем опции командной строки соотв. браузера
-            //chromeOptions.AddArguments("start-fullscreen");
+            chromeOptions.AddArguments("start-fullscreen");
+            // Для задания опции UnhandledPromptBehavior
+            chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.DismissAndNotify;
+            chromeOptions.AddArgument("--lang=ru");
+            chromeOptions.AddArgument("no-sandbox");
 
             return chromeOptions;
         }
@@ -520,12 +501,12 @@ namespace CsharpWebDriverLib.DriverBase
         private FirefoxOptions getRemoteFirefoxOptions()
         {
             FirefoxOptions firefoxOptions = new FirefoxOptions();
-            firefoxOptions.PlatformName = "linux";
+
             firefoxOptions.BrowserVersion = "112.0";
-            
+            firefoxOptions.PlatformName = DriverBaseParams.driverSelenoidPlatformNameLinux;
+
             var runName = GetType().Assembly.GetName().Name;
             var timestamp = $"{DateTime.Now:yyyyMMdd.HHmm}";
-
             // * Variant 1 -------------------------------------------------------------
             firefoxOptions.AddAdditionalOption("selenoid:options", new Dictionary<string, object>
             {
@@ -539,7 +520,6 @@ namespace CsharpWebDriverLib.DriverBase
                 ["enableLog"] = true,
                 ["screenResolution"] = "1920x1080x24"
             });
-
             /*
             // * Variant 2 -------------------------------------------------------------
             // Set the selenoid:options capability in the moz:firefoxOptions dictionary
@@ -552,7 +532,6 @@ namespace CsharpWebDriverLib.DriverBase
             selenoidOptions.Add("enableLog"), true);
             firefoxOptions.AddAdditionalOption("selenoid:options", selenoidOptions);
             */
-
             // Для задания опции acceptInsecureCerts
             var preferenceName = "acceptInsecureCerts";
             firefoxOptions.SetPreference(preferenceName, false);
