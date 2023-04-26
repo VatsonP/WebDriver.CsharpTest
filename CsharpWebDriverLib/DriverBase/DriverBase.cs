@@ -297,8 +297,10 @@ namespace CsharpWebDriverLib.DriverBase
 
         private ChromeOptions getChromeOptions()
         {
-            ChromeOptions chromeOptions = new ChromeOptions(); 
+            ChromeOptions chromeOptions = new ChromeOptions();
 
+            // Для задания опции acceptInsecureCerts
+            chromeOptions.AcceptInsecureCertificates = false;
             // Для задания опции UnhandledPromptBehavior
             chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.DismissAndNotify;
             chromeOptions.AddArgument("--lang=ru");
@@ -487,12 +489,14 @@ namespace CsharpWebDriverLib.DriverBase
                 ["enableLog"] = true,
                 ["screenResolution"] = "1920x1080x24"
             });
-            //--Задаем опции командной строки соотв. браузера
-            chromeOptions.AddArguments("start-fullscreen");
+            // Для задания опции acceptInsecureCerts
+            chromeOptions.AcceptInsecureCertificates = false;
             // Для задания опции UnhandledPromptBehavior
             chromeOptions.UnhandledPromptBehavior = UnhandledPromptBehavior.DismissAndNotify;
+            //--Задаем опции командной строки соотв. браузера
+            chromeOptions.AddArguments("start-fullscreen");
             chromeOptions.AddArgument("--lang=ru");
-            chromeOptions.AddArgument("no-sandbox");
+            chromeOptions.AddArgument("--no-sandbox");
 
             return chromeOptions;
         }
