@@ -14,8 +14,8 @@ namespace CsharpWebDriverLib.DriverBase
         // константа времени (в сек) для максимального времени неявного ожидания
         public int drvMaxWaitTime { get; init; }
 
-        // Remote WinServer2019 with Docker "192.168.0.91"
-        private const string remoteIpStr_WinServer2019 = "192.168.0.91";
+        // Remote WinServer2019 with Docker "192.168.0.87"
+        private const string remoteIpStr_WinServer2019 = "192.168.0.87";
         // Remote Ubuntu 20.4   with Docker "192.168.203.128"
         private const string remoteIpStr_Ubuntu_20_4 = "192.168.0.96";
         // Local Windows Ip  
